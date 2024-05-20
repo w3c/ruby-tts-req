@@ -10,3 +10,6 @@ Check [README of Japanese Language Enablement repository](https://github.com/w3c
 - Working Draft: https://www.w3.org/TR/ruby-t2s-req/ (aiming Internationalization WG NOTE, but not yet published)
 
 
+## Milestone
+
+MM create a milestone for the first publication as a W3C Note and chose some issues for it.
