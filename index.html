@@ -113,7 +113,7 @@
       <h2>Roles of ruby annotations</h2>
 
       <section>
-        <h3>Furigana, background</h3>
+        <h3 id="furigana-background">Furigana, background</h3>
         <p>
 	  The primary purpose of ruby annotations is to indicate how
 	  to pronounce CJK ideographic characters, a practice known
@@ -424,36 +424,123 @@
       <section>
         <h3>Reading aloud ruby annotations only</h3>
         <p>
-          In this option, ruby annotations are read aloud but ruby bases are not. 
-          For example, <ruby><rb>foo</rb><rt>bar</rt></ruby> is read aloud as 'bar'.
+          In this option, ruby annotations are read aloud but ruby bases
+	  are not. For example, <ruby><rb>foo</rb><rt>bar</rt></ruby> is
+	  read aloud as 'bar'.
         </p>
-
         <section>
           <h4>Furigana, when ruby annotations read aloud</h4>
           <p>
-            The option of reading aloud ruby annotations only provides not-incorrect-but-unnatural results usually. 
-            In some cases, it causes mistakes in deciding whether <span lang="ja">へ</span> should be read aloud 
-            as <span lang="ja">え</span> (E) or <span lang="ja">へ</span> (HE) and 
-            whether <span lang="ja">は</span> should be read aloud as <span lang="ja">わ</span> (WA) or <span lang="ja">は</span> (HA). 
-            This is because the morphological analysis does not work properly and pronunciation dictionaries 
-            for compound words cannot be used, as kana characters are used instead of CJK ideographic characters.
-            As an example, consider <span lang="ja">今後は<ruby><rb>発展</rb><rt>はってん</rt></ruby></span>. 
-            Text-to-speech of <span lang="ja">今後は発展</span> typically works fine but that of <span lang="ja">今後ははってん</span> does not. 
-            The first occurrence of <span lang="ja">は</span> should be read aloud as <span lang="ja">わ</span> (WA) 
-            but is mistakenly read aloud as <span lang="ja">は</span> (/ha/).
+	    Even native Japanese speakers may easily assume, without
+	    thorough consideration, that the option of reading only ruby
+	    annotations aloud will provide reasonable results. However,
+	    this is not always the case.
           </p>
-          <p>
-            Even when this option is used, it might be wise to ignore furigana-added-for-enhanced-accessibility but rely on ruby bases.
-          </p>
-          <p>
-            If furigana is assigned only for the first occurrence of a word, 
-            there is a risk that the first occurrence and the others are read aloud differently.
-          </p>
-          <aside class="note" title="" id="n20211101002">
-            One way to avoid this problem is for the text-to-speech engine to maintain a correspondence table between ruby bases and ruby annotations.
-          </aside>
-        </section>
 
+	  <section>
+	    <h5>Incorrect pitch accent</h5>
+
+	    <p>Each hiragarana character represents a mora (a basic timing
+	      unit in phonology), which is typically a single vowel or a
+	      consonant followed by a single vowel.  The same sequence of
+	      moras may mean different words depending on the pitch accent.
+	      For example, both <span lang="ja">雨</span> (rain) and
+	      <span lang="ja">飴</span> (candy) consists of the same moras:
+	      <span lang="ja">あ</span> and <span lang="ja">め</span>.
+	      However, the first mora in <span lang="ja">雨</span> has a
+	      high pitch, and the second has a low pitch;
+	      <span lang="ja">飴</span> has the opposite pitch accent.</p>
+
+	    <p>Reading aloud ruby annotations rather than ruby bases often
+	      leads to incorrect pitch accent. As an example, consider
+	      <span lang-"ja"><ruby><rb>雨</rb><rt>あめ</rt></ruby>が好き</span>
+	      (I like rain) and <span lang-"ja"><ruby><rb>飴</rb><rt>あめ</rt></ruby>が好き</span>
+	      (I like candy). In both cases, reading aloud ruby annotations
+	      rather than ruby bases implies that the TTS engine will receive
+	      <span lang-"ja">あめが好き</span> and create the same result.</p>
+
+	    <p>A similar example is <span lang-"ja"><ruby><rb>牡蠣</rb><rt>かき</rt></ruby>を食べる</span>
+	      (I eat oysters) and <span lang-"ja"><ruby><rb>柿</rb><rt>かき</rt></ruby>を食べる</span>
+	      (I eat persimmons), where <span lang="ja">牡蠣</span> and
+	      <span lang="ja">柿</span> have the same two moras and different
+	      pitch accents.</p>
+	  </section>	    
+
+	  <section>
+	    <h5>Incorrectly pronouncing non-particle は or へ as particles</h5>
+
+	    <p>In modern Japanese, there is basically only one way to read
+	      each hiragana character. But <span lang="ja">は</span> and
+	      <span lang="ja">へ</span> are exceptions. <span lang="ja">は</span>
+	      is usually read aloud as /ha/ but is read aloud as /wa/ when
+	      it is used as a particle. Likewise, <span lang="ja">へ</span>
+	      is usually read aloud as /he/ but is read aloud as /e/ when
+	      it is used as a particle.</p>
+
+	    <p>Reading aloud ruby annotations rather than ruby bases implies
+	      that CJK ideographic characters in ruby bases will not be
+	      passed to the TTS engine, only hiragana characters in ruby
+	      annotations will be.</p>
+
+	    <p>Without CJK ideographic characters, Japanese morphological
+	      analysis is likely to fail. Thus, occurrences of
+	      <span lang="ja">は</span> or <span lang="ja">へ</span> as
+	      non-particles in ruby annotations may well be mistakenly
+	      interpreted as particles.  Consequently, such occurrences
+	      of <span lang="ja">は</span> and <span lang="ja">へ</span>
+	      may well be mistakenly read aloud as /wa/ and /e/, respectively.</p>
+
+	    <p>For example, consider  
+	      <span lang="ja">やがて<ruby><rb>廃止</rb><rt>はいし</rt></ruby>になる</span>.
+	      This sentence means "It will be abolished eventually".  But
+	      if <span lang="ja">やがてはいしになる</span> is passed to the
+	      TTS engine, <span lang="ja">は</span> may well be mistakenly
+	      read aloud as /wa/ rather than /ha/.  The result means
+	      "I will eventually become a doctor".
+	    </p>
+
+	    <p>Here are some similar examples.  All occurrences of
+	      <span lang="ja">は</span> and <span lang="ja">へ</span>
+	      in ruby annotations are likely to be mistakenly read aloud.</p>
+	    
+	    <ul>
+	      <li><span lang="ja">人員<ruby><rb>配置</rb><rt>はいち</rt></ruby></span> </li>
+	      <li><span lang="ja">自然<ruby><rb>破壊</rb><rt>はかい</rt></ruby></span> </li>
+	      <li><span lang="ja">社会<ruby><rb>波紋</rb><rt>はもん</rt></ruby></span> </li>
+	      <li><span lang="ja">天皇<ruby><rb>陛下</rb><rt>へいか</rt></ruby></span></li>
+	      <li><span lang="ja">大学<ruby><rb>併願</rb><rt>へいがん</ruby></span></li>
+	      <li><span lang="ja">学級<ruby><rb>閉鎖</rb><rt>へいさ</rt></ruby></span></li>
+	    </ul>
+	  </section>
+	  <section>
+	    <h5>Inconsistency between the first and subsequent occurrences</h5>
+            <p>
+	      As described in <a href="#furigana-background"><span class="secno">2.1</span></a>,
+	      furigana as a ruby annotation may be attached to only the
+	      first occurrence of a CJK ideographic character or a word
+	      composed from such characters.  Thus, there is a risk that
+	      the first occurrence and the others are read aloud differently.
+	      For example, consider <span lang="ja">智子</span> as the name
+	      of a character in the novel. There are two possible readings
+	      of this name: <span lang="ja">さとこ</span> and
+	      <span lang="ja">ともこ</span>. If <span lang="ja">さとこ</span>
+	      as a ruby annotation is attached only to the first occurrence
+	      of the name, it will be read as <span lang="ja">さとこ</span>
+	      and the other occurrences may be read as <span lang="ja">ともこ</span>.
+	      The reader would then think that <span lang="ja">さとこ</span>
+	      and <span lang="ja">ともこ</span> are different characters.</p>
+          <aside class="note" title="" id="n20211101002">
+            One approach to avoid this problem is to create a table of
+	    ruby base-annotation pairs. When a CJK ideographic character
+	    or a word composed of such characters is encountered, this
+	    table allows the TTS engine to receive the ruby annotation
+	    for not only the first occurrence but also for the subsequent
+	    occurrences.
+          </aside>
+
+	  </section>
+	  </section>
+	  
         <section>
           <h4>Gikun, when ruby annotations read aloud</h4>
           <p>
