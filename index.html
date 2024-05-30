@@ -68,6 +68,12 @@
             date: "March 2010",
             publisher: "Japan Electronics and Information Technology Industries Association",
           },
+          'Transliteration Training Course': {
+              title: "Textbook for the Volunteer Transliteration Training Course: Basics (In Japanese, 音訳ボランティア養成講習会テキスト　基礎課程編)",
+	      href: "https://naiiv-books.net/shopdetail/000000000023/",
+            date: "March 2010",
+            publisher: "National Council of Japan for the Visually Impaired (In Japanese, 全国視覚障害者情報提供施設協会)",
+          },
         },
         xref: true,
         postProcess: [  ],
@@ -310,9 +316,9 @@
       <section>
         <h3>Reading aloud both ruby bases and ruby annoations</h3>
         <p>
-          In this option, ruby bases are read aloud first and ruby annotations are then read aloud. 
+          In this option, both ruby bases and ruby annotations are read aloud (double reading).
           Many implementations (screen readers, in particular) support this option only. 
-          For example, <ruby><rb>foo</rb><rt>bar</rt></ruby> is read aloud as 'foo bar'.
+          For example, <ruby><rb>foo</rb><rt>bar</rt></ruby> is read aloud as 'foo bar' or 'bar foo'.
         </p>
 
         <section>
@@ -363,14 +369,13 @@
         <section>
           <h4 id="gikun_both_read_aloud">Gikun, when both read aloud</h4>
           <p>
-            The option of reading aloud both is sensible.
+            The option of reading aloud both is sensible.  It is common to read aloud ruby annotations first then ruby bases next, but it is sometimes better to read aloud ruby bases first and ruby annotations next [[?Transliteration Training Course]]).
           </p>
 	  <p>
-            <span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> is read aloud as TEKI TOMO, which means 'enemy friend' (equal to 'frenemy').</p>
-
+            <span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> is read aloud as TEKI TOMO or TOMO TEKI, which means 'enemy friend' or 'friend enemy'  (equal to 'frenemy').</p>
 		      
           <p>
-            <span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> is read aloud as SEIMEI INOCHI, 
+            <span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> is read aloud as SEIMEI INOCHI or INOCHI SEIMEI, 
             where SEIMEI is a loan word from Chinese and INOCHI is a native Japanese word.  Both means life.
           </p>
         </section>
@@ -382,14 +387,14 @@
           </p>
           <p>
             <span lang="ja"><ruby><rb>不死川玄弥</rb><rt>しなずがわげんや</rt></ruby></span>
-            is read aloud as FUSHIKAWA GENYA SHINAZUGAWA GENYA, which suggests two persons rather than one person.
+            is read aloud as FUSHIKAWA GENYA SHINAZUGAWA GENYA or SHINAZUGAWA GENYA FUSHIKAWA GENYA, which suggests two persons rather than one person.
           </p>
         </section>
 
         <section>
           <h4 id="interlinear_note_both_read_aloud">Interlinear notes, when both read aloud</h4>
           <p>
-            The option of reading aloud both is sensible.
+            The option of reading aloud both is sensible.  It is necessary to read aloud ruby bases first then ruby annotations next.
           </p>
           <p>
             For example, <span lang="ja"><ruby><rb>徳川慶喜</rb><rt>1837-1913 江戸幕府最後の将軍</rt></ruby></span> 
