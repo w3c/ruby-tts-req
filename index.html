@@ -641,13 +641,25 @@
 
       <section>
         <h3>A single ruby element or multiple ruby elements per one compound word</h3>
-        <p>When attaching a ruby annotation to a compound word consisting of multiple CJK ideographic characters in an HTML or EPUB document, it is natural to create a single HTML <code>ruby</code> element for the entire word. However, in some cases, a separate <code>ruby</code> element is created for each CJK ideographic character. 
+        <p>When attaching a ruby annotation to a compound word consisting of multiple CJK ideographic characters in an HTML or EPUB document, one way is to create a single HTML <code>ruby</code> element for the entire word. However, in some cases, a separate <code>ruby</code> element is created for each CJK ideographic character. 
 For example, to attach the ruby annotation <span lang="ja">せいめい</span> to the word <span lang="ja">生命</span> (meaning “life” in Japanese), the typical approach is to create a single <code>ruby</code> element for this word.  This <code>ruby</code> element may have a single <code>rt</code> element for “せいめい” or two <code>rt</code> elements (one for “せい” and another for “めい”).  However, it is not entirely uncommon to see two <code>ruby</code> elements for this word: one for “生” and another for “命”.</p>
 
 	<p>Some people argue that 
           creating a ruby element per compound word is better than creating a ruby element for each character in a compound word. They argue that 
 it becomes easier for the text-to-speech engine to maintain a correspondence table between ruby bases and ruby annotations so that subsequent occurrences of the compound word without ruby can be pronounced correctly.
         </p>
+	<p>Meanwhile, others argue that there is a good reason to attach ruby
+	  annotations to some, but not all, characters in a compound word.
+	  For example, consider <span lang="ja">佳人</span>, where
+	  <span lang="ja">佳</span> is taught in junior high schools while
+	  <span lang="ja">人</span> is taught in the first grade of elementary
+	  schools.  Therefore, it makse sense to attach a ruby annotation to
+	  <span lang="ja">佳</span> only (one <code>ruby</code> element for
+	  <span lang="ja">佳</span> and no <code>ruby</code> element for
+	  <span lang="ja">人</span>).  Similarly, it is reasonable to attach ruby
+	  annotations to the first and third CJK idegraphic characters in
+	  <span lang="ja">屯田兵</span> only but not to the second one (thus,
+	  two <code>ruby</code> elements).</p>
       </section>
 
       <section>
