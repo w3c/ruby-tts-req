@@ -112,7 +112,7 @@
 	text-to-speech of ruby annotations. Section 5 introduces
 	alternative mechanisms, such as SSML and PLS. Section 6 delves
 	into the use of ruby annotations in translating HTML or EPUB
-	content to braille.</p>
+	document to braille.</p>
     </section>
 
     <section>
@@ -128,9 +128,8 @@
         <p>
 	  In contemporary usage, it is uncommon to attach ruby
 	  annotations to all CJK ideographic characters
-	  (<dfn>fully-annotated ruby</dfn>). Instead, it is common to
-	  attach ruby annotations to some CJK ideographic characters
-	  (<dfn>partially-annotated ruby</dfn>).
+	  in a given document. Instead, it is more common to
+	  attach ruby annotations to only some of the CJK ideographic characters.
         </p>
         <p>Ruby annotations find their application in various
         contexts, including trade books, newspapers, textbooks,
@@ -148,9 +147,9 @@
           YAMAZAKI or YAMASAKI. 
         </p>
         <p>
-          In the case of partially-annotated ruby, ruby annotations are often attached to the first occurrence of each CJK ideographic character, 
-          and not attached to the second and subsequent occurrences of the same character, 
-          probably because users should learn from the first occurrence.
+	  If ruby annotations are attached to only some of the CJK ideographic characters in a given document, the first occurrence
+	  of a CJK ideographic character or a word composed of such characters may have a ruby annotation, while subsequent occurrences typically do not. This practice
+	  assumes that users will learn the correct pronunciation from the first occurrence.
         </p>
       </section>
 
@@ -325,8 +324,6 @@
           <h4 id="furigana_both_read_aloud">Furigana, when both read aloud</h4>
           <p>
             The option of reading aloud both interferes with readers' understanding significantly. 
-            This is true for both group ruby (see also <a data-cite="JLREQ#term.group-ruby">JLReq terminology</a>) 
-            and mono ruby (see also <a data-cite="JLREQ#term.mono-ruby">JLReq terminology</a>). 
           </p>
 	  <section>
 	    <h5>Examples of harmful double reading: Japanese</h5>
@@ -648,16 +645,25 @@
 
       <section>
         <h3>A single ruby element or multiple ruby elements per one compound word</h3>
-        <p>
-          Okayama-san of Hitach has argued that, even in the case of mono ruby, 
-          creating a single ruby element per compound word is better than creating a ruby element for each character of the ruby base in a compound word. 
-          For example, to attach mono ruby to <span lang="ja">生命</span>, he recommends a single ruby element and two sets of rb and rt elements: 
-          one for <span lang="ja">生</span> and another for <span lang="ja">命</span> rather than creating two ruby elements.
+        <p>When attaching a ruby annotation to a compound word consisting of multiple CJK ideographic characters in an HTML or EPUB document, one way is to create a single HTML <code>ruby</code> element for the entire word. However, in some cases, a separate <code>ruby</code> element is created for each CJK ideographic character. 
+For example, to attach the ruby annotation <span lang="ja">せいめい</span> to the word <span lang="ja">生命</span> (meaning “life” in Japanese), the typical approach is to create a single <code>ruby</code> element for this word.  This <code>ruby</code> element may have a single <code>rt</code> element for “せいめい” or two <code>rt</code> elements (one for “せい” and another for “めい”).  However, it is not entirely uncommon to see two <code>ruby</code> elements for this word: one for “生” and another for “命”.</p>
+
+	<p>Some people argue that 
+          creating a ruby element per compound word is better than creating a ruby element for each character in a compound word. They argue that 
+it becomes easier for the text-to-speech engine to maintain a correspondence table between ruby bases and ruby annotations so that subsequent occurrences of the compound word without ruby can be pronounced correctly.
         </p>
-        <p>
-          A single ruby element per compound word can be rendered as mono ruby or jukugo ruby by CSS. 
-          Moreover, it is also easy for the text-to-speech engine to maintain a correspondence table between ruby bases and ruby annotations.
-        </p>
+	<p>Meanwhile, others argue that there is a good reason to attach ruby
+	  annotations to some, but not all, characters in a compound word.
+	  For example, consider <span lang="ja">佳人</span>, where
+	  <span lang="ja">佳</span> is taught in junior high schools while
+	  <span lang="ja">人</span> is taught in the first grade of elementary
+	  schools.  Therefore, it makse sense to attach a ruby annotation to
+	  <span lang="ja">佳</span> only (one <code>ruby</code> element for
+	  <span lang="ja">佳</span> and no <code>ruby</code> element for
+	  <span lang="ja">人</span>).  Similarly, it is reasonable to attach ruby
+	  annotations to the first and third CJK idegraphic characters in
+	  <span lang="ja">屯田兵</span> only but not to the second one (thus,
+	  two <code>ruby</code> elements).</p>
       </section>
 
       <section>
