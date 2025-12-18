@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Text to Speech of Electronic Documents Containing Ruby: User Requirements</title>
+    <title>Text-to-Speech Rendering of Electronic Documents Containing Ruby: User Requirements</title>
     <script
       defer
       class="remove"
@@ -94,7 +94,7 @@
   </head>
   <body>
     <section id="abstract">
-      <p>This document describes user requirements for text to speech of electronic documents containing ruby.</p>
+      <p>This document describes user requirements for the text-to-speech rendering of electronic documents that contain ruby annotations.</p>
     </section>
     <section id="sotd">
       <p></p>
@@ -104,11 +104,11 @@
       <p>
         This document addresses issues related to text-to-speech 
         functionality in HTML documents and EPUB publications 
-        that contain ruby annotations. While the typographical 
-        arrangement of ruby is covered by [[JLREQ]], text-to-speech 
-        considerations in this context have not been widely 
-        recognized. This document examines the various uses 
-        of ruby and discusses how each usage should be read 
+        that contain ruby annotations. Although the typographic
+	aspects of ruby are addressed in [[JLREQ]], the
+	text-to-speech implications have received little 
+        attention. This document examines the various uses 
+       of ruby and discusses how each usage should be read 
         aloud, identifying the types of information that are 
         relevant for text-to-speech. It does not specify processing 
         procedures or algorithms, nor does it introduce new 
@@ -143,7 +143,7 @@
           Even for simple CJK ideographic characters, ruby annotations may be added for some users who have particular 
           difficulties with CJK ideographic characters 
           (in electronic documents, it is easy to make ruby annotations visible or invisible based on user preferences). 
-          Such ruby annotations are called as furigana-added-for-enhanced-accessibility.
+          Such ruby annotations are referred to as "furigana added for enhanced accessibility".
         </p>
         <p>
           Some simple CJK ideographic characters have more than one possible reading and thus require ruby annotations for disambiguation.  
@@ -151,8 +151,7 @@
           YAMAZAKI or YAMASAKI. 
         </p>
         <p>
-	  If ruby annotations are attached to only some of the CJK ideographic characters in a given document, the first occurrence
-	  of a CJK ideographic character or a word composed of such characters may have a ruby annotation, while subsequent occurrences typically do not. This practice
+	  When ruby annotations are applied only to selected CJK ideographic characters in a document, typically only the first occurrence of such characters or words receives an annotation, and subsequent occurrences do not. This practice
 	  assumes that users will learn the correct pronunciation from the first occurrence.
         </p>
       </section>
@@ -323,7 +322,8 @@
         <h3>Reading aloud both ruby bases and ruby annoations</h3>
         <p>
           In this option, both ruby bases and ruby annotations are read aloud (double reading).
-          Many implementations (screen readers, in particular) support this option only. 
+          Many implementations (screen readers, in particular) support only the option
+of reading both ruby bases and annotations.
           For example, <ruby><rb>foo</rb><rt>bar</rt></ruby> is read aloud as 'foo bar' or 'bar foo'.
         </p>
 
@@ -339,7 +339,7 @@
 
 	    <p>This sentence is intended to mean "His name is
 	    Dewanai".  Double reading completely changes the meaning:
-	    it will be interpreted as "His name is NOT Dewanai".</p>
+	    it will be interpreted as "His name is <em>not</em> Dewanai".</p>
 
 	    <p lang="ja">それでは<ruby><rb>話</rb><rt>はなし</rt></ruby>にならない。</p>
 
@@ -444,9 +444,9 @@
           <h4 id="furigana_annotation_read_aloud">Furigana, when ruby annotations read aloud</h4>
           <p>
 	    Even native Japanese speakers may easily assume, without
-	    thorough consideration, that the option of reading only ruby
-	    annotations aloud will provide reasonable results. However,
-	    this is not always the case.
+	    thorough consideration, that reading only ruby
+	    annotations used as furigana aloud will provide reasonable results. This common
+	    assumption, however, is not always correct.
           </p>
 
 	  <section>
@@ -495,26 +495,22 @@
 	      annotations will be.</p>
 
 	    <p>Without CJK ideographic characters, Japanese morphological
-	      analysis is likely to fail. For example, <span lang="ja">やがてはいしになる</span> may be
-	      misinterepreted as <span lang="ja">やがては いしに なる</span> ("I will eventually become a doctor") rather
-	      than <span lang="ja">やがて はいしに なる</span> ("It will be abolished eventually").
-	      Occurrences of
-	      <span lang="ja">は</span> or <span lang="ja">へ</span> as
-	      non-particles in ruby annotations may well be mistakenly
-	      interpreted as particles.  Consequently, such occurrences
-	      of <span lang="ja">は</span> and <span lang="ja">へ</span>
-	      may well be mistakenly read aloud as WA and E, respectively.</p>
-
-	    <p>For example, consider  
+	      analysis is likely to fail. For example, consider  
 	      <span lang="ja">やがて<ruby><rb>廃止</rb><rt>はいし</rt></ruby>になる</span>.
 	      This sentence means "It will be abolished eventually".  But
 	      if <span lang="ja">やがてはいしになる</span> is passed to the
 	      TTS engine, <span lang="ja">は</span> may well be mistakenly
-	      read aloud as WA rather than HA.  The result means
+	      interpreted as a particle and 
+	      read aloud as WA rather than HA.  The resulting utterance means
 	      "I will eventually become a doctor".
+	      A similar problem arises with <span lang="ja">へ</span>. 
+	      When <span lang="ja">へ</span> appears in ruby annotations
+	      without the corresponding CJK ideographic characters,
+	      it may also be misinterpreted as a particle and read aloud as
+	      E rather than HE.
 	    </p>
 
-	    <p>Here are some similar examples.  All occurrences of
+	    <p>Here are some further examples.  All occurrences of
 	      <span lang="ja">は</span> and <span lang="ja">へ</span>
 	      in ruby annotations are likely to be mistakenly read aloud.</p>
 	    
@@ -768,13 +764,13 @@ it becomes easier for the text-to-speech engine to maintain a correspondence tab
       </section>
 
       <section>
-        <h3>Markup for indicating furigana-added-for-enhanced-accessibility</h3>
+        <h3>Markup for indicating furigana added for enhanced accessibility</h3>
         <p>
-          Although furigana-added-for-enhanced-accessibility is necessary for those readers who have particular 
+          Although furigana added for enhanced accessibility is necessary for those readers who have particular 
           difficulties with CJK ideographic characters, it is unnecessary or slightly disturbing for others. 
-          If furigana-added-for-enhanced-accessibility is distinguishable from normal furigana, 
+          If furigana added for enhanced accessibility is distinguishable from normal furigana, 
           it can be made visible or invisible depending on user preferences. 
-          It is thus necessary to standardize a markup mechanism for indicating furigana-added-for-enhanced-accessibility.
+          It is thus necessary to standardize a markup mechanism for indicating furigana added for enhanced accessibility.
         </p>
       </section>
 
