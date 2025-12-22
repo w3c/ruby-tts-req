@@ -845,7 +845,44 @@ it becomes easier for the text-to-speech engine to maintain a correspondence tab
         </p>
       </section>
     </section>
+    <section>
+      <h2>Information sources relevant to spoken presentation of ruby annotations</h2>
 
+      <p>This section summarizes the kinds of information that may be
+      relevant to spoken presentation of content containing ruby
+      annotations. It does not introduce new requirements or prescribe
+      how such information is to be used, but instead enumerates the
+      information sources discussed in previous sections.</p>
+
+      <p>These information sources include, but are not limited to:</p>
+
+      <ol>
+	<li>Ruby base</li>
+	<li>Ruby annotation</li>
+	<li>Morphological analysis (for particle pronunciation and word segmentation)</li>
+	<li>Contextual reuse of ruby base/annotation pairs</li>
+	<li>Author-supplied pronunciation hints (e.g., via PLS or SSML)</li>
+	<li>Heuristics or AI-based inference for legacy content lacking explicit semantics</li>
+      </ol>
+	  
+      <p>In many cases, multiple sources of information may be
+      considered together. For example, morphological analysis of the
+      ruby base may affect how adjacent particles are pronounced,
+      while PLS or SSML data may override default
+      pronunciations. Inconsistencies between ruby base and annotation
+      can also provide clues for determining whether the ruby is
+      phonetic or non-phonetic in nature.</p>
+
+      <p>In summary, spoken presentation of content containing ruby
+      annotations may draw on multiple layers of information,
+      including linguistic, typographic, and author-supplied
+      data. This document identifies these information sources but
+      intentionally avoids prescribing algorithms, prioritization
+      strategies, or weighting mechanisms. Such implementation
+      decisions may evolve through heuristics, rule-based systems, or
+      AI-based approaches, and are expected to be documented
+      elsewhere.</p>
+    </section>
     <section>
       <h2>Use of ruby for automatic braille translation</h2>
       <p>
