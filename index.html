@@ -94,7 +94,12 @@
   </head>
   <body>
     <section id="abstract">
-      <p>This document describes user requirements for the text-to-speech rendering of electronic documents that contain ruby annotations.</p>
+      <p>This document describes user requirements related to
+	text-to-speech rendering of electronic documents containing
+	ruby annotations.  It examines the roles and practices of ruby
+	in different writing systems and discusses the implications of
+	various reading strategies for text-to-speech, without
+	prescribing algorithms or implementation-specific behavior.</p>
     </section>
     <section id="sotd">
       <p></p>
@@ -102,24 +107,24 @@
     <section id="scope">
       <h2>Scope</h2>
       <p>
-        This document addresses issues related to text-to-speech 
-        functionality in HTML documents and EPUB publications 
-        that contain ruby annotations. Although the typographic
-	aspects of ruby are addressed in [[JLREQ]], the
-	text-to-speech implications have received little 
-        attention. This document examines the various uses 
-       of ruby and discusses how each usage should be read 
-        aloud, identifying the types of information that are 
-        relevant for text-to-speech. It does not specify processing 
-        procedures or algorithms, nor does it introduce new 
-        mechanisms or markup related to reading ruby aloud beyond 
-        those already defined; such matters are outside the 
-        scope of this document.
+	This document addresses issues related to text-to-speech
+	functionality in HTML documents and EPUB publications that
+	contain ruby annotations. Although the typographic aspects of
+	ruby are addressed in [[JLREQ]] and [[CLREQ]], the
+	text-to-speech implications have received little
+	attention. This document examines the various uses of ruby and
+	discusses the implications of different reading strategies,
+	identifying the types of information that may be relevant for
+	text-to-speech. It does not specify processing procedures or
+	algorithms, nor does it introduce new mechanisms or markup
+	related to reading ruby aloud beyond those already defined;
+	such matters are outside the scope of this document.
+
     </p>
 
     </section>
 
-    <section>
+    <section id="practices-and-roles">
       <h2>Roles of ruby annotations</h2>
 
       <section>
@@ -320,13 +325,15 @@
       </section>
     </section>
     
-    <section>
+    <section id="which_should_be_read_aloud">
       <h2>Which should be read aloud, ruby bases or ruby annotations, or both?</h2>
       <p>
-        There are three possible options: (1) both ruby bases and ruby annotations, (2) ruby annotations only, and (3) ruby bases only.
+        There are three possible options for text-to-speech rendering: (1) reading aloud both ruby bases and ruby annotations,
+	(2) reading aloud ruby annotations only, and (3) reading aloud ruby bases only. This section evaluates the consequences
+	of these options, assuming the roles and semantics of ruby annotations described in  [[[#practices-and-roles]]].
       </p>
 
-      <section>
+      <section id="reading_aloud_both">
         <h3>Reading aloud both ruby bases and ruby annoations</h3>
         <p>
           In this option, both ruby bases and ruby annotations are read aloud (double reading).
@@ -428,7 +435,7 @@ of reading both ruby bases and annotations.
         </section>
       </section>
 
-      <section>
+      <section id="reading_aloud_ruby_annotations_only">
         <h3>Reading aloud ruby annotations only</h3>
         <p>
           In this option, ruby annotations are read aloud but ruby bases
@@ -521,7 +528,7 @@ of reading both ruby bases and annotations.
 	  <section>
 	    <h5>Inconsistency between the first and subsequent occurrences</h5>
             <p>
-	      As described in <a href="#furigana-background"><span class="secno">2.1</span></a>,
+	      As described in <a href="#furigana-background"><span class="secno">2.1.1</span></a>,
 	      furigana as a ruby annotation may be attached to only the
 	      first occurrence of a CJK ideographic character or a word
 	      composed from such characters.  Thus, there is a risk that
@@ -603,7 +610,7 @@ of reading both ruby bases and annotations.
         </section>
       </section>
 
-      <section>
+      <section id="reading_aloud_ruby_bases_only">
         <h3>Reading aloud ruby bases only</h3>
         <p>
           In this option, ruby bases are read aloud but ruby annotations are not. 
@@ -744,15 +751,22 @@ it becomes easier for the text-to-speech engine to maintain a correspondence tab
           difficulties with CJK ideographic characters, it is unnecessary or slightly disturbing for others. 
           If furigana added for enhanced accessibility is distinguishable from normal furigana, 
           it can be made visible or invisible depending on user preferences. 
-          It is thus necessary to have a standardized way to indicate furigana added for enhanced accessibility.
+          It is thus desirable to have a standardized way to indicate furigana added for enhanced accessibility.
         </p>
       </section>
 
       <section>
         <h3>Distinguishing ruby annotations used as gikun or interlinear notes</h3>
         <p>
-          In Section 3, we have seen that ruby annotations used as gikun or interlinear notes should be read aloud differently from the other cases. 
-          Therefore, it is necessary to be able to distinguish ruby annotations used as gikun or interlinear notes from other ruby annotations, in order to ensure appropriate reading behavior.
+          In [[[#which_should_be_read_aloud]]], we have seen that ruby
+          annotations used as gikun or interlinear notes should be
+          read aloud differently from the other cases.  Therefore, it
+          is important to be able to distinguish ruby annotations used
+          as gikun or interlinear notes from other ruby annotations in
+          order to support appropriate reading behavior.  How such
+          distinctions are made — whether through linguistic
+          analysis, lexical resources, markup conventions, or other
+          means — is outside the scope of this document.
         </p>
       </section>
     </section>
@@ -807,7 +821,7 @@ it becomes easier for the text-to-speech engine to maintain a correspondence tab
           externally to and referenced by <a data-cite="epub-33#dfn-xhtml-content-document">XHTML content documents</a>
           (see <a data-cite="epub-tts-10#pls">Pronunciation Lexicons
           section</a> in [[?epub-tts-10]]).  As of the present,
-          [[spoken-html]] does not offer a mechanism for associationg
+          [[?spoken-html]] does not offer a mechanism for associationg
           PLS lexicons with HTML documents.
         </p>
         <p>
@@ -820,10 +834,10 @@ it becomes easier for the text-to-speech engine to maintain a correspondence tab
       </section>
     </section>
     <section>
-      <h2>Information sources relevant to spoken presentation of ruby annotations</h2>
+      <h2>Information sources relevant to text-to-speech rendering of ruby annotations</h2>
 
       <p>This section summarizes the kinds of information that may be
-      relevant to spoken presentation of content containing ruby
+      relevant to text-to-speech rendering of content containing ruby
       annotations. It does not introduce new requirements or prescribe
       how such information is to be used, but instead enumerates the
       information sources discussed in previous sections.</p>
@@ -847,7 +861,7 @@ it becomes easier for the text-to-speech engine to maintain a correspondence tab
       can also provide clues for determining whether the ruby is
       phonetic or non-phonetic in nature.</p>
 
-      <p>In summary, spoken presentation of content containing ruby
+      <p>In summary, text-to-speech rendering of content containing ruby
       annotations may draw on multiple layers of information,
       including linguistic, typographic, and author-supplied
       data. This document identifies these information sources but
