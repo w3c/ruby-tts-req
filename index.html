@@ -125,10 +125,26 @@
     </section>
 
     <section id="practices-and-roles">
-      <h2>Roles of ruby annotations</h2>
+      <h2>Ruby practices and roles</h2>
 
-      <section>
-        <h3 id="furigana-background">Furigana, background</h3>
+	    <p>In Japanese-language documents, ruby bases are typically
+	    CJK ideographic characters, and ruby annotations are typically
+	    written using hiragana or katakana characters [[JLREQ]].
+      </p>
+      <p>In Chinese-language documents, ruby bases are typically CJK
+	    ideographic characters.  Ruby annotations are commonly
+	    expressed using pinyin in Mainland China and bopomofo in
+	    Taiwan.  This document does not attempt to provide a
+	    comprehensive or systematic description of Chinese ruby
+	    annotation practices; readers are referred to [[CLREQ]] for
+	    detailed background and requirements.
+	    </p>
+
+      <section id="furigana-background">
+        <h3>Furigana, background</h3>
+        
+      <section id="furigana-background-JP" class="no-secno notoc">
+        <h4 >(1) Japanese case</h4>
         <p>
 	  The primary purpose of ruby annotations is to indicate how
 	  to pronounce CJK ideographic characters, a practice known
@@ -160,11 +176,84 @@
 	  assumes that users will learn the correct pronunciation from the first occurrence.
         </p>
       </section>
+      
+      <section id="furigana-background-CN" class="no-secno notoc">
+        <h2>(2) Chinese case</h2>
+
+        
+	<p>In both Mainland China and Taiwan, the most common role of
+	ruby annotations is to indicate pronunciation, corresponding
+	roughly to the role of furigana in Japanese.</p>
+	<p>However, Chinese practices regarding ruby annotations differ 
+    from Japanese furigana in three important respects.</p>
+
+	<ol>
+    <li>
+	  <p><strong>Repetition of ruby annotations</strong></p>
+	  <p>In Chinese-language documents, ruby annotations
+	  indicating pronunciation are commonly applied to the same
+	  CJK ideographic character or word repeatedly, rather than
+	  being limited to the first occurrence. This practice is
+	  observed both in Mainland China and in Taiwan and contrasts
+	  with common practices in Japanese-language documents, where
+	  ruby annotations are often provided only at the first
+	  occurrence and omitted thereafter.</p>
+
+	  <p>This repeated application reflects a convention in which
+	  ruby annotations are treated as locally useful aids to
+	  reading, rather than as information introduced once and
+	  assumed to be remembered by the reader. As a result,
+	  Chinese-language content does not generally rely on a
+	  “first occurrence only” convention for ruby
+	  annotations.</p>
+
+    </li>
+	  <li>
+	  <p><strong>Pinyin and bopomofo encode Standard Mandarin pronunciation</strong></p>
+	  <p>In Chinese-language documents, ruby annotations expressed
+	  using pinyin or bopomofo encode the pronunciation of
+	  Standard Mandarin (Putonghua). Both systems are designed to
+	  represent the phonology of Standard Mandarin and do not
+	  represent the pronunciations of other Chinese languages or
+	  regional varieties.</p>
+
+	  <p>At the same time, the base text of Chinese-language
+	  documents may be read by humans using a wide range of
+	  Chinese languages, including Cantonese and other
+	  non-Mandarin varieties. Readers may therefore read the same
+	  written text using a pronunciation that differs from the
+	  pronunciation encoded by the ruby annotations.</p>
+
+	  <p>As a result, pinyin or bopomofo ruby annotations should
+	  not be interpreted as universally applicable pronunciation
+	  information for all reading contexts. Rather, they represent
+	  one possible reading — that of Standard Mandarin — which
+	  may or may not align with how a given reader actually reads
+	  the text.</p>
+    </li>
+	<li>
+	  <p><strong>Prosodic information in Chinese ruby annotations</strong></p>
+	  <p>Unlike Japanese furigana, which does not encode
+	  information about pitch accent, intonation, or other
+	  prosodic features, Chinese ruby annotations are in principle
+	  capable of representing tonal information as part of
+	  pronunciation.</p>
+	  <p>In practice, however, such tonal or prosodic information
+	  is often omitted, and ruby annotations may indicate only
+	  segmental pronunciation.</p>
+    </li>
+
+  </ol>
+      </section>
 
       <section>
-        <h3>Gikun, background</h3>
+        <h3 id="gikun-background">Gikun, background</h3>
+        
+       <section class="no-secno notoc">
+          <h4 id="gikun-background-JP">(1) Japanese case</h4>
+
         <p>
-          Especially in Japan, ruby annotations are
+          Ruby annotations are
 	  also used to indicate something different from the reading of a CJK ideographic character.
           Such ruby annotations are referred to as <dfn>Gikun</dfn>.  Gikun is commonly employed in light novels and comics. 
         </p>
@@ -194,7 +283,7 @@
         </ul>
         <p>
           Even when Gikun is used for a compound word, it is unlikely to be repeated for later occurrences of the same word. 
-          Moreover, different [=GIKUN=] may be added for subsequent occurrences of the same word. 
+          Moreover, different [=Gikun=] may be added for subsequent occurrences of the same word. 
           For example, the next occurrence of <span lang="ja">生命</span> may well be 
           <span lang="ja"><ruby><rb>生命</rb><rt>ライフ</rt></ruby></span>
           where <span lang="ja">ライフ</span> (life) is an English translation.
@@ -203,11 +292,30 @@
 	<aside class="note">The frenemy example shows how contradictory meanings can coexist within a single expression. In some creative works, ruby text is used in a similar but more extreme way, deliberately contradicting the base text for rhetorical or ironic effect. For instance, <ruby><rb>平和的解決</rb><rt>一方的虐殺</rt></ruby> appears in [[Tokyo Ghoul: re]], where 平和的解決 means “peaceful resolution” and 一方的虐殺 means “one-sided massacre”. Such cases demonstrate that reading only one layer — base or ruby — can entirely distort the author’s intended message.</aside>
 	  
       </section>
+       <section id="gikun-background-CN" class="no-secno notoc">
+        <h5>(2) Chinese case</h5>
+
+        	<p>Ruby annotations corresponding to gikun in Japanese, where
+	the ruby text intentionally differs from the conventional
+	reading of the base characters, are not part of traditional
+	Chinese writing practices.</p>
+	<p>While such uses are not common, ruby annotations resembling
+	gikun can occasionally be found in recent Chinese-language
+	content, particularly in creative works influenced by Japanese
+	publishing practices. These cases remain limited and
+	non-systematic.</p>
+
+      </section>
+
+      </section>
 
       <section>
-        <h3>Unusual names of people and places, background</h3>
+        <h3 id="unusal-names-backgound">Unusual names of people and places, background</h3>
+        
+       <section id="unusal-names-backgound-JP" class="no-secno notoc">
+          <h4 >(1) Japanese case</h4>
 	<p>
-	  Unusual names of people in Japan are typically written
+	  Unusual names of people are typically written
 	  using CJK ideographic characters but are pronounced quite
 	  differently from the standard reading of these
 	  characters. For instance, <span lang="ja"><ruby>
@@ -245,8 +353,34 @@
 
       </section>
 
+      
+       <section id="unusal-names-backgound-CN" class="no-secno notoc">
+        <h5>(2) Chinese case</h5>
+
+        
+	<p>Ruby annotations corresponding to the use of furigana for
+	  unusual names of people and places in Japanese are not
+	  traditionally common in Chinese-language documents.</p>
+
+	<p>However, in recent years, similar uses of ruby annotations
+	  can occasionally be found, particularly in fictional works,
+	  translated content, or other contexts influenced by Japanese
+	  publishing practices. In such cases, ruby annotations may be
+	  used to indicate non-obvious pronunciations of personal or
+	  place names, but this usage remains limited and
+	  non-systematic.</p>
+
+      </section>
+
+      </section>
+
       <section>
         <h3>Interlinear notes, background</h3>
+
+        
+       <section id="interlinear-notes-background-JP" class="no-secno notoc">
+        <h5>(1) Japanese case</h5>
+
         <p>
           <dfn>Interlinear notes</dfn> resemble ruby annotations in appearance.  
           A <a data-cite="JLREQ#n224">note in JLreq</a> introduces interlinear notes as follows:
@@ -268,17 +402,37 @@
           and an official name as an interlinear note for an abbreviated name.
         </p>
         <p>
-          One could argue that HTML ruby elements should not be used for representing interlinear notes 
-          (see <a href="https://lists.w3.org/Archives/Public/public-i18n-japanese/2021AprJun/0051.html">Kobayashi Sensei's mail in Japanese</a>). 
-          However, it is not difficult to imagine that ruby elements are actually used for representing interlinear notes.
+          One could argue that HTML ruby elements should not be used for representing 
+          interlinear notes, since interlinear notes involve much longer annotations 
+          and bases than ruby, and therefore have very different layout requirements.
+         However, it is not difficult to imagine that ruby elements are actually used for representing interlinear notes.
         </p>
       </section>
 
-      <section>
-        <h3>Others</h3>
+       <section id="interlinear-notes-background-CN" class="no-secno notoc">
+        <h5>(2) Chinese case</h5>
+
+        
+	<p>Ruby annotations corresponding to interlinear notes, as
+	used in Japanese, are not part of traditional Chinese writing
+	practices.</p>
+
+	<p>However, in limited and relatively recent contexts—such as
+	annotated texts, translated materials, or creative works
+	influenced by Japanese publishing practices—ruby annotations
+	may occasionally be used in a manner similar to interlinear
+	notes. Such uses remain uncommon and non-systematic.</p>
+
+      </section>
+      </section>
+      <section id="Non-CJK-base-background">
+        <h3>Ruby annotations attached to non-CJK characters</h3>
+        
+        <section id="Non-CJK-base-background-JA" class="no-secno notoc">
+        <h5>(1) Japanese case</h5>
+        
         <p>
-	  Ruby annotations can be used for purposes other than
-	  indicating the reading of CJK ideographic text. For example,
+    Ruby annotations can be attached to non-CJK ideographic text. For example,
 	  they may be applied to foreign-language text written in
 	  non-native scripts, chemical formulas, mathematical
 	  expressions, or other specialized notations, in order to
@@ -291,18 +445,30 @@
 	  language-dependent reading behavior and accessibility
 	  considerations raise specific and non-trivial issues.
         </p>
+
+        </section>
+               <section id="Non-CJK-base-background-CN" class="no-secno notoc">
+        <h5>(2) Chinese case</h5>
+
+        <p>Attaching ruby annotations to non-CJK ideographic characters is not part of traditional Chinese writing practices.</p>
+        </section>
       </section>
 
-      <section>
+      <section id="double-sided-ruby-background">
         <h3>Double-sided ruby, background</h3>
+
+        
+       <section id="double-sided-ruby-background-JP" class="no-secno notoc">
+        <h5>(1) Japanese case</h5>
+
         <p>
           A sequence of characters can be accompanied by two ruby annotations,
-	  typically consisting of [=Furigana=] and either [=GIKUN=] or an [=interlinear note=].  
+	  typically consisting of [=Furigana=] and either [=Gikun=] or an [=interlinear note=].  
           In <a data-cite="JLREQ#fig2_3_12">an example provided in JLreq</a> 
           ("An example of ruby annotations attached to both sides of the base characters"), 
           <span lang="ja">東南</span> is accompanied by <span lang="ja">たつみ</span> and <span lang="ja">とうなん</span>. 
           Here <span lang="ja">東南</span> means 'southeast', with <span lang="ja">とうなん</span> (TOUNAN) serving as [=Furigana=], 
-          and <span lang="ja">たつみ</span> (TATSUMI) as [=GIKUN=], 
+          and <span lang="ja">たつみ</span> (TATSUMI) as [=Gikun=], 
           as <span lang="ja">辰巳</span> (read as <span lang="ja">TATSUMI</span>) indicates the same direction as <span lang="ja">東南</span>.
         </p>
 
@@ -323,6 +489,22 @@
           In this example, <span lang="ja">おだのぶなが</span> serves as [=Furigana=], while <span lang="ja">"1534〜82"</span> is presented as an [=interlinear note=].
         </p>
       </section>
+
+       <section id="double-sided-ruby-background-CN" class="no-secno notoc">
+        <h5>(2) Chinese case</h5>
+      <p>Double-sided ruby, as used in Japanese to convey both
+	  phonetic and semantic information simultaneously, is not
+	  part of traditional Chinese or Taiwanese typographic
+	  practices.</p>
+
+	<p>While isolated or experimental uses cannot be entirely
+	ruled out, Chinese ruby annotations—typically expressed using
+	pinyin or bopomofo—are generally used to convey pronunciation
+	only and are not systematically combined with additional ruby
+	annotations serving different roles.</p>
+  </section>
+
+</section>
     </section>
     
     <section id="which_should_be_read_aloud">
