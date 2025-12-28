@@ -382,13 +382,22 @@
 
   <aside class="note">
     <p>
-      In some Chinese contexts, ruby annotations encode pronunciation assumptions that
-      are specific to a particular spoken variety. When read-aloud output is generated
-      using a different spoken variety, reading such annotations aloud may be
-      misleading or counterproductive. This Note does not attempt to address such
-      cases systematically.
+    In read-aloud scenarios using Cantonese or other non-Mandarin spoken varieties,
+    ruby annotations that encode Mandarin-based pronunciation assumptions should not
+    be used as input for read-aloud output, as doing so may result in misleading or
+    unintelligible output.
     </p>
   </aside>
+
+  <aside class="note">
+  <p>
+    In Japanese, read-aloud behavior may differ between the first occurrence of a term
+    and subsequent occurrences, which can in some cases interfere with comprehension.
+    Such differences in read-aloud treatment based on first occurrence are not
+    generally observed in Chinese.
+  </p>
+  </aside>
+  
 </section>
 
       
