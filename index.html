@@ -333,6 +333,65 @@
 	of these options, assuming the roles and semantics of ruby annotations described in  [[[#practices-and-roles]]].
       </p>
 
+      <section id="language-dependent-considerations">
+  <h3>Language-dependent considerations for reading aloud content with ruby annotations</h3>
+
+  <p>
+    The strategies discussed in this section for reading aloud content that contains
+    ruby annotations are inherently language-dependent. The presence of ruby
+    annotations does not necessarily imply that the annotations themselves should be
+    read aloud. The appropriateness, effectiveness, and potential drawbacks of a given
+    strategy depend on the writing system, linguistic conventions, and typical roles
+    that ruby annotations play in each language.
+  </p>
+
+  <p>
+  This Note focuses primarily on Japanese and Chinese, which both employ ruby
+  annotations but do so in fundamentally different ways. In Japanese, ruby
+  annotations can be essential for correct interpretation and comprehension of
+  the base text in read-aloud scenarios. As a result, how ruby annotations are
+  handled during read-aloud processing can have a significant impact on user
+  experience, and careful selection among alternative strategies is required.
+  </p>
+
+  <p>
+        In contrast, in Chinese, ruby annotations such as pinyin or zhuyin are typically
+    used as auxiliary pronunciation aids and are not generally required for
+    intelligible read-aloud output. In many practical reading scenarios, text-to-speech
+    (TTS) or other read-aloud output based solely on the ruby base text is sufficient.
+    Reading ruby annotations aloud may in some cases introduce confusion, particularly
+    when the assumptions underlying the annotations do not align with those of the
+    read-aloud output.
+  </p>
+
+<p>
+  The analysis of Chinese reading practices in this Note is limited. While some
+  general observations are provided to inform the discussion of read-aloud
+  strategies, a comprehensive treatment of Chinese reading practices &mdash;
+  including dialectal variation, prosodic information, and phonological detail
+  &mdash; is beyond the scope of this version of the Note.
+</p>
+
+  <p>
+    The strategies described in the following subsections should therefore not be
+    interpreted as universally applicable recommendations. User agents and assistive
+    technologies are expected to take the target language, content type, and usage
+    context into account when selecting or implementing a strategy for reading aloud
+    content that includes ruby annotations.
+  </p>
+
+  <aside class="note">
+    <p>
+      In some Chinese contexts, ruby annotations encode pronunciation assumptions that
+      are specific to a particular spoken variety. When read-aloud output is generated
+      using a different spoken variety, reading such annotations aloud may be
+      misleading or counterproductive. This Note does not attempt to address such
+      cases systematically.
+    </p>
+  </aside>
+</section>
+
+      
       <section id="reading_aloud_both">
         <h3>Reading aloud both ruby bases and ruby annoations</h3>
         <p>
