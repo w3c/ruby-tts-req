@@ -10,16 +10,16 @@
     ></script>
     <script class="remove">
       var respecConfig = {
-        shortName: "ruby-tts-reqs",
+        shortName: "ruby-tts-req",
         specStatus: "ED", // "WG-NOTE"
         noRecTrack: true,
-        edDraftURI: "https://w3c.github.io/ruby-tts-reqs/",
+        edDraftURI: "https://w3c.github.io/ruby-tts-req/",
         editors: [
           { name: "MURATA Makoto [FAMILLY Given]", company: "Information Accessibility Institute", w3cid: "171631", },
         ],
         group: "i18n",
         github: {
-          repoURL: "w3c/ruby-tts-reqs",
+          repoURL: "w3c/ruby-tts-req",
           branch: "gh-pages",
         },
         localBiblio: {
@@ -81,6 +81,23 @@
               date: "2016",
               publisher: "Shueisha",
           },
+	  'Imai_Yuuji_2009': {
+	      title: "The history of Furigana (In Japanese, 振仮名の歴史)",
+	      authors: ["Yuuji Imai"],
+  	      id: "Imai_Yuuji_2009",
+	      date: "2009",
+	      publisher: "Shuueisha",
+	  },
+	  'Zhuyin Fuhao': {
+	      title: "Scheme for the National Phonetic Alphabet (In Chinese, 注音字母方案)", 
+	      date: "1918",
+	      publisher: "Ministry of Education, Republic of China",
+	  },
+	  'Hanyu Pinyin': {
+	      title: "Resolution on the Scheme for the Chinese Phonetic Alphabet (Hanyu Pinyin) (In Chinese, 汉语拼音方案)",
+	      date: "1958",
+	      publisher: "National People’s Congress of the People’s Republic of China",
+	  },
         },
         xref: true,
         postProcess: [  ],
@@ -125,7 +142,7 @@
     </section>
 
     <section id="practices-and-roles">
-      <h2>Ruby practices and roles</h2>
+      <h2>Ruby origins, practices and roles</h2>
 
 	    <p>In Japanese-language documents, ruby bases are typically
 	    CJK ideographic characters, and ruby annotations are typically
@@ -139,12 +156,56 @@
 	    annotation practices; readers are referred to [[CLREQ]] for
 	    detailed background and requirements.
 	    </p>
+      <section id="origins">
+	<h3>Origins</h3>
+	<section id="origin-JP" class="no-secno notoc">
+          <h4 >(1) Japanese case</h4>
+	  <p>Japanese ruby-like annotation practices can be traced back 
+          to the late eighth to early ninth century, when notes and 
+          reading marks began to be added to Chinese texts in Japan. 
+          At that time, Chinese characters were used to write texts 
+          that were read in Japanese, and there was no standardized 
+          mapping between characters and Japanese readings. Ruby 
+          therefore served to designate a reading chosen by the 
+          annotator for each character, rather than a fixed or 
+          normative pronunciation. From its origin, Japanese ruby 
+          thus spanned two languages—the written text in Chinese 
+          characters and the annotation in Japanese—and reflected 
+          interpretive reading practices rather than codified 
+          phonetic systems. These annotation practices have continued, 
+          with evolving forms and functions, throughout the history 
+          of Japanese writing and remain in active use today [[Imai_Yuuji_2009]].
+        </p>
 
+
+	</section>
+	<section id="origin-CN" class="no-secno notoc">
+          <h4 >(2) Chinese case</h4>
+	  <p>In contrast, Chinese ruby annotations using pinyin and
+          bopomofo have clearly documented modern origins tied to
+          state language policy. Bopomofo (Zhuyin Fuhao) was
+          officially adopted by the government of the Republic of
+          China in 1918 as a phonetic system to support literacy and
+          pronunciation education [[Zhuyin Fuhao]]. Later, in the
+          People’s Republic of China, Hanyu Pinyin was formally
+          promulgated in 1958 by a resolution of the National
+          People’s Congress as a standardized romanization system for
+          Modern Standard Mandarin [[Hanyu Pinyin]].  Both systems
+          were created explicitly for language planning, education,
+          and standardization, and their use in ruby annotations
+          reflects these policy-driven goals. Unlike Japanese ruby,
+          which emerged from manuscript annotation practices, Chinese
+          ruby is directly grounded in officially defined phonetic
+          schemes established by governmental decisions.</p>
+        
+
+	</section>
+      </section>
       <section id="furigana-background">
         <h3>Furigana, background</h3>
-        
       <section id="furigana-background-JP" class="no-secno notoc">
         <h4 >(1) Japanese case</h4>
+
         <p>
 	  The primary purpose of ruby annotations is to indicate how
 	  to pronounce CJK ideographic characters, a practice known
@@ -179,8 +240,6 @@
       
       <section id="furigana-background-CN" class="no-secno notoc">
         <h2>(2) Chinese case</h2>
-
-        
 	<p>In both Mainland China and Taiwan, the most common role of
 	ruby annotations is to indicate pronunciation, corresponding
 	roughly to the role of furigana in Japanese.</p>
@@ -209,27 +268,28 @@
 
     </li>
 	  <li>
-	  <p><strong>Pinyin and bopomofo encode Standard Mandarin pronunciation</strong></p>
+	  <p><strong>Dialects represented by ruby annotations and dialects selected for TTS</strong></p>
 	  <p>In Chinese-language documents, ruby annotations expressed
-	  using pinyin or bopomofo encode the pronunciation of
-	  Standard Mandarin (Putonghua). Both systems are designed to
-	  represent the phonology of Standard Mandarin and do not
-	  represent the pronunciations of other Chinese languages or
-	  regional varieties.</p>
+	  using pinyin or bopomofo encode pronunciation information
+	  for a particular Chinese dialect chosen by the author,
+	  publisher, or content designer. While these systems are most
+	  commonly used to represent Standard Mandarin, they may also
+	  be used to represent other dialects.</p>
 
-	  <p>At the same time, the base text of Chinese-language
-	  documents may be read by humans using a wide range of
-	  Chinese languages, including Cantonese and other
-	  non-Mandarin varieties. Readers may therefore read the same
-	  written text using a pronunciation that differs from the
-	  pronunciation encoded by the ruby annotations.</p>
+	  <p>At the same time, readers of Chinese-language documents
+	  may wish to have the text read aloud using a different
+	  dialect than the one assumed by the ruby annotations. In
+	  text-to-speech contexts, users may select Cantonese or other
+	  regional dialects based on their linguistic background,
+	  accessibility needs, or personal preference.</p>
 
-	  <p>As a result, pinyin or bopomofo ruby annotations should
-	  not be interpreted as universally applicable pronunciation
-	  information for all reading contexts. Rather, they represent
-	  one possible reading — that of Standard Mandarin — which
-	  may or may not align with how a given reader actually reads
-	  the text.</p>
+	  <p>As a result, the dialect represented by ruby annotations
+	  and the dialect selected for text-to-speech might not match
+	  When such a mismatch occurs, the pronunciation
+	  information encoded in ruby annotations may need to be
+	  ignored, overridden, or applied selectively by
+	  text-to-speech systems.</p>
+
     </li>
 	<li>
 	  <p><strong>Prosodic information in Chinese ruby annotations</strong></p>
@@ -238,14 +298,11 @@
 	  prosodic features, Chinese ruby annotations are in principle
 	  capable of representing tonal information as part of
 	  pronunciation.</p>
-	  <p>In practice, however, such tonal or prosodic information
-	  is often omitted, and ruby annotations may indicate only
-	  segmental pronunciation.</p>
     </li>
 
   </ol>
       </section>
-
+      </section>
       <section>
         <h3 id="gikun-background">Gikun, background</h3>
         
@@ -297,12 +354,11 @@
 
         	<p>Ruby annotations corresponding to gikun in Japanese, where
 	the ruby text intentionally differs from the conventional
-	reading of the base characters, are not part of traditional
-	Chinese writing practices.</p>
+	reading of the base characters, are not part of 
+	the original design of pinyin or bopomofo.</p>
 	<p>While such uses are not common, ruby annotations resembling
-	gikun can occasionally be found in recent Chinese-language
-	content, particularly in creative works influenced by Japanese
-	publishing practices. These cases remain limited and
+	gikun can occasionally be found in Chinese-language
+	content, particularly in creative works. These cases remain limited and
 	non-systematic.</p>
 
       </section>
@@ -362,13 +418,13 @@
 	  unusual names of people and places in Japanese are not
 	  traditionally common in Chinese-language documents.</p>
 
-	<p>However, in recent years, similar uses of ruby annotations
-	  can occasionally be found, particularly in fictional works,
-	  translated content, or other contexts influenced by Japanese
-	  publishing practices. In such cases, ruby annotations may be
-	  used to indicate non-obvious pronunciations of personal or
-	  place names, but this usage remains limited and
-	  non-systematic.</p>
+	<p>Occasional uses of ruby annotations for non-obvious
+	  pronunciations of personal or place names can be found in
+	  some contemporary Chinese-language materials, particularly
+	  in fictional works, translated content, or other contexts
+	  where explicit pronunciation guidance is needed. Such usage
+	  remains limited and non-systematic, and does not represent a
+	  generalized or established convention.</p>
 
       </section>
 
@@ -414,13 +470,11 @@
 
         
 	<p>Ruby annotations corresponding to interlinear notes, as
-	used in Japanese, are not part of traditional Chinese writing
-	practices.</p>
+	used in Japanese, are not part of the original design of pinyin or bopomofo.</p>
 
-	<p>However, in limited and relatively recent contexts—such as
-	annotated texts, translated materials, or creative works
-	influenced by Japanese publishing practices—ruby annotations
-	may occasionally be used in a manner similar to interlinear
+	<p>However, in limited contexts, such as
+	annotated texts, translated materials, or creative works, ruby annotations
+	may occasionally be used for representing interlinear
 	notes. Such uses remain uncommon and non-systematic.</p>
 
       </section>
@@ -450,7 +504,8 @@
                <section id="Non-CJK-base-background-CN" class="no-secno notoc">
         <h5>(2) Chinese case</h5>
 
-        <p>Attaching ruby annotations to non-CJK ideographic characters is not part of traditional Chinese writing practices.</p>
+        <p>Attaching ruby annotations to non-CJK ideographic characters is not part of
+	  the original design of pinyin or bopomofo.</p>
         </section>
       </section>
 
@@ -494,7 +549,7 @@
         <h5>(2) Chinese case</h5>
       <p>Double-sided ruby, as used in Japanese to convey both
 	  phonetic and semantic information simultaneously, is not
-	  part of traditional Chinese or Taiwanese typographic
+	  part of traditional Chinese typographic
 	  practices.</p>
 
 	<p>While isolated or experimental uses cannot be entirely
@@ -505,8 +560,7 @@
   </section>
 
 </section>
-      </section>
-    </section>      
+      </section>   
     
     <section id="which_should_be_read_aloud">
       <h2>Which should be read aloud, ruby bases or ruby annotations, or both?</h2>
