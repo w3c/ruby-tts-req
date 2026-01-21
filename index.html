@@ -328,24 +328,91 @@
     <section id="which_should_be_read_aloud">
       <h2>Which should be read aloud, ruby bases or ruby annotations, or both?</h2>
       <p>
-        There are three possible options for text-to-speech rendering: (1) reading aloud both ruby bases and ruby annotations,
+        There are three possible strategies for text-to-speech rendering: (1) reading aloud both ruby bases and ruby annotations,
 	(2) reading aloud ruby annotations only, and (3) reading aloud ruby bases only. This section evaluates the consequences
-	of these options, assuming the roles and semantics of ruby annotations described in  [[[#practices-and-roles]]].
+	of these strategies, assuming the roles and semantics of ruby annotations described in  [[[#practices-and-roles]]].
       </p>
 
+      <section id="language-dependent-considerations">
+  <h3>Language-dependent considerations for reading aloud content with ruby annotations</h3>
+
+  <p>
+    The strategies discussed in this section for reading aloud content that contains
+    ruby annotations are inherently language-dependent. The presence of ruby
+    annotations does not necessarily imply that the annotations themselves should be
+    read aloud. The appropriateness, effectiveness, and potential drawbacks of a given
+    strategy depend on the writing system, linguistic conventions, and typical roles
+    that ruby annotations play in each language.
+  </p>
+
+  <p>
+  This Note focuses primarily on Japanese and Chinese, which both employ ruby
+  annotations but do so in fundamentally different ways. In Japanese, ruby
+  annotations can be essential for correct interpretation and comprehension of
+  the base text in read-aloud scenarios. As a result, how ruby annotations are
+  handled during read-aloud processing can have a significant impact on user
+  experience, and careful selection among alternative strategies is required.
+  </p>
+
+  <p>
+        In contrast, in Chinese, ruby annotations such as pinyin or zhuyin are typically
+    used as auxiliary pronunciation aids and are not generally required for
+    intelligible read-aloud output. In many practical reading scenarios, text-to-speech
+    (TTS) or other read-aloud output based solely on the ruby base text is sufficient.
+    Reading ruby annotations aloud may in some cases introduce confusion, particularly
+    when the assumptions underlying the annotations do not align with those of the
+    read-aloud output.
+  </p>
+
+<p>
+  The analysis of Chinese reading practices in this Note is limited. While some
+  general observations are provided to inform the discussion of read-aloud
+  strategies, a comprehensive treatment of Chinese reading practices &mdash;
+  including dialectal variation, prosodic information, and phonological detail
+  &mdash; is beyond the scope of this version of the Note.
+</p>
+
+  <p>
+    The strategies described in the following subsections should therefore not be
+    interpreted as universally applicable recommendations. User agents and assistive
+    technologies are expected to take the target language, content type, and usage
+    context into account when selecting or implementing a strategy for reading aloud
+    content that includes ruby annotations.
+  </p>
+
+  <aside class="note">
+    <p>
+    In read-aloud scenarios using Cantonese or other non-Mandarin spoken varieties,
+    ruby annotations that encode Mandarin-based pronunciation assumptions should not
+    be used as input for read-aloud output, as doing so may result in misleading or
+    unintelligible output.
+    </p>
+  </aside>
+
+  <aside class="note">
+  <p>
+    In Japanese, read-aloud behavior may differ between the first occurrence of a term
+    and subsequent occurrences, which can in some cases interfere with comprehension.
+    Such differences in read-aloud treatment based on first occurrence are not
+    generally observed in Chinese.
+  </p>
+  </aside>
+  
+</section>
+
+      
       <section id="reading_aloud_both">
         <h3>Reading aloud both ruby bases and ruby annoations</h3>
         <p>
-          In this option, both ruby bases and ruby annotations are read aloud (double reading).
-          Many implementations (screen readers, in particular) support only the option
-of reading both ruby bases and annotations.
+	  This strategy reads aloud both ruby bases and ruby annotations (double reading).
+          Many implementations (screen readers, in particular) support only this strategy.
           For example, <ruby><rb>foo</rb><rt>bar</rt></ruby> is read aloud as 'foo bar' or 'bar foo'.
         </p>
 
         <section>
           <h4 id="furigana_both_read_aloud">Furigana, when both read aloud</h4>
           <p>
-            The option of reading aloud both interferes with readers' understanding significantly. 
+            The strategy of reading aloud both interferes with readers' understanding significantly. 
           </p>
 	  <section>
 	    <h5>Examples of harmful double reading: Japanese</h5>
@@ -388,7 +455,7 @@ of reading both ruby bases and annotations.
         <section>
           <h4 id="gikun_both_read_aloud">Gikun, when both read aloud</h4>
           <p>
-            The option of reading aloud both is sensible.  It is common to read aloud ruby annotations first then ruby bases next, but it is sometimes better to read aloud ruby bases first and ruby annotations next [[?Transliteration Training Course]]).
+            The strategy of reading aloud both is sensible.  It is common to read aloud ruby annotations first then ruby bases next, but it is sometimes better to read aloud ruby bases first and ruby annotations next [[?Transliteration Training Course]]).
           </p>
 	  <p>
             <span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> is read aloud as TEKI TOMO or TOMO TEKI, which means 'enemy friend' or 'friend enemy'  (equal to 'frenemy').</p>
@@ -402,7 +469,7 @@ of reading both ruby bases and annotations.
         <section>
           <h4 id="unusual_names_both_read_aloud">Unusual names of people and places, when both read aloud</h4>
           <p>
-            The option of reading aloud both interferes with readers' understanding significantly. 
+            The strategy of reading aloud both interferes with readers' understanding significantly. 
           </p>
           <p>
             <span lang="ja"><ruby><rb>不死川玄弥</rb><rt>しなずがわげんや</rt></ruby></span>
@@ -413,7 +480,7 @@ of reading both ruby bases and annotations.
         <section>
           <h4 id="interlinear_note_both_read_aloud">Interlinear notes, when both read aloud</h4>
           <p>
-            The option of reading aloud both is sensible.  It is necessary to read aloud ruby bases first then ruby annotations next.
+            The strategy of reading aloud both is sensible.  It is necessary to read aloud ruby bases first then ruby annotations next.
           </p>
           <p>
             For example, <span lang="ja"><ruby><rb>徳川慶喜</rb><rt>1837-1913 江戸幕府最後の将軍</rt></ruby></span> 
@@ -438,8 +505,8 @@ of reading both ruby bases and annotations.
       <section id="reading_aloud_ruby_annotations_only">
         <h3>Reading aloud ruby annotations only</h3>
         <p>
-          In this option, ruby annotations are read aloud but ruby bases
-	  are not. For example, <ruby><rb>foo</rb><rt>bar</rt></ruby> is
+	  This strategy reads aloud ruby annotations without reading the ruby bases.
+	  For example, <ruby><rb>foo</rb><rt>bar</rt></ruby> is
 	  read aloud as 'bar'.
         </p>
         <section>
@@ -557,7 +624,7 @@ of reading both ruby bases and annotations.
         <section>
           <h4 id="gikun_annotation_read_aloud">Gikun, when ruby annotations read aloud</h4>
           <p>
-            The option of reading aloud ruby annotations only provides an understandable result but does not properly convey the author's intention.
+            The strategy of reading aloud ruby annotations only provides an understandable result but does not properly convey the author's intention.
           </p>
   	  <p>
             <span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> is read aloud as TOMO, which means 'friend', but 'frenemy' is intended.</p>
@@ -570,7 +637,7 @@ of reading both ruby bases and annotations.
         <section>
           <h4>Unusual names of people and places, when ruby annotations read aloud</h4>
           <p>
-            The option of reading aloud ruby annotations only works correctly. 
+            The strategy of reading aloud ruby annotations only works correctly. 
             However, if the first occurrence of a name is accompanied by a ruby annotation and the other occurrences are not, 
             the first occurrence is read aloud differently from the others thus suggesting different persons or places.
           </p>
@@ -587,7 +654,7 @@ of reading both ruby bases and annotations.
         <section>
           <h4 id="interlinear_note_annotation_read_aloud">Interlinear notes, when ruby annotations read aloud</h4>
           <p>
-            The option of reading aloud ruby annotations only provides incomprehensible results often.
+            The strategy of reading aloud ruby annotations only provides incomprehensible results often.
           </p>
           <p>
             If <span lang="ja">"1837-1913 江戸幕府最後の将軍"</span> is attached to <span lang="ja">徳川慶喜</span> as a ruby annotation, 
@@ -601,7 +668,7 @@ of reading both ruby bases and annotations.
         <section>
           <h4>Double-sided ruby, when ruby annotations read aloud</h4>
           <p>
-            The option of reading aloud ruby annotations only makes two ruby annotations be read aloud while ignoring their ruby base. 
+            The strategy of reading aloud ruby annotations only makes two ruby annotations be read aloud while ignoring their ruby base. 
             Since one of the two ruby annotations is typically furigana, the description in <a href="#furigana_annotation_read_aloud"><span class="secno">3.2.1</span></a> applies. 
             If the other ruby annotation is a Gikun, the description in <a href="#gikun_annotation_read_aloud"><span class="secno">3.2.2</span></a> applies; 
             if it is an interlinear note, the description in <a href="#interlinear_note_annotation_read_aloud"><span class="secno">3.2.4</span></a> applies.
@@ -613,18 +680,18 @@ of reading both ruby bases and annotations.
       <section id="reading_aloud_ruby_bases_only">
         <h3>Reading aloud ruby bases only</h3>
         <p>
-          In this option, ruby bases are read aloud but ruby annotations are not. 
+	  This strategy reads aloud ruby bases without reading ruby annotations.
           For example, <ruby><rb>foo</rb><rt>bar</rt></ruby> is read aloud as foo.
         </p>
         <aside class="note" title="" id="n20211101004">
-          This option does not necessarily ignore ruby annotations. 
+          This strategy does not necessarily ignore ruby annotations. 
           Although text-to-speech engines mainly use ruby bases, they may also use ruby annotations as a hint.
         </aside>
 
         <section>
           <h4 id="furigana_base_read_aloud">Furigana, when bases read aloud</h4>
           <p>
-            The option of reading aloud ruby bases only may or may not provide good results, depending on text-to-speech engines.
+            The strategy of reading aloud ruby bases only may or may not provide good results, depending on text-to-speech engines.
           </p>
           <p>
             The following is a quote from [[?ACCESSIBLE_E_BOOKS]].
@@ -647,7 +714,7 @@ of reading both ruby bases and annotations.
         <section>
           <h4 id="gikun_base_read_aloud">Gikun, when bases read aloud</h4>
           <p>
-            The option of reading aloud ruby bases only results in a perfectly understandable result. 
+            The strategy of reading aloud ruby bases only results in a perfectly understandable result. 
             However, since gikun is ignored, the author's intent is not completely conveyed.
           </p>
 	  <p>
@@ -661,7 +728,7 @@ of reading both ruby bases and annotations.
         <section>
           <h4>Unusual names of people and places, when bases read aloud</h4>
           <p>
-            The option of reading ruby bases only leads to incorrect results. 
+            The strategy of reading ruby bases only leads to incorrect results. 
             However, since every occurrence of a name is read aloud in the same way, users will not be confused.
           </p>
           <p>
@@ -673,7 +740,7 @@ of reading both ruby bases and annotations.
         <section>
           <h4 id="interlinear_note_base_read_aloud">Interlinear notes, when bases read aloud</h4>
           <p>
-            The option of reading ruby bases only provides a perfectly understandable result. 
+            The stragey of reading ruby bases only provides a perfectly understandable result. 
             However, since interlinear notes are ignored, the author's intention is not conveyed well.
           </p>
           <p>
@@ -687,7 +754,7 @@ of reading both ruby bases and annotations.
         <section>
           <h4>Double-sided ruby, when bases read aloud</h4>
           <p>
-            The option of reading ruby bases only will ignore the two ruby annotations and read their ruby base only. 
+            The strategy of reading ruby bases only will ignore the two ruby annotations and read their ruby base only. 
             When one of the two ruby annotations is furigana, the description in <a href="#furigana_base_read_aloud"><span class="secno">3.3.1</span></a> applies. 
             If the other is a gikun, the description in <a href="#gikun_base_read_aloud"><span class="secno">3.3.2</span></a> applies, and if it is an interlinear note, the description in <a href="#interlinear_note_base_read_aloud"><span class="secno">3.3.4</span></a> applies.
           </p>
