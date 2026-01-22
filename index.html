@@ -14,6 +14,7 @@
         specStatus: "ED", // "DNOTE"
         noRecTrack: true,
         copyrightStart: "2026",
+        // publishDate: "2026-01-27",
         edDraftURI: "https://w3c.github.io/ruby-tts-req/",
         editors: [
           { name: "MURATA Makoto [FAMILLY Given]", company: "Information Accessibility Institute", w3cid: "171631", },
@@ -40,7 +41,7 @@
           },
           'epub-32': {
             title: "EPUB 3.2",
-            href: "https://www.w3.org/publishing/epub3/epub-spec.html",
+            href: "https://www.w3.org/publishing/epub32/",
             status: "W3C Final Community Group Specification",
             publisher: "W3C",
             date: "08 May 2019",
@@ -537,14 +538,14 @@
 
 	    <p>Reading aloud ruby annotations rather than ruby bases often
 	      leads to incorrect pitch accent. As an example, consider
-	      <span lang-"ja"><ruby><rb>雨</rb><rt>あめ</rt></ruby>が好き</span>
-	      (I like rain) and <span lang-"ja"><ruby><rb>飴</rb><rt>あめ</rt></ruby>が好き</span>
+	      <span lang="ja"><ruby><rb>雨</rb><rt>あめ</rt></ruby>が好き</span>
+	      (I like rain) and <span lang="ja"><ruby><rb>飴</rb><rt>あめ</rt></ruby>が好き</span>
 	      (I like candy). In both cases, reading aloud ruby annotations
 	      rather than ruby bases implies that the TTS engine will receive
-	      <span lang-"ja">あめが好き</span> and create the same result.</p>
+	      <span lang="ja">あめが好き</span> and create the same result.</p>
 
-	    <p>A similar example is <span lang-"ja"><ruby><rb>牡蠣</rb><rt>かき</rt></ruby>を食べる</span>
-	      (I eat oysters) and <span lang-"ja"><ruby><rb>柿</rb><rt>かき</rt></ruby>を食べる</span>
+	    <p>A similar example is <span lang="ja"><ruby><rb>牡蠣</rb><rt>かき</rt></ruby>を食べる</span>
+	      (I eat oysters) and <span lang="ja"><ruby><rb>柿</rb><rt>かき</rt></ruby>を食べる</span>
 	      (I eat persimmons), where <span lang="ja">牡蠣</span> and
 	      <span lang="ja">柿</span> have the same two moras but opposite
 	      pitch accents.</p>
