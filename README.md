@@ -7,7 +7,7 @@ and is developed under [Japanese Layout Task Force](https://www.w3.org/groups/tf
 Check [README of Japanese Language Enablement repository](https://github.com/w3c/jlreq/blob/gh-pages/README.md) for providing feedbacks or participating.
 
 - Editor's draft: https://w3c.github.io/ruby-tts-req/
-- Draft NOTE: https://www.w3.org/TR/ruby-tts-req/ (aiming Internationalization WG NOTE, but not yet published)
+- Draft NOTE: https://www.w3.org/TR/ruby-tts-req/
 
 
 ## Milestone
