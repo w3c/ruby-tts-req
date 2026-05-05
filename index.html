@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en"><head>
     <meta charset="utf-8">
     <title>Text-to-Speech Rendering of Electronic Documents Containing Ruby: User Requirements</title>
-    <script
-      defer
-      class="remove"
-      src="https://www.w3.org/Tools/respec/respec-w3c"
-    ></script>
+    <script defer="" class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
     <script class="remove">
       var respecConfig = {
         shortName: "ruby-tts-req",
@@ -115,20 +109,43 @@
   </head>
   <body>
     <section id="abstract">
-      <p>This document describes user requirements related to
+      
+      <p lang="en" its-locale-filter-list="en">This document describes user requirements related to
 	text-to-speech rendering of electronic documents containing
 	ruby annotations.  It examines the roles and practices of ruby
 	in different writing systems and discusses the implications of
 	various reading strategies for text-to-speech, without
 	prescribing algorithms or implementation-specific behavior.</p>
+      <p lang="ja" its-locale-filter-list="ja">本ドキュメントでは、
+    ルビ注釈を含む電子文書の
+    テキスト読み上げ処理に関するユーザー要件について記述する。
+    ここでは、異なる表記体系におけるルビの役割と慣行を検証し、
+    テキスト読み上げに対する様々な読み方戦略が及ぼす影響について論じるが、
+    アルゴリズムや実装固有の挙動については規定しない。</p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant">本文件描述了與
+    包含
+    紅字註釋的電子文檔的文本轉語音渲染相關的用戶需求。它探討了紅字
+    在不同書寫系統中的作用和應用，並討論了
+    各種閱讀策略對文本轉語音的影響，但
+    不規定具體算法或實現細節。</p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans">本文件描述了与
+    包含
+    红字注释的电子文档的文本转语音渲染相关的用户需求。它探讨了红字
+    在不同书写系统中的作用和应用，并讨论了
+    各种阅读策略对文本转语音的影响，但
+    不规定具体算法或实现细节。</p>
     </section>
     <section id="sotd">
-      <p></p>
+      
+      <p lang="en" its-locale-filter-list="en"></p>
+      <p lang="ja" its-locale-filter-list="ja"></p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant"></p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans"></p>
     </section>
     <section id="scope">
-      <h2>Scope</h2>
-      <p>
-	This document addresses issues related to text-to-speech
+      <h2><span lang="en" its-locale-filter-list="en">Scope</span><span lang="ja" its-locale-filter-list="ja">適用範囲</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">範圍</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">范围</span></h2>
+      
+      <p lang="en" its-locale-filter-list="en">This document addresses issues related to text-to-speech
 	functionality in HTML documents and EPUB publications that
 	contain ruby annotations. Although the typographic aspects of
 	ruby are addressed in [[JLREQ]] and [[CLREQ]], the
@@ -139,32 +156,92 @@
 	text-to-speech. It does not specify processing procedures or
 	algorithms, nor does it introduce new mechanisms or markup
 	related to reading ruby aloud beyond those already defined;
-	such matters are outside the scope of this document.
-
-    </p>
+	such matters are outside the scope of this document.</p>
+      <p lang="ja" its-locale-filter-list="ja">本ドキュメントは、ルビ注釈を含むHTML文書およびEPUB出版物における
+    テキスト読み上げ機能に関連する課題について取り上げる。
+    ルビの組版上の側面については[[JLREQ]]および[[CLREQ]]で扱われているが、
+    テキスト読み上げへの影響についてはほとんど
+    注目されてこなかった。 本ドキュメントでは、ルビの様々な用途を検証し、
+    異なる読み上げ戦略が及ぼす影響について考察するとともに、
+    テキスト読み上げに関連し得る情報の種類を特定する。
+    本ドキュメントは、処理手順やアルゴリズムを規定するものではなく、
+    また、既に定義されているものを超えて、ルビの読み上げに関連する
+    新たなメカニズムやマークアップを導入するものでもない。
+    そのような事項は、本ドキュメントの範囲外である。</p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant">本文件探討了HTML文檔和EPUB出版物中
+    包含注音（ruby）標註時，與文本轉語音
+    功能相關的問題。儘管[[JLREQ]]和[[CLREQ]]
+    已涉及注音的排版方面，但其對文本轉語音
+    的影響卻鮮少受到關注。 本文檔考察了注音的各種用途，
+    並探討了不同朗讀策略的影響，
+    同時指出了可能與
+    文本轉語音相關的信息類型。本文檔不規定處理流程或
+    算法，也不引入任何新的機制或標記
+    （除已定義的內容外），用於朗讀注音；
+    此類事項超出本文檔的範圍。</p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans">本文件探讨了HTML文档和EPUB出版物中
+    包含注音（ruby）标注时，与文本转语音
+    功能相关的问题。尽管[[JLREQ]]和[[CLREQ]]
+    已涉及注音的排版方面，但其对文本转语音
+    的影响却鲜少受到关注。 本文档考察了注音的各种用途，
+    并探讨了不同朗读策略的影响，
+    同时指出了可能与
+    文本转语音相关的信息类型。本文档不规定处理流程或
+    算法，也不引入任何新的机制或标记
+    （除已定义的内容外），用于朗读注音；
+    此类事项超出本文档的范围。</p>
 
     </section>
 
     <section id="practices-and-roles">
-      <h2>Ruby origins, practices and roles</h2>
+      <h2><span lang="en" its-locale-filter-list="en">Ruby origins, practices and roles</span><span lang="ja" its-locale-filter-list="ja">Rubyの起源、実践、および役割</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">Ruby 的起源、實踐與作用</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">Ruby 的起源、实践与作用</span></h2>
 
-	    <p>In Japanese-language documents, ruby bases are typically
+	    
+	    <p lang="en" its-locale-filter-list="en">In Japanese-language documents, ruby bases are typically
 	    CJK ideographic characters, and ruby annotations are typically
-	    written using hiragana or katakana characters [[JLREQ]].
-      </p>
-      <p>In Chinese-language documents, ruby bases are typically CJK
+	    written using hiragana or katakana characters [[JLREQ]].</p>
+	    <p lang="ja" its-locale-filter-list="ja">日本語の文書において、ルビの基となる文字は通常
+        CJK表意文字であり、ルビの注釈は通常
+        ひらがなまたはカタカナで表記される [[JLREQ]]。</p>
+	    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在日語文檔中，注音的基底通常是
+        中日韓表意文字，而注音通常
+        使用平假名或片假名書寫 [[JLREQ]]。</p>
+	    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在日语文档中，注音的基底通常是
+        中日韩表意文字，而注音通常
+        使用平假名或片假名书写 [[JLREQ]]。</p>
+      
+      <p lang="en" its-locale-filter-list="en">In Chinese-language documents, ruby bases are typically CJK
 	    ideographic characters.  Ruby annotations are commonly
 	    expressed using pinyin in Mainland China and bopomofo in
 	    Taiwan.  This document does not attempt to provide a
 	    comprehensive or systematic description of Chinese ruby
 	    annotation practices; readers are referred to [[CLREQ]] for
-	    detailed background and requirements.
-	    </p>
+	    detailed background and requirements.</p>
+      <p lang="ja" its-locale-filter-list="ja">中国語の文書において、ルビの基となる文字は通常、CJK
+        表意文字です。  ルビの表記は、中国本土では通常ピンインで、
+        台湾では通常ボポモフォを用いて
+        表現される。本ドキュメントは、中国語のルビ
+        表記慣行について包括的または体系的な説明を
+        行うものではない。詳細な背景や要件については、
+        [[CLREQ]]を参照のこと。</p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在中文文檔中，注音的基底通常是中日韓
+        表意文字。  在大陸，注音通常
+        使用拼音表示；在臺灣，則使用
+        注音符號。本文檔無意對中文注音
+        規範進行全面或系統的描述；讀者可參閱 [[CLREQ]] 以獲取
+        詳細的背景信息和要求。</p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在中文文档中，注音的基底通常是中日韩
+        表意文字。  在大陆，注音通常
+        使用拼音表示；在台湾，则使用
+        注音符号。本文档无意对中文注音
+        规范进行全面或系统的描述；读者可参阅 [[CLREQ]] 以获取
+        详细的背景信息和要求。</p>
       <section id="origins">
-	<h3>Origins</h3>
+	<h3><span lang="en" its-locale-filter-list="en">Origins</span><span lang="ja" its-locale-filter-list="ja">起源</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">起源</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">起源</span></h3>
 	<section id="origin-JP" class="no-secno notoc">
-          <h4 >(1) Japanese case</h4>
-	  <p>Japanese ruby-like annotation practices can be traced back 
+          <h4><span lang="en" its-locale-filter-list="en">(1) Japanese case</span><span lang="ja" its-locale-filter-list="ja">(1) 日本の事例</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">(1) 日本案例</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">(1) 日本案例</span></h4>
+	  
+	  <p lang="en" its-locale-filter-list="en">Japanese ruby-like annotation practices can be traced back 
           to the late eighth to early ninth century, when notes and 
           reading marks began to be added to Chinese texts in Japan. 
           At that time, Chinese characters were used to write texts 
@@ -180,14 +257,68 @@
           interpretive reading practices rather than codified 
           phonetic systems. These annotation practices have continued, 
           with evolving forms and functions, throughout the history 
-          of Japanese writing and remain in active use today [[Imai_Yuuji_2009]].
-        </p>
+          of Japanese writing and remain in active use today [[Imai_Yuuji_2009]].</p>
+	  <p lang="ja" its-locale-filter-list="ja">日本語のルビーのような注釈の慣行は、
+          8世紀後半から9世紀初頭にまで遡ることができ、
+          その頃、日本では漢文に注釈や
+          読み記号が付けられ始めた。
+          当時、漢字は日本語で読まれる文章を書くために
+          用いられていたが、漢字と日本語の読みとの間には
+          標準化された対応関係は存在しなかった。 したがってルビは、
+      各漢字に対して注釈者が選んだ読み方、
+      すなわち日本語の読み（訓読み）であれ、
+      中国語の発音に基づく漢語の読み（音読み）であれ、
+      固定された、あるいは
+          規範的な発音ではなく、
+      その読み方を示す役割を果たしていた。 このように、日本語のルビは
+          その起源から、漢字で書かれた本文と
+          日本語による注釈という二つの言語にまたがり、
+          体系化された
+          音韻体系というよりは、解釈的な読み方の慣行を
+          反映していた。 こうした注釈の慣行は、
+          形態や機能を変化させつつ、日本語の記述の歴史を通じて
+          続いており、今日でも活発に用いられている [[Imai_Yuuji_2009]]。</p>
+	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant">日本類似“紅字”的註釋做法可追溯至
+          8世紀末至9世紀初，當時日本開始在漢文文本中
+          添加註釋和讀音標記。
+          當時，雖然使用漢字書寫文本，
+          但讀音卻是日語，且漢字與日語讀音之間
+          尚無標準化的對應關係。 因此，注音
+      的作用在於爲每個漢字標註註釋者選定的讀音，
+      無論是日語讀音（訓讀），還是基於漢語發音的
+      日語借讀音（音讀），而非
+      固定或
+          規範的發音。 由此可見，自誕生之初，日語注音
+          便橫跨兩種語言——漢字書寫的文本
+          與日語註釋，反映了
+          解讀性的閱讀實踐，而非
+          規範化的語音體系。 這些注音實踐在日語書寫史上
+          隨着形式與功能的演變而延續至今，
+          至今仍被廣泛使用 [[Imai_Yuuji_2009]]。</p>
+	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans">日本类似“红字”的注释做法可追溯至
+          8世纪末至9世纪初，当时日本开始在汉文文本中
+          添加注释和读音标记。
+          当时，虽然使用汉字书写文本，
+          但读音却是日语，且汉字与日语读音之间
+          尚无标准化的对应关系。 因此，注音
+      的作用在于为每个汉字标注注释者选定的读音，
+      无论是日语读音（训读），还是基于汉语发音的
+      日语借读音（音读），而非
+      固定或
+          规范的发音。 由此可见，自诞生之初，日语注音
+          便横跨两种语言——汉字书写的文本
+          与日语注释，反映了
+          解读性的阅读实践，而非
+          规范化的语音体系。 这些注音实践在日语书写史上
+          随着形式与功能的演变而延续至今，
+          至今仍被广泛使用 [[Imai_Yuuji_2009]]。</p>
 
 
 	</section>
 	<section id="origin-CN" class="no-secno notoc">
-          <h4 >(2) Chinese case</h4>
-	  <p>In contrast, Chinese ruby annotations using pinyin and
+          <h4><span lang="en" its-locale-filter-list="en">(2) Chinese case</span><span lang="ja" its-locale-filter-list="ja">(2) 中国の事例</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">(2) 中文案例</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">(2) 中文案例</span></h4>
+	  
+	  <p lang="en" its-locale-filter-list="en">In contrast, Chinese ruby annotations using pinyin and
           bopomofo have clearly documented modern origins tied to
           state language policy. Bopomofo was
           officially adopted by the government of the Republic of
@@ -203,199 +334,563 @@
           which emerged from manuscript annotation practices, Chinese
           ruby is directly grounded in officially defined phonetic
           schemes established by governmental decisions.</p>
+	  <p lang="ja" its-locale-filter-list="ja">対照的に、ピンインや
+          注音符号を用いた中国語のルビー表記は、
+          国家の言語政策と結びついた近代的な起源が
+          明確に記録されている。注音符号は、
+          識字教育および発音教育を支援するための
+          音声表記体系として、1918年に中華民国政府によって
+          正式に採用された [[Zhuyin_Fuhao]]。 その後、
+          中華人民共和国において、漢語拼音は1958年に
+          全国人民代表大会の決議により、現代標準中国語の
+          標準化されたローマ字表記体系として正式に
+          公布された [[Hanyu_Pinyin]]。  どちらの体系も
+          言語計画、教育、
+          および標準化を明確に目的として作成されたものであり、ルビ表記における
+          その使用は、こうした政策主導の目標を反映している。手書き原稿への注釈の慣行から
+          生まれた日本語のルビとは異なり、中国語の
+          ルビは、政府の決定によって確立された公式の
+          発音体系に直接基づいている。</p>
+	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant">相比之下，使用拼音和
+          注音符號的中文注音標註，其現代起源與
+          國家語言政策有着明確的關聯。注音符號於
+          1918年被中華民國政府
+          正式採納，作爲一種支持識字和
+          發音教育的音標系統 [[注音符號]]。 後來，在
+          中華人民共和國，漢語拼音於1958年經
+          全國人民代表大會決議正式
+          頒佈，作爲現代標準普通話的
+          標準化羅馬化系統 [[Hanyu_Pinyin]]。  這兩種系統
+          均明確旨在服務於語言規劃、教育
+          及標準化，其在注音標註中的應用
+          體現了這些政策驅動的目標。與源於手稿標註實踐的
+          日語注音不同，漢語
+          注音直接基於政府決策確立的官方定義
+          音標體系。</p>
+	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans">相比之下，使用拼音和
+          注音符号的中文注音标注，其现代起源与
+          国家语言政策有着明确的关联。注音符号于
+          1918年被中华民国政府
+          正式采纳，作为一种支持识字和
+          发音教育的音标系统 [[注音符号]]。 后来，在
+          中华人民共和国，汉语拼音于1958年经
+          全国人民代表大会决议正式
+          颁布，作为现代标准普通话的
+          标准化罗马化系统 [[Hanyu_Pinyin]]。  这两种系统
+          均明确旨在服务于语言规划、教育
+          及标准化，其在注音标注中的应用
+          体现了这些政策驱动的目标。与源于手稿标注实践的
+          日语注音不同，汉语
+          注音直接基于政府决策确立的官方定义
+          音标体系。</p>
         
 
 	</section>
       </section>
       <section id="furigana-background">
-        <h3>Furigana, background</h3>
+        <h3><span lang="en" its-locale-filter-list="en">Furigana, background</span><span lang="ja" its-locale-filter-list="ja">ふりがな、背景</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">假名，背景</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">假名，背景</span></h3>
       <section id="furigana-background-JP" class="no-secno notoc">
-        <h4 >(1) Japanese case</h4>
+        <h4><span lang="en" its-locale-filter-list="en">(1) Japanese case</span><span lang="ja" its-locale-filter-list="ja">(1) 日本の事例</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">(1) 日本案例</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">(1) 日本案例</span></h4>
 
-        <p>
-	  The primary purpose of ruby annotations is to indicate how
+        
+        <p lang="en" its-locale-filter-list="en">The primary purpose of ruby annotations is to indicate how
 	  to pronounce CJK ideographic characters, a practice known
-	  as <dfn>Furigana</dfn> (see also <a data-cite="JLREQ#term.furigana">JLReq terminology</a>).
-        </p>
-        <p>
-	  In contemporary usage, it is uncommon to attach ruby
+	  as <dfn>Furigana</dfn> (see also <a data-cite="JLREQ#term.furigana">JLReq terminology</a>).</p>
+        <p lang="ja" its-locale-filter-list="ja">Rubyの注釈の主な目的は、
+      CJK表意文字の発音を示すことであり、この慣習は
+      <dfn>Furigana</dfn> として知られています（<a data-cite="JLREQ#term.furigana">JLReq terminology</a> も参照）。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">Ruby 註釋的主要目的是標註
+      中日韓表意文字的讀音，這種做法被稱爲
+      <dfn>Furigana</dfn>（另見 <a data-cite="JLREQ#term.furigana">JLReq terminology</a>）。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">Ruby 注释的主要目的是标注
+      中日韩表意文字的读音，这种做法被称为
+      <dfn>Furigana</dfn>（另见 <a data-cite="JLREQ#term.furigana">JLReq terminology</a>）。</p>
+        
+        <p lang="en" its-locale-filter-list="en">In contemporary usage, it is uncommon to attach ruby
 	  annotations to all CJK ideographic characters
 	  in a given document. Instead, it is more common to
-	  attach ruby annotations to only some of the CJK ideographic characters.
-        </p>
-        <p>Ruby annotations find their application in various
+	  attach ruby annotations to only some of the CJK ideographic characters.</p>
+        <p lang="ja" its-locale-filter-list="ja">現代の用法では、特定の文書内のすべてのCJK表意文字にルビを付けることは
+      あまり一般的ではありません。その代わりに、一部のCJK表意文字にのみ
+      ルビを付けることが一般的です。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在當代用法中，很少會爲
+      文檔中的所有中日韓表意文字
+      添加註音。相反，更常見的做法是
+      僅爲部分中日韓表意文字添加註音。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在当代用法中，很少会为
+      文档中的所有中日韩表意文字
+      添加注音。相反，更常见的做法是
+      仅为部分中日韩表意文字添加注音。</p>
+        
+        <p lang="en" its-locale-filter-list="en">Ruby annotations find their application in various
         contexts, including trade books, newspapers, textbooks,
         teaching materials, and more, but are rarely utilized in
         business documents.</p>
-        <p>
-          Even for simple CJK ideographic characters, ruby annotations may be added for some users who have particular 
+        <p lang="ja" its-locale-filter-list="ja">ルビー注は、一般書、新聞、教科書、
+        教材など、さまざまな
+        場面で活用されていますが、
+        ビジネス文書ではほとんど利用されていません。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">Ruby註釋的應用場景十分廣泛，
+        涵蓋大衆讀物、報紙、教科書、
+        教學材料等，但在
+        商務文件中卻很少被採用。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">Ruby注释的应用场景十分广泛，
+        涵盖大众读物、报纸、教科书、
+        教学材料等，但在
+        商务文件中却很少被采用。</p>
+        
+        <p lang="en" its-locale-filter-list="en">Even for simple CJK ideographic characters, ruby annotations may be added for some users who have particular 
           difficulties with CJK ideographic characters 
           (in electronic documents, it is easy to make ruby annotations visible or invisible based on user preferences). 
-          Such ruby annotations are referred to as "furigana added for enhanced accessibility".
-        </p>
-        <p>
-          Some simple CJK ideographic characters have more than one possible reading and thus require ruby annotations for disambiguation.  
+          Such ruby annotations are referred to as "furigana added for enhanced accessibility".</p>
+        <p lang="ja" its-locale-filter-list="ja">単純なCJK表意文字であっても、CJK表意文字の読み取りに特に
+          困難を感じるユーザーのために、ルビを付けることがあります
+          （電子文書では、ユーザーの設定に応じてルビの表示・非表示を切り替えることが容易です）。
+          このようなルビは、「アクセシビリティ向上のために追加されたルビ」と呼ばれます。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">即使對於簡單的漢字、日文和韓文字符，也可以爲那些在閱讀漢字、日文和韓文字符時遇到特殊困難的用戶添加註音標記
+          （在電子文檔中，可以根據用戶偏好輕鬆地顯示或隱藏注音標記）。
+          此類注音標記被稱爲“爲提高可訪問性而添加的注音”。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">即使对于简单的汉字、日文和韩文字符，也可以为那些在阅读汉字、日文和韩文字符时遇到特殊困难的用户添加注音标记
+          （在电子文档中，可以根据用户偏好轻松地显示或隐藏注音标记）。
+          此类注音标记被称为“为提高可访问性而添加的注音”。</p>
+        
+        <p lang="en" its-locale-filter-list="en">Some simple CJK ideographic characters have more than one possible reading and thus require ruby annotations for disambiguation.  
           This is common for names of people and places. For example, <span lang="ja">山崎</span> (a person's name) may be read as 
-          YAMAZAKI or YAMASAKI. 
-        </p>
-        <p>
-	  When ruby annotations are applied only to selected CJK ideographic characters in a document, typically only the first occurrence of such characters or words receives an annotation, and subsequent occurrences do not. This practice assumes that users will learn the correct pronunciation from the first occurrence and is explicitly recommended in several style guidelines issued by Japanese publishers as a standard editorial convention for native Japanese readers.  In such documents, later occurrences without ruby may rely on contextual reuse of previously provided ruby base/annotation pairs for pronunciation.</p>
-	  <p>However, one could argue that attaching the same ruby annotation to every occurrence is also a viable option to accommodate the needs of foreign language students and individuals with cognitive or learning disabilities.
-        </p>
+          YAMAZAKI or YAMASAKI.</p>
+        <p lang="ja" its-locale-filter-list="ja">一部の単純なCJK表意文字には複数の読み方があり、そのため、読み分けのためにルビを付ける必要があります。  
+          これは人名や地名によく見られます。例えば、<span lang="ja">「山崎」</span>（人名）は、
+          「YAMAZAKI」または「YAMASAKI」と読まれることがあります。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">某些簡單的漢字可能有多種讀法，因此需要添加註音來消除歧義。  
+          這種情況在人名和地名中很常見。例如，<span lang="ja">山崎</span>（人名）可以讀作 
+          YAMAZAKI 或 YAMASAKI。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">某些简单的汉字可能有多种读法，因此需要添加注音来消除歧义。  
+          这种情况在人名和地名中很常见。例如，<span lang="ja">山崎</span>（人名）可以读作 
+          YAMAZAKI 或 YAMASAKI。</p>
+        
+        <p lang="en" its-locale-filter-list="en">When ruby annotations are applied only to selected CJK ideographic characters in a document, typically only the first occurrence of such characters or words receives an annotation, and subsequent occurrences do not. This practice assumes that users will learn the correct pronunciation from the first occurrence and is explicitly recommended in several style guidelines issued by Japanese publishers as a standard editorial convention for native Japanese readers.  In such documents, later occurrences without ruby may rely on contextual reuse of previously provided ruby base/annotation pairs for pronunciation.</p>
+        <p lang="ja" its-locale-filter-list="ja">文書内のCJK表意文字のうち、選択された文字にのみルビ注釈が適用される場合、通常、そのような文字や単語の最初の出現箇所にのみ注釈が付けられ、それ以降の出現箇所には付けられません。この慣行は、ユーザーが最初の出現箇所から正しい発音を学ぶことを前提としており、日本の出版社が発行するいくつかのスタイルガイドラインにおいて、日本語を母語とする読者向けの標準的な編集慣行として明示的に推奨されています。  このような文書では、ルビが付いていない後の出現箇所については、文脈に応じて、以前に提供されたルビの基底語と注釈の組み合わせを再利用して発音を確認することがあります。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">當在文檔中僅對選定的中日韓表意文字應用注音標記時，通常只有此類字符或單詞的首次出現會被標註，後續出現則不標註。這種做法假設用戶會從首次出現處學會正確發音，且日本多家出版商發佈的若干風格指南中，都明確將此作爲面向日語母語讀者的標準編輯慣例予以推薦。  在此類文檔中，後續未標註假名注音的出現位置，其發音可依賴上下文中先前提供的假名注音對進行復用。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">当在文档中仅对选定的中日韩表意文字应用注音标记时，通常只有此类字符或单词的首次出现会被标注，后续出现则不标注。这种做法假设用户会从首次出现处学会正确发音，且日本多家出版商发布的若干风格指南中，都明确将此作为面向日语母语读者的标准编辑惯例予以推荐。  在此类文档中，后续未标注假名注音的出现位置，其发音可依赖上下文中先前提供的假名注音对进行复用。</p>
+	  
+	  <p lang="en" its-locale-filter-list="en">However, one could argue that attaching the same ruby annotation to every occurrence is also a viable option to accommodate the needs of foreign language students and individuals with cognitive or learning disabilities.</p>
+	  <p lang="ja" its-locale-filter-list="ja">とはいえ、外国語学習者や認知障害・学習障害のある人々のニーズに応えるためには、すべての出現箇所に同じRuby注釈を付けることも有効な選択肢であると言えるだろう。</p>
+	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant">不過，也有人認爲，爲每個出現位置添加相同的Ruby註釋，也是滿足外語學習者以及有認知或學習障礙人士需求的一種可行方案。</p>
+	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans">不过，也有人认为，为每个出现位置添加相同的Ruby注释，也是满足外语学习者以及有认知或学习障碍人士需求的一种可行方案。</p>
       </section>
       
       <section id="furigana-background-CN" class="no-secno notoc">
-        <h2>(2) Chinese case</h2>
-	<p>In both Mainland China and Taiwan, the most common role of
+        <h2><span lang="en" its-locale-filter-list="en">(2) Chinese case</span><span lang="ja" its-locale-filter-list="ja">(2) 中国の事例</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">(2) 中文案例</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">(2) 中文案例</span></h2>
+	
+	<p lang="en" its-locale-filter-list="en">In both Mainland China and Taiwan, the most common role of
 	ruby annotations is to indicate pronunciation, corresponding
 	roughly to the role of furigana in Japanese.</p>
-	<p>However, Chinese practices regarding ruby annotations differ 
+	<p lang="ja" its-locale-filter-list="ja">中国本土でも台湾でも、ルビー注釈の最も一般的な役割は
+    発音を示すことであり、これは
+    おおむね日本語のふりがなの役割に相当する。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">無論在中國大陸還是臺灣，
+    ruby 註釋最常見的用途是標註發音，
+    這大致相當於日語中的假名注音。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">无论在中国大陆还是台湾，
+    ruby 注释最常见的用途是标注发音，
+    这大致相当于日语中的假名注音。</p>
+	
+	<p lang="en" its-locale-filter-list="en">However, Chinese practices regarding ruby annotations differ 
     from Japanese furigana in three important respects.</p>
+	<p lang="ja" its-locale-filter-list="ja">しかし、ルビー注釈に関する中国での慣行は、
+    日本のふりがなとは3つの重要な点で異なっている。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">然而，中文在紅字註釋方面的做法
+    與日語的假名注音在三個重要方面有所不同。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">然而，中文在红字注释方面的做法
+    与日语的假名注音在三个重要方面有所不同。</p>
 
 	<ol>
     <li>
-	  <p><strong>Repetition of ruby annotations</strong></p>
-	  <p>There are no widely recognized or systematically applied
+	  
+	  <p lang="en" its-locale-filter-list="en"><strong>Repetition of ruby annotations</strong></p>
+	  <p lang="ja" its-locale-filter-list="ja"><strong>Rubyアノテーションの繰り返し</strong></p>
+	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant"><strong>Ruby 註釋的重複</strong></p>
+	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans"><strong>Ruby 注释的重复</strong></p>
+	  
+	  <p lang="en" its-locale-filter-list="en">There are no widely recognized or systematically applied
 	    editorial guidelines in Chinese publishing that require
 	    limiting ruby annotations to the first occurrence only. In practice, ruby annotations
 	  indicating pronunciation are commonly applied to the same
 	  CJK ideographic character or word repeatedly. This practice 
 	  is observed both in Mainland China and in Taiwan, although some 
 	  Chinese-language publications may follow a "first occurrence only" rule.</p>
+	  <p lang="ja" its-locale-filter-list="ja">中国語の出版業界において、ルビの表記を
+        最初の出現箇所に限定することを求める、
+        広く認知され、体系的に適用されている編集ガイドラインは存在しない。 実際には、発音を示すルビは、
+      同じ漢字や単語に対して繰り返し
+      付されるのが一般的である。この慣行は
+      中国本土と台湾の両方で見られるが、一部の
+      中国語出版物では「初回出現時のみ」という規則に従っている場合もある。</p>
+	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在中國出版界，尚無廣爲認可或系統適用的
+        編輯規範要求
+        將注音僅限於首次出現時使用。 實際上，
+      標註發音的注音符號通常會反覆應用於
+      同一個漢字或詞語。這種做法
+      在中國大陸和臺灣地區均可見，儘管部分
+      中文出版物可能遵循“僅限首次出現”的規則。</p>
+	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在中国出版界，尚无广为认可或系统适用的
+        编辑规范要求
+        将注音仅限于首次出现时使用。 实际上，
+      标注发音的注音符号通常会反复应用于
+      同一个汉字或词语。这种做法
+      在中国大陆和台湾地区均可见，尽管部分
+      中文出版物可能遵循“仅限首次出现”的规则。</p>
 
-	  <p>Furthermore, from an accessibility perspective,
+	  
+	  <p lang="en" its-locale-filter-list="en">Furthermore, from an accessibility perspective,
 	  attaching the same ruby annotation to every occurrence is a
 	  viable option to accommodate the needs of foreign language
 	  students and individuals with cognitive or learning
 	  disabilities.</p>
+	  <p lang="ja" its-locale-filter-list="ja">さらに、アクセシビリティの観点から言えば、
+      すべての出現箇所に同じルビを付けることは、
+      外国語学習者や、認知障害・学習障害のある
+      人々のニーズに応えるための
+      有効な選択肢となります。</p>
+	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant">此外，從無障礙設計的角度來看，
+      爲每個出現的位置添加相同的註釋
+      是一種可行的方案，有助於滿足
+      外語學習者以及有認知或學習障礙
+      人士的需求。</p>
+	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans">此外，从无障碍设计的角度来看，
+      为每个出现的位置添加相同的注释
+      是一种可行的方案，有助于满足
+      外语学习者以及有认知或学习障碍
+      人士的需求。</p>
 
     </li>
 	  <li>
-	  <p><strong>Dialects represented by ruby annotations and dialects selected for TTS</strong></p>
-	  <p>In Chinese-language documents, ruby annotations expressed
+	  
+	  <p lang="en" its-locale-filter-list="en"><strong>Dialects represented by ruby annotations and dialects selected for TTS</strong></p>
+	  <p lang="ja" its-locale-filter-list="ja"><strong>ルビー注釈で表される方言と、TTS用に選択された方言</strong></p>
+	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant"><strong>通過紅字註釋表示的方言以及爲語音合成（TTS）選定的方言</strong></p>
+	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans"><strong>通过红字注释表示的方言以及为语音合成（TTS）选定的方言</strong></p>
+	  
+	  <p lang="en" its-locale-filter-list="en">In Chinese-language documents, ruby annotations expressed
 	  using pinyin or bopomofo encode pronunciation information
 	  for a particular Chinese dialect (including Standard Mandarin) chosen by the author,
 	  publisher, or content designer. While these systems are most
 	  commonly used to represent Standard Mandarin, they may also
 	  be used to represent other dialects.</p>
+	  <p lang="ja" its-locale-filter-list="ja">中国語の文書において、ピンインやボポモフォを用いて表記されるルビ注釈は、
+著者、出版社、またはコンテンツ設計者が選択した特定の方言（標準中国語を含む）の
+発音情報を表しています。これらの表記法は主に
+標準中国語を表記するために使用されますが、
+他の方言を表記するためにも用いられることがあります。</p>
+	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在中文文檔中，使用拼音或注音符號表示的
+      紅字註釋，用於記錄作者、
+      出版商或內容設計者所選定
+      的特定漢語方言（包括普通話）的發音信息。雖然這些系統最
+      常用於表示普通話，但也
+      可用於表示其他方言。</p>
+	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在中文文档中，使用拼音或注音符号表示的
+      红字注释，用于记录作者、
+      出版商或内容设计者所选定
+      的特定汉语方言（包括普通话）的发音信息。虽然这些系统最
+      常用于表示普通话，但也
+      可用于表示其他方言。</p>
 
-	  <p>At the same time, readers of Chinese-language documents
+	  
+	  <p lang="en" its-locale-filter-list="en">At the same time, readers of Chinese-language documents
 	  may wish to have the text read aloud using a different
 	  dialect than the one assumed by the ruby annotations. In
 	  text-to-speech contexts, users may select Cantonese or other
 	  dialects based on their linguistic background,
 	  accessibility needs, or personal preference.</p>
+	  <p lang="ja" its-locale-filter-list="ja">一方で、中国語の文書を読む際、
+      読者は、ルビの表記とは異なる
+      方言でテキストを読み上げてもらいたいと考える場合があります。
+      テキスト読み上げ機能を利用する際、ユーザーは自身の言語的背景、
+      アクセシビリティ上のニーズ、あるいは個人的な好みに応じて、
+      広東語やその他の方言を選択することができます。</p>
+	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant">與此同時，閱讀中文文檔的用戶
+      可能希望文本採用與紅字註釋所設定的方言
+      不同的方言進行朗讀。在
+      文本轉語音場景中，用戶可根據自身的語言背景、
+      無障礙需求或個人偏好，
+      選擇粵語或其他方言。</p>
+	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans">与此同时，阅读中文文档的用户
+      可能希望文本采用与红字注释所设定的方言
+      不同的方言进行朗读。在
+      文本转语音场景中，用户可根据自身的语言背景、
+      无障碍需求或个人偏好，
+      选择粤语或其他方言。</p>
 
-	  <p>As a result, the dialect represented by ruby annotations
+	  
+	  <p lang="en" its-locale-filter-list="en">As a result, the dialect represented by ruby annotations
 	  and the dialect selected for text-to-speech might not match.
 	  When such a mismatch occurs, the pronunciation
 	  information encoded in ruby annotations needs to be
 	  ignored, overridden, or applied selectively by
 	  text-to-speech systems.</p>
+	  <p lang="ja" its-locale-filter-list="ja">その結果、ルビ注釈で指定された方言と
+      テキスト読み上げ用に選択された方言が一致しない場合があります。
+      このような不一致が生じた場合、
+      テキスト読み上げシステムは、ルビ注釈に
+      エンコードされた発音情報を
+      無視するか、上書きするか、あるいは選択的に適用する必要があります。</p>
+	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant">因此，由紅字註釋所代表的方言
+      與文本轉語音功能所選定的方言可能不一致。
+      當出現此類不一致時，文本轉語音系統
+      需要忽略、覆蓋或有選擇地應用
+      紅字註釋中編碼的發音
+      信息。</p>
+	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans">因此，由红字注释所代表的方言
+      与文本转语音功能所选定的方言可能不一致。
+      当出现此类不一致时，文本转语音系统
+      需要忽略、覆盖或有选择地应用
+      红字注释中编码的发音
+      信息。</p>
 
     </li>
 	<li>
-	  <p><strong>Prosodic information in Chinese ruby annotations</strong></p>
-	  <p>Unlike Japanese furigana, which does not encode
+	  
+	  <p lang="en" its-locale-filter-list="en"><strong>Prosodic information in Chinese ruby annotations</strong></p>
+	  <p lang="ja" its-locale-filter-list="ja"><strong>中国語のルビ注釈における韻律情報</strong></p>
+	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant"><strong>中文紅字註釋中的韻律信息</strong></p>
+	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans"><strong>中文红字注释中的韵律信息</strong></p>
+	  
+	  <p lang="en" its-locale-filter-list="en">Unlike Japanese furigana, which does not encode
 	  information about pitch accent, intonation, or other
 	  prosodic features, Chinese ruby annotations are 
 	  capable of representing tonal information as part of
 	  pronunciation.</p>
+	  <p lang="ja" its-locale-filter-list="ja">日本語のふりがなは、
+      ピッチアクセントやイントネーション、その他の
+      韻律的特徴に関する情報を表さないのに対し、中国語のルビは、
+      発音の一部として声調情報を
+      表現することができる。</p>
+	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant">與日語的假名注音不同，後者不包含
+      關於音高重音、語調或其他
+      韻律特徵的信息，而中文的注音
+      則能夠將聲調信息作爲
+      發音的一部分加以呈現。</p>
+	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans">与日语的假名注音不同，后者不包含
+      关于音高重音、语调或其他
+      韵律特征的信息，而中文的注音
+      则能够将声调信息作为
+      发音的一部分加以呈现。</p>
     </li>
 
   </ol>
       </section>
       </section>
       <section>
-        <h3 id="gikun-background">Gikun, background</h3>
+        <h3 id="gikun-background"><span lang="en" its-locale-filter-list="en">Gikun, background</span><span lang="ja" its-locale-filter-list="ja">ギクン、背景</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">吉君，背景</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">吉君，背景</span></h3>
         
        <section class="no-secno notoc">
-          <h4 id="gikun-background-JP">(1) Japanese case</h4>
+          <h4 id="gikun-background-JP"><span lang="en" its-locale-filter-list="en">(1) Japanese case</span><span lang="ja" its-locale-filter-list="ja">(1) 日本の事例</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">(1) 日本案例</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">(1) 日本案例</span></h4>
 
-        <p>
-          Ruby annotations are
+        
+        <p lang="en" its-locale-filter-list="en">Ruby annotations are
 	  also used to indicate something different from the reading of a CJK ideographic character.
-          Such ruby annotations are referred to as <dfn>Gikun</dfn>.  Gikun is commonly employed in light novels and comics. 
-        </p>
-        <p>
-          Here are some examples of Gikun:
-        </p>
+          Such ruby annotations are referred to as <dfn>Gikun</dfn>.  Gikun is commonly employed in light novels and comics.</p>
+        <p lang="ja" its-locale-filter-list="ja">ルビは、
+      CJK表意文字の読みとは異なる意味を示すためにも使用されます。
+          このようなルビは <dfn>Gikun</dfn> と呼ばれます。ギクンは、ライトノベルや漫画でよく用いられます。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">注音
+      也用於標註與中日韓表意文字讀音不同的內容。
+          此類注音被稱爲<dfn>Gikun</dfn>。  在輕小說和漫畫中，注音的使用十分普遍。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">注音
+      也用于标注与中日韩表意文字读音不同的内容。
+          此类注音被称为<dfn>Gikun</dfn>。  在轻小说和漫画中，注音的使用十分普遍。</p>
+        
+        <p lang="en" its-locale-filter-list="en">Here are some examples of Gikun:</p>
+        <p lang="ja" its-locale-filter-list="ja">以下に「ギクン」の例をいくつか挙げます：</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">以下是一些“技文”的例子：</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">以下是一些“技文”的例子：</p>
         <ul>
-          <li>
-            <span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> 
-            (where <span lang="ja">敵</span> means 'enemy' and <span lang="ja">とも</span> means 'friend').  The combination means 'frenemy'.
-          </li>
-	  <li>
-            <span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> 
+          
+          <li lang="en" its-locale-filter-list="en"><span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> 
+            (where <span lang="ja">敵</span> means 'enemy' and <span lang="ja">とも</span> means 'friend').  The combination means 'frenemy'.</li>
+          <li lang="ja" its-locale-filter-list="ja"><span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> 
+            （ここで「<span lang="ja">敵</span>」は「敵」を、「<span lang="ja">とも</span>」は「友」を意味する）。この組み合わせは「フレネミー」を意味する。</li>
+          <li lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> 
+            （其中“敵”意爲“敵人”，“とも”意爲“朋友”）。該組合意爲“友敵”。</li>
+          <li lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> 
+            （其中“敵”意为“敌人”，“とも”意为“朋友”）。该组合意为“友敌”。</li>
+	  
+	  <li lang="en" its-locale-filter-list="en"><span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> 
             (where the typical reading of <span lang="ja">生命</span> is SEIMEI rather than <span lang="ja">いのち</span> (INOCHI), 
-            both of which mean 'Life')
-          </li>
-          <li>
-            <span lang="ja"><ruby><rb>背景</rb><rt>バック</rt></ruby></span> 
+            both of which mean 'Life')</li>
+	  <li lang="ja" its-locale-filter-list="ja"><span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> 
+            （なお、「<span lang="ja">生命</span>」の一般的な読み方は「<span lang="ja">いのち</span>（INOCHI）」ではなく「SEIMEI」ですが、
+            どちらも「生命」を意味します）</li>
+	  <li lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> 
+            （其中“<span lang="ja">生命</span>”一詞通常讀作“SEIMEI”，而非<span lang="ja">“いのち</span>”（INOCHI），
+            兩者均意爲“生命”）</li>
+	  <li lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> 
+            （其中“<span lang="ja">生命</span>”一词通常读作“SEIMEI”，而非<span lang="ja">“いのち</span>”（INOCHI），
+            两者均意为“生命”）</li>
+          
+          <li lang="en" its-locale-filter-list="en"><span lang="ja"><ruby><rb>背景</rb><rt>バック</rt></ruby></span> 
             (where the typical reading of <span lang="ja">背景</span> is HAIKEI rather than <span lang="ja">バック</span> (back), 
-            an English translation)
-          </li>
-          <li>
-            <span lang="ja"><ruby><rb>牛乳</rb><rt>ミルク</rt></ruby></span> 
+            an English translation)</li>
+          <li lang="ja" its-locale-filter-list="ja"><span lang="ja"><ruby><rb>背景</rb><rt>バック</rt></ruby></span> 
+            （なお、「<span lang="ja">背景</span>」の一般的な読み方は「<span lang="ja">バック</span>」ではなく「ハイケイ」であり、
+            これは英語訳によるものである）</li>
+          <li lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja"><ruby><rb>背景</rb><rt>バック</rt></ruby></span> 
+            （其中<span lang="ja">“背景</span>”的常用讀音是“HAIKEI”，而非<span lang="ja">“バック”</span>（back），
+            即英文譯法）</li>
+          <li lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja"><ruby><rb>背景</rb><rt>バック</rt></ruby></span> 
+            （其中<span lang="ja">“背景</span>”的常用读音是“HAIKEI”，而非<span lang="ja">“バック”</span>（back），
+            即英文译法）</li>
+          
+          <li lang="en" its-locale-filter-list="en"><span lang="ja"><ruby><rb>牛乳</rb><rt>ミルク</rt></ruby></span> 
             (where the typical reading of <span lang="ja">牛乳</span> is GYUUNYUU rather than <span lang="ja">ミルク</span> (milk), 
-            an English translation)
-          </li>
+            an English translation)</li>
+          <li lang="ja" its-locale-filter-list="ja"><span lang="ja"><ruby><rb>牛乳</rb><rt>ミルク</rt></ruby></span> 
+            （なお、「<span lang="ja">牛乳</span>」の一般的な読み方は「<span lang="ja">ミルク</span>」という英語訳ではなく「ギュウニュウ」である）</li>
+          <li lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja"><ruby><rb>牛乳</rb><rt>ミルク</rt></ruby></span> 
+            （其中<span lang="ja">“牛乳</span>”的常用讀音是“GYUUNYUU”，而非<span lang="ja">“ミルク</span>”（milk），
+            即英文譯法）</li>
+          <li lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja"><ruby><rb>牛乳</rb><rt>ミルク</rt></ruby></span> 
+            （其中<span lang="ja">“牛乳</span>”的常用读音是“GYUUNYUU”，而非<span lang="ja">“ミルク</span>”（milk），
+            即英文译法）</li>
         </ul>
-        <p>
-          Even when Gikun is used for a compound word, it is unlikely to be repeated for later occurrences of the same word. 
+        
+        <p lang="en" its-locale-filter-list="en">Even when Gikun is used for a compound word, it is unlikely to be repeated for later occurrences of the same word. 
           Moreover, different [=Gikun=] may be added for subsequent occurrences of the same word. 
           For example, the next occurrence of <span lang="ja">生命</span> may well be 
           <span lang="ja"><ruby><rb>生命</rb><rt>ライフ</rt></ruby></span>
-          where <span lang="ja">ライフ</span> (life) is an English translation.
-        </p>
+          where <span lang="ja">ライフ</span> (life) is an English translation.</p>
+        <p lang="ja" its-locale-filter-list="ja">「ギクン」が複合語に使用される場合でも、同じ単語が後に現れる際にそれが繰り返されることはまずない。
+          さらに、同じ単語が後に現れる際には、別の[=ギクン=]が追加されることもある。
+          例えば、「<span lang="ja">生命</span>」が次に現れる際は、
+          <span lang="ja"><ruby><rb>生命</rb><rt>ライフ</rt></ruby></span>
+          となる可能性が高く、ここで「<span lang="ja">ライフ</span>」は英語訳である。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">即使在將“Gikun”用於複合詞時，同一詞彙在後續出現時通常也不會重複使用該“Gikun”。
+          此外，同一詞彙在後續出現時可能會添加不同的[=Gikun=]。
+          例如，“<span lang="ja">生命</span>”的下一次出現很可能是
+          <span lang="ja"><ruby><rb>生命</rb><rt>ライフ</rt></ruby></span>
+          其中<span lang="ja">“ライフ”</span>（life）是其英文譯名。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">即使在将“Gikun”用于复合词时，同一词汇在后续出现时通常也不会重复使用该“Gikun”。
+          此外，同一词汇在后续出现时可能会添加不同的[=Gikun=]。
+          例如，“<span lang="ja">生命</span>”的下一次出现很可能是
+          <span lang="ja"><ruby><rb>生命</rb><rt>ライフ</rt></ruby></span>
+          其中<span lang="ja">“ライフ”</span>（life）是其英文译名。</p>
 
 	<aside class="note">The frenemy example shows how contradictory meanings can coexist within a single expression. In some creative works, ruby text is used in a similar but more extreme way, deliberately contradicting the base text for rhetorical or ironic effect. For instance, <ruby><rb>平和的解決</rb><rt>一方的虐殺</rt></ruby> appears in [[TokyoGhoul]], where 平和的解決 means “peaceful resolution” and 一方的虐殺 means “one-sided massacre”. Such cases demonstrate that reading only one layer — base or ruby — can entirely distort the author’s intended message.</aside>
 	  
       </section>
        <section id="gikun-background-CN" class="no-secno notoc">
-        <h5>(2) Chinese case</h5>
+        <h5><span lang="en" its-locale-filter-list="en">(2) Chinese case</span><span lang="ja" its-locale-filter-list="ja">(2) 中国の事例</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">(2) 中文案例</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">(2) 中文案例</span></h5>
 
-        	<p>Ruby annotations corresponding to gikun in Japanese, where
+        	
+        	<p lang="en" its-locale-filter-list="en">Ruby annotations corresponding to gikun in Japanese, where
 	the ruby text intentionally differs from the conventional
 	reading of the base characters, are not part of 
 	the original design of pinyin or bopomofo.</p>
-	<p>While such uses are not common, ruby annotations resembling
+        	<p lang="ja" its-locale-filter-list="ja">日本語の「gikun」に対応するルビは、
+    そのルビの読みが、基となる文字の
+    一般的な読み方とは意図的に異なるものですが、
+    これはピンインやボポモフォの
+    本来の設計には含まれていません。</p>
+        	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">日語中對應“gikun”的注音，其
+    注音文本有別於基礎漢字的常規
+    讀法，這並非
+    拼音或注音符號的原始設計內容。</p>
+        	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">日语中对应“gikun”的注音，其
+    注音文本有别于基础汉字的常规
+    读法，这并非
+    拼音或注音符号的原始设计内容。</p>
+	
+	<p lang="en" its-locale-filter-list="en">While such uses are not common, ruby annotations resembling
 	gikun can occasionally be found in Chinese-language
 	content, particularly in creative works. These cases remain limited and
 	non-systematic.</p>
+	<p lang="ja" its-locale-filter-list="ja">こうした用法は一般的ではありませんが、
+    「gikun」に似たルビ表記が、
+    中国語のコンテンツ、特に創作作品の中で時折見受けられます。こうした事例は依然として限定的であり、
+    体系的なものではありません。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">雖然此類用法並不常見，但在中文內容中，尤其是文學作品中，偶爾也能見到類似
+    gikun 的紅字註記。此類情況仍然較爲有限，且
+    不具系統性。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">虽然此类用法并不常见，但在中文内容中，尤其是文学作品中，偶尔也能见到类似
+    gikun 的红字注记。此类情况仍然较为有限，且
+    不具系统性。</p>
 
       </section>
 
       </section>
 
       <section>
-        <h3 id="unusal-names-backgound">Unusual names of people and places, background</h3>
+        <h3 id="unusal-names-backgound"><span lang="en" its-locale-filter-list="en">Unusual names of people and places, background</span><span lang="ja" its-locale-filter-list="ja">人名や地名の珍しい呼び名、その背景</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">人名和地名的特殊之處，背景</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">人名和地名的特殊之处，背景</span></h3>
         
        <section id="unusal-names-backgound-JP" class="no-secno notoc">
-          <h4 >(1) Japanese case</h4>
-	<p>
-	  Unusual names of people are typically written
+          <h4><span lang="en" its-locale-filter-list="en">(1) Japanese case</span><span lang="ja" its-locale-filter-list="ja">(1) 日本の事例</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">(1) 日本案例</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">(1) 日本案例</span></h4>
+	
+	<p lang="en" its-locale-filter-list="en">Unusual names of people are typically written
 	  using CJK ideographic characters but are pronounced quite
 	  differently from the standard reading of these
 	  characters. For instance, <span lang="ja"><ruby>
 	      <rb>男</rb><rt>あだむ</rt></ruby></span> is an unusual name,
 	  where <span lang="ja">男</span> (usually read as OTOKO)
 	  means 'man', and <span lang="ja">あだむ</span> represents
-	  'Adam' in Kana.
-	</p>
+	  'Adam' in Kana.</p>
+	<p lang="ja" its-locale-filter-list="ja">珍しい人名は通常、
+      CJK表意文字を使って表記されますが、
+      その発音は、これらの文字の
+      標準的な読み方とはかなり異なります。例えば、<span lang="ja"><ruby>
+	      <rb>男</rb><rt>あだむ</rt></ruby>という</span>珍しい名前では、
+      「<span lang="ja">男</span>」（通常は「オトコ」と読む）は
+      「男性」を意味し、「<span lang="ja">あだむ</span>」は
+      かな表記で「アダム」を表しています。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">不尋常的人名通常
+      使用中日韓表意文字書寫，但其發音與
+      這些文字的標準讀音
+      大相徑庭。例如，<span lang="ja"><ruby>
+	      <rb>男</rb><rt>あだむ</rt></ruby></span> 是一個不尋常的名字，
+      其中<span lang="ja">“男”</span>（通常讀作 OTOKO）
+      意爲“男人”，而<span lang="ja">“あだむ</span>”則代表
+      假名中的“亞當”。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">不寻常的人名通常
+      使用中日韩表意文字书写，但其发音与
+      这些文字的标准读音
+      大相径庭。例如，<span lang="ja"><ruby>
+	      <rb>男</rb><rt>あだむ</rt></ruby></span> 是一个不寻常的名字，
+      其中<span lang="ja">“男”</span>（通常读作 OTOKO）
+      意为“男人”，而<span lang="ja">“あだむ</span>”则代表
+      假名中的“亚当”。</p>
 
-	<p>
-	  Character names in comics, animations, and light novels can
+	
+	<p lang="en" its-locale-filter-list="en">Character names in comics, animations, and light novels can
 	  sometimes be extremely challenging to pronounce. Many of the
 	  character names
 	  in <a href="https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba">Demon
 	  Slayer (Kimetsu no Yaiba)</a> fall into this category. For
 	  example, almost no one can read
-	  <span lang="ja">不死川 玄弥</span> as SHINAZUGAWA GENNYA without assistance.
-	</p>
+	  <span lang="ja">不死川 玄弥</span> as SHINAZUGAWA GENNYA without assistance.</p>
+	<p lang="ja" its-locale-filter-list="ja">漫画、アニメ、ライトノベルに登場するキャラクター名は、
+      発音が非常に難しい場合があります。
+      『<a href="https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba">Demon
+	  Slayer (Kimetsu no Yaiba)</a>』に登場するキャラクター名の多くは、
+      まさにその類に属します。
+      例えば、
+	  <span lang="ja">「不死川 玄弥</span>」という名前を、
+      誰の助けも借りずに「シナズガワ・ゲンヤ」と正しく読める人は、
+      ほとんどいないでしょう。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">漫畫、動畫和輕小說中的角色名
+      有時讀起來非常困難。<a href="https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba">Demon
+	  Slayer (Kimetsu no Yaiba)</a>中的許多
+      角色名
+      都屬於這一類。例如，
+      幾乎沒有人能在沒有提示的情況下將
+	  <span lang="ja">“不死川 玄彌</span>”讀作SHINAZUGAWA GENNYA。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">漫画、动画和轻小说中的角色名
+      有时读起来非常困难。<a href="https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba">Demon
+	  Slayer (Kimetsu no Yaiba)</a>中的许多
+      角色名
+      都属于这一类。例如，
+      几乎没有人能在没有提示的情况下将
+	  <span lang="ja">“不死川 玄弥</span>”读作SHINAZUGAWA GENNYA。</p>
 
-	<p>
-	  Names of places can also be difficult to read due to
+	
+	<p lang="en" its-locale-filter-list="en">Names of places can also be difficult to read due to
 	  historical reasons. For instance, <span lang="ja"><ruby>
 	      <rb>神居古潭</rb><rt>かむいこたん</rt></ruby></span>,
           <span lang="ja"><ruby><rb>温根沼</rb><rt>おんねとう</rt></ruby></span>, 
@@ -404,53 +899,122 @@
 	  island of Japan). These names are challenging to pronounce
 	  because they originated from <a href="https://en.wikipedia.org/wiki/Ainu_people#Language">the Ainu language</a>,
 	  which is
-	  entirely different from the Japanese language.
-	</p>
-	<p>	  
-	In many instances, the first occurrence of an unusual name is accompanied by a ruby annotation, but subsequent occurrences are not.
-	</p>
+	  entirely different from the Japanese language.</p>
+	<p lang="ja" its-locale-filter-list="ja">地名も、歴史的な理由から
+      読みづらい場合があります。 例えば、<span lang="ja"><ruby>
+	      <rb>神居古潭</rb><rt>かむいこたん</rt></ruby></span>
+	  、
+          <span lang="ja"><ruby><rb>温根沼</rb><rt>おんねとう</rt></ruby></span>
+	  、
+          <span lang="ja"><ruby><rb>音威子府</rb><rt>おといねっぷ</rt></ruby>は</span>
+	  北海道（日本の北の
+      島）にある地名です。これらの地名は、
+      日本語とは全く異なる言語である
+      <a href="https://en.wikipedia.org/wiki/Ainu_people#Language">the Ainu language</a>に由来するため、
+      発音が難しいのです。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">地名有時也會因
+      歷史原因而難以讀懂。 例如，<span lang="ja"><ruby>
+	      <rb>神居古潭</rb><rt>かむいこたん</rt></ruby></span>
+	  、
+          <span lang="ja"><ruby><rb>温根沼</rb><rt>おんねとう</rt></ruby></span>
+	  、
+          <span lang="ja"><ruby><rb>音威子府</rb><rt>おといねっぷ</rt></ruby></span>
+	  是北海道（日本北部
+      島嶼）的地名。這些地名發音頗具挑戰性，
+      因爲它們源自 <a href="https://en.wikipedia.org/wiki/Ainu_people#Language">the Ainu language</a>，
+      而該語言
+      與日語截然不同。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">地名有时也会因
+      历史原因而难以读懂。 例如，<span lang="ja"><ruby>
+	      <rb>神居古潭</rb><rt>かむいこたん</rt></ruby></span>
+	  、
+          <span lang="ja"><ruby><rb>温根沼</rb><rt>おんねとう</rt></ruby></span>
+	  、
+          <span lang="ja"><ruby><rb>音威子府</rb><rt>おといねっぷ</rt></ruby></span>
+	  是北海道（日本北部
+      岛屿）的地名。这些地名发音颇具挑战性，
+      因为它们源自 <a href="https://en.wikipedia.org/wiki/Ainu_people#Language">the Ainu language</a>，
+      而该语言
+      与日语截然不同。</p>
+	
+	<p lang="en" its-locale-filter-list="en">In many instances, the first occurrence of an unusual name is accompanied by a ruby annotation, but subsequent occurrences are not.</p>
+	<p lang="ja" its-locale-filter-list="ja">多くの場合、珍しい名前が初めて登場するときはルビー注釈が付きますが、それ以降の出現には付かないことがあります。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">在許多情況下，不尋常名稱的首次出現會附帶一個紅寶石註釋，但後續出現時則不會。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">在许多情况下，不寻常名称的首次出现会附带一个红宝石注释，但后续出现时则不会。</p>
 
       </section>
 
       
        <section id="unusal-names-backgound-CN" class="no-secno notoc">
-        <h5>(2) Chinese case</h5>
+        <h5><span lang="en" its-locale-filter-list="en">(2) Chinese case</span><span lang="ja" its-locale-filter-list="ja">(2) 中国の事例</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">(2) 中文案例</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">(2) 中文案例</span></h5>
 
         
-	<p>Ruby annotations corresponding to the use of furigana for
+	
+	<p lang="en" its-locale-filter-list="en">Ruby annotations corresponding to the use of furigana for
 	  unusual names of people and places in Japanese are not
 	  traditionally common in Chinese-language documents.</p>
+	<p lang="ja" its-locale-filter-list="ja">日本語における人名や地名の異例の表記にふりがなを付ける慣習に相当するRuby注釈は、
+      中国語の文書では従来、一般的ではない。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">在中文文檔中，通常不會像日語那樣
+      對人名和地名中的生僻詞使用注音（furigana）
+      來標註註釋。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">在中文文档中，通常不会像日语那样
+      对人名和地名中的生僻词使用注音（furigana）
+      来标注注释。</p>
 
-	<p>Occasional uses of ruby annotations for non-obvious
+	
+	<p lang="en" its-locale-filter-list="en">Occasional uses of ruby annotations for non-obvious
 	  pronunciations of personal or place names can be found in
 	  some contemporary Chinese-language materials, particularly
 	  in fictional works, translated content, or other contexts
 	  where explicit pronunciation guidance is needed. Such usage
 	  remains limited and non-systematic, and does not represent a
 	  generalized or established convention.</p>
+	<p lang="ja" its-locale-filter-list="ja">人名や地名の発音が直感的に分かりにくい場合に、ルビー表記が時折用いられることが、
+      一部の現代中国語資料、特に
+      小説や翻訳作品、あるいは明確な発音ガイドが必要なその他の場面で見られる。
+      こうした用法は依然として限定的かつ非体系的であり、
+      一般化された、あるいは定着した慣習とはいえない。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">在某些當代中文材料中，偶爾會使用紅字注音來標註
+      人名或地名的非標準讀音，
+      尤其是在虛構作品、譯作或其他
+      需要明確發音指引的語境中。此類用法
+      仍屬有限且不具系統性，並不構成
+      普遍或確立的慣例。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">在某些当代中文材料中，偶尔会使用红字注音来标注
+      人名或地名的非标准读音，
+      尤其是在虚构作品、译作或其他
+      需要明确发音指引的语境中。此类用法
+      仍属有限且不具系统性，并不构成
+      普遍或确立的惯例。</p>
 
       </section>
 
       </section>
 
       <section>
-        <h3>Interlinear notes, background</h3>
+        <h3><span lang="en" its-locale-filter-list="en">Interlinear notes, background</span><span lang="ja" its-locale-filter-list="ja">行間注釈、背景</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">行間註釋，背景</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">行间注释，背景</span></h3>
 
         
        <section id="interlinear-notes-background-JP" class="no-secno notoc">
-        <h5>(1) Japanese case</h5>
+        <h5><span lang="en" its-locale-filter-list="en">(1) Japanese case</span><span lang="ja" its-locale-filter-list="ja">(1) 日本の事例</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">(1) 日本案例</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">(1) 日本案例</span></h5>
 
-        <p>
-          <dfn>Interlinear notes</dfn> resemble ruby annotations in appearance.  
-          A <a data-cite="JLREQ#n224">note in JLreq</a> introduces interlinear notes as follows:
-        </p>
+        
+        <p lang="en" its-locale-filter-list="en"><dfn>Interlinear notes</dfn> resemble ruby annotations in appearance.  
+          A <a data-cite="JLREQ#n224">note in JLreq</a> introduces interlinear notes as follows:</p>
+        <p lang="ja" its-locale-filter-list="ja"><dfn>Interlinear notes</dfn> は、見た目が Ruby のアノテーションに似ています。  
+          <a data-cite="JLREQ#n224">note in JLreq</a> は、次のように行間注釈を導入します：</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant"><dfn>Interlinear notes</dfn> 的外觀與 Ruby 註釋相似。  
+          <a data-cite="JLREQ#n224">note in JLreq</a> 用於引入行間註釋，格式如下：</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans"><dfn>Interlinear notes</dfn> 的外观与 Ruby 注释相似。  
+          <a data-cite="JLREQ#n224">note in JLreq</a> 用于引入行间注释，格式如下：</p>
         <aside class="note" title="Quoted note from JLReq" id="n20211101001">
           Other than these styles of note, explanations of facts and persons in study aid books and history texts, 
           and modern translations of Japanese classic texts are sometimes set between lines. 
           These notes are called interlinear notes (see <a data-cite="JLREQ#fig3_2_8">Figure 241</a>).
         </aside>
-        <p>
-          In the example shown in 
+        
+        <p lang="en" its-locale-filter-list="en">In the example shown in 
           <a data-cite="JLREQ#fig3_2_8">a figure referenced in the quoted note ("An example of a note in inter lines")</a>, 
           <span lang="ja">徳川慶喜</span> (Tokugawa Yoshinobu) is accompanied by an interlinear note 
           "1837-1913 <span lang="ja">江戸幕府最後の将軍</span>" (1837-1913 the last shogun of the Edo shogunate). 
@@ -458,310 +1022,700 @@
           a standard Japanese expression as an interlinear note for an expression in a dialect, 
           a modern CJK ideographic character as an interlinear note for a traditional CJK ideographic character, 
           an English text chunk as an interlinear note for a Japanese text chunk, 
-          and an official name as an interlinear note for an abbreviated name.
-        </p>
-        <p>
-          One could argue that HTML ruby elements should not be used for representing 
+          and an official name as an interlinear note for an abbreviated name.</p>
+        <p lang="ja" its-locale-filter-list="ja"><a data-cite="JLREQ#fig3_2_8">a figure referenced in the quoted note ("An example of a note in inter lines")</a>に示された例では、
+          <span lang="ja">徳川慶喜</span> (Tokugawa Yoshinobu) の横書き注釈として、
+          「1837-1913 <span lang="ja">江戸幕府最後の将軍</span>」と記されています。 
+          その他の例としては、歴史的な仮名表現に対する現代の仮名表現の行間注釈、
+          方言表現に対する標準日本語表現の行間注釈、
+          伝統的な漢字・仮名文字に対する現代の漢字・仮名文字の行間注釈、
+          日本語のテキスト断片に対する英語のテキスト断片の行間注釈、
+          および略称に対する正式名称の行間注釈などが挙げられる。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在 
+          <a data-cite="JLREQ#fig3_2_8">a figure referenced in the quoted note ("An example of a note in inter lines")</a> 所示的示例中，
+          <span lang="ja">“德川慶喜</span> (Tokugawa Yoshinobu)” 旁附有行間註釋 
+          “1837-1913 <span lang="ja">江戶幕府最後的</span>將軍”。 
+          其他示例包括：用現代假名短語作爲歷史假名短語的行間註釋，
+          用標準日語表達作爲方言表達的行間註釋，
+          用現代中日韓表意文字作爲傳統中日韓表意文字的行間註釋，
+          用英語文本片段作爲日語文本片段的行間註釋，
+          以及用全稱作爲縮寫名稱的行間註釋。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在 
+          <a data-cite="JLREQ#fig3_2_8">a figure referenced in the quoted note ("An example of a note in inter lines")</a> 所示的示例中，
+          <span lang="ja">“德川庆喜</span> (Tokugawa Yoshinobu)” 旁附有行间注释 
+          “1837-1913 <span lang="ja">江户幕府最后的</span>将军”。 
+          其他示例包括：用现代假名短语作为历史假名短语的行间注释，
+          用标准日语表达作为方言表达的行间注释，
+          用现代中日韩表意文字作为传统中日韩表意文字的行间注释，
+          用英语文本片段作为日语文本片段的行间注释，
+          以及用全称作为缩写名称的行间注释。</p>
+        
+        <p lang="en" its-locale-filter-list="en">One could argue that HTML ruby elements should not be used for representing 
           interlinear notes, since interlinear notes involve much longer annotations 
           and bases than ruby, and therefore have very different layout requirements.
-         However, it is not difficult to imagine that ruby elements are actually used for representing interlinear notes.
-        </p>
+         However, it is not difficult to imagine that ruby elements are actually used for representing interlinear notes.</p>
+        <p lang="ja" its-locale-filter-list="ja">HTMLのruby要素は、行間注釈の表現には使用すべきではないと主張する人もいるだろう。なぜなら、行間注釈はルビよりもはるかに長い注釈や基線を含み、したがってレイアウトの要件も大きく異なるからである。
+         しかし、ruby要素が実際に 行間注釈の表現に使われていると想像するのは難しくない。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">有人可能會認爲，不應使用 HTML ruby 元素來表示
+          行間註釋，因爲行間註釋涉及的註釋內容和基文本比 ruby 長得多，
+          因此其排版要求截然不同。
+         然而，不難想象 ruby 元素實際上被用於表示行間註釋。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">有人可能会认为，不应使用 HTML ruby 元素来表示
+          行间注释，因为行间注释涉及的注释内容和基文本比 ruby 长得多，
+          因此其排版要求截然不同。
+         然而，不难想象 ruby 元素实际上被用于表示行间注释。</p>
       </section>
 
        <section id="interlinear-notes-background-CN" class="no-secno notoc">
-        <h5>(2) Chinese case</h5>
+        <h5><span lang="en" its-locale-filter-list="en">(2) Chinese case</span><span lang="ja" its-locale-filter-list="ja">(2) 中国の事例</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">(2) 中文案例</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">(2) 中文案例</span></h5>
 
         
-	<p>Ruby annotations corresponding to interlinear notes, as
+	
+	<p lang="en" its-locale-filter-list="en">Ruby annotations corresponding to interlinear notes, as
 	used in Japanese, are not part of the original design of pinyin or bopomofo.</p>
+	<p lang="ja" its-locale-filter-list="ja">日本語で使用されるような行間注釈に対応するRuby注釈は、
+ピンインやボポモフォの本来の設計には含まれていません。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">與日語中使用的行間註釋相對應的Ruby註釋，
+    並非拼音或注音符號的原始設計內容。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">与日语中使用的行间注释相对应的Ruby注释，
+    并非拼音或注音符号的原始设计内容。</p>
 
-	<p>However, in limited contexts, such as
+	
+	<p lang="en" its-locale-filter-list="en">However, in limited contexts, such as
 	annotated texts, translated materials, or creative works, ruby annotations
 	may occasionally be used for representing interlinear
 	notes. Such uses remain uncommon and non-systematic.</p>
+	<p lang="ja" its-locale-filter-list="ja">ただし、注釈付きテキスト、翻訳資料、創作作品といった限られた状況においては、
+    ルビー注釈が行間注釈を表すために
+    用いられることがある。こうした用法は依然として稀であり、体系的なものではない。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">然而，在某些特定情況下，例如
+    帶註釋的文本、翻譯材料或創作作品中，紅字註釋
+    偶爾會被用來表示行間
+    註釋。此類用法仍屬罕見且不具系統性。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">然而，在某些特定情况下，例如
+    带注释的文本、翻译材料或创作作品中，红字注释
+    偶尔会被用来表示行间
+    注释。此类用法仍属罕见且不具系统性。</p>
 
       </section>
       </section>
       <section id="Non-CJK-base-background">
-        <h3>Ruby annotations attached to non-CJK characters</h3>
+        <h3><span lang="en" its-locale-filter-list="en">Ruby annotations attached to non-CJK characters</span><span lang="ja" its-locale-filter-list="ja">非CJK文字に付加されたRuby注釈</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">附加在非中日韓字符上的 Ruby 註釋</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">附加在非中日韩字符上的 Ruby 注释</span></h3>
         
         <section id="Non-CJK-base-background-JA" class="no-secno notoc">
-        <h5>(1) Japanese case</h5>
+        <h5><span lang="en" its-locale-filter-list="en">(1) Japanese case</span><span lang="ja" its-locale-filter-list="ja">(1) 日本の事例</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">(1) 日本案例</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">(1) 日本案例</span></h5>
         
-        <p>
-    Ruby annotations can be attached to non-CJK ideographic text. For example,
+        
+        <p lang="en" its-locale-filter-list="en">Ruby annotations can be attached to non-CJK ideographic text. For example,
 	  they may be applied to foreign-language text written in
 	  non-native scripts, chemical formulas, mathematical
 	  expressions, or other specialized notations, in order to
 	  convey pronunciation or supplementary information.</p>
+        <p lang="ja" its-locale-filter-list="ja">Ruby注釈は、CJK以外の表意文字テキストにも付加できます。例えば、
+      母国語以外の文字で書かれた外国語のテキストや、
+      化学式、数式、
+      その他の特殊な表記に対して、
+      発音や補足情報を伝えるために適用することができます。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">Ruby 注音可以附加在非中日韓表意文字上。例如，
+      它們可用於標註使用
+      非母語文字書寫的外國語言文本、化學公式、數學
+      表達式或其他專業符號，以便
+      傳達發音或補充信息。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">Ruby 注音可以附加在非中日韩表意文字上。例如，
+      它们可用于标注使用
+      非母语文字书写的外国语言文本、化学公式、数学
+      表达式或其他专业符号，以便
+      传达发音或补充信息。</p>
 
-	<p>
-	  However, such uses of ruby annotations fall outside the
+	
+	<p lang="en" its-locale-filter-list="en">However, such uses of ruby annotations fall outside the
 	  scope of this note. This document focuses exclusively on
 	  ruby annotations associated with CJK ideographic text, where
 	  language-dependent reading behavior and accessibility
-	  considerations raise specific and non-trivial issues.
-        </p>
+	  considerations raise specific and non-trivial issues.</p>
+	<p lang="ja" its-locale-filter-list="ja">ただし、ルビー注釈のこうした用途は、
+      本ノートの対象範囲外である。本文書では、
+      CJK表意文字に関連するルビー注釈にのみ焦点を当てており、
+      言語に依存する読み取り動作やアクセシビリティの
+      観点から、具体的かつ重大な課題が生じている。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">然而，此類 Ruby 註釋的用法超出了
+      本說明的範圍。本文檔僅專注於
+      與 CJK 表意文本相關的 Ruby 註釋，因爲
+      在此類文本中，與語言相關的閱讀行爲及無障礙
+      方面的考量會引發具體且不容忽視的問題。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">然而，此类 Ruby 注释的用法超出了
+      本说明的范围。本文档仅专注于
+      与 CJK 表意文本相关的 Ruby 注释，因为
+      在此类文本中，与语言相关的阅读行为及无障碍
+      方面的考量会引发具体且不容忽视的问题。</p>
 
         </section>
                <section id="Non-CJK-base-background-CN" class="no-secno notoc">
-        <h5>(2) Chinese case</h5>
+        <h5><span lang="en" its-locale-filter-list="en">(2) Chinese case</span><span lang="ja" its-locale-filter-list="ja">(2) 中国の事例</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">(2) 中文案例</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">(2) 中文案例</span></h5>
 
-        <p>Attaching ruby annotations to non-CJK ideographic characters is not part of
+        
+        <p lang="en" its-locale-filter-list="en">Attaching ruby annotations to non-CJK ideographic characters is not part of
 	  the original design of pinyin or bopomofo.</p>
+        <p lang="ja" its-locale-filter-list="ja">CJK以外の表意文字にルビー注釈を付けることは、
+      ピンインやボポモフォの本来の設計には含まれていません。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">爲非中日韓表意文字添加 Ruby 註釋，並非
+      拼音或注音符號的原始設計意圖。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">为非中日韩表意文字添加 Ruby 注释，并非
+      拼音或注音符号的原始设计意图。</p>
         </section>
       </section>
 
       <section id="double-sided-ruby-background">
-        <h3>Double-sided ruby, background</h3>
+        <h3><span lang="en" its-locale-filter-list="en">Double-sided ruby, background</span><span lang="ja" its-locale-filter-list="ja">両面ルビー、背景</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">雙面紅寶石，背景</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">双面红宝石，背景</span></h3>
 
         
        <section id="double-sided-ruby-background-JP" class="no-secno notoc">
-        <h5>(1) Japanese case</h5>
+        <h5><span lang="en" its-locale-filter-list="en">(1) Japanese case</span><span lang="ja" its-locale-filter-list="ja">(1) 日本の事例</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">(1) 日本案例</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">(1) 日本案例</span></h5>
 
-        <p>
-          A sequence of characters can be accompanied by two ruby annotations,
+        
+        <p lang="en" its-locale-filter-list="en">A sequence of characters can be accompanied by two ruby annotations,
 	  typically consisting of [=Furigana=] and either [=Gikun=] or an [=interlinear note=].  
           In <a data-cite="JLREQ#fig2_3_12">an example provided in JLreq</a> 
           ("An example of ruby annotations attached to both sides of the base characters"), 
           <span lang="ja">東南</span> is accompanied by <span lang="ja">たつみ</span> and <span lang="ja">とうなん</span>. 
           Here <span lang="ja">東南</span> means 'southeast', with <span lang="ja">とうなん</span> (TOUNAN) serving as [=Furigana=], 
           and <span lang="ja">たつみ</span> (TATSUMI) as [=Gikun=], 
-          as <span lang="ja">辰巳</span> (read as <span lang="ja">TATSUMI</span>) indicates the same direction as <span lang="ja">東南</span>.
-        </p>
+          as <span lang="ja">辰巳</span> (read as <span lang="ja">TATSUMI</span>) indicates the same direction as <span lang="ja">東南</span>.</p>
+        <p lang="ja" its-locale-filter-list="ja">一連の文字には、2つのルビ注釈を付けることができます。
+      通常、これらは [=ルビ=] と、[=ギクン=] または [=行間注釈=] のいずれかで構成されます。  
+          <a data-cite="JLREQ#fig2_3_12">an example provided in JLreq</a> 
+          （「基本文字の両側にルビが付いた例」）では、
+          <span lang="ja">「東南」</span>に<span lang="ja">「たつみ」</span>と<span lang="ja">「とうなん」</span>が付いています。 
+          ここで<span lang="ja">「東南」は</span>「南東」を意味し、「<span lang="ja">とうなん</span>（TOUNAN）」が [=Furigana=]、
+          「<span lang="ja">たつみ</span>（TATSUMI）」が [=Gikun=] として機能しています。
+          これは、<span lang="ja">「辰巳」</span>（<span lang="ja">TATSUMI</span>と読む）が「<span lang="ja">東南</span>」と同じ方位を示すためです。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">一組字符可以附帶兩條註釋，
+      通常包括 [=假名注音=] 以及 [=釋義=] 或 [=行間註釋=] 之一。  
+          在 <a data-cite="JLREQ#fig2_3_12">an example provided in JLreq</a> 
+          （“基礎字符兩側均附有紅字註釋的示例”），
+          <span lang="ja">“東南</span>”一詞配有<span lang="ja">“たつみ</span>”和<span lang="ja">“とうなん”</span>。 
+          此處的<span lang="ja">“東南</span>”意爲“東南”，其中<span lang="ja">“とうなん”</span>（TOUNAN）作爲[=假名注音=]，
+          而<span lang="ja">“たつみ”</span>（TATSUMI）作爲[=注音=]，
+          因爲<span lang="ja">“辰巳”</span>（讀作<span lang="ja">TATSUMI</span>）與<span lang="ja">“東南</span>”表示的是同一方向。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">一组字符可以附带两条注释，
+      通常包括 [=假名注音=] 以及 [=释义=] 或 [=行间注释=] 之一。  
+          在 <a data-cite="JLREQ#fig2_3_12">an example provided in JLreq</a> 
+          （“基础字符两侧均附有红字注释的示例”），
+          <span lang="ja">“東南</span>”一词配有<span lang="ja">“たつみ</span>”和<span lang="ja">“とうなん”</span>。 
+          此处的<span lang="ja">“东南</span>”意为“东南”，其中<span lang="ja">“とうなん”</span>（TOUNAN）作为[=假名注音=]，
+          而<span lang="ja">“たつみ”</span>（TATSUMI）作为[=注音=]，
+          因为<span lang="ja">“辰巳”</span>（读作<span lang="ja">TATSUMI</span>）与<span lang="ja">“东南</span>”表示的是同一方向。</p>
 
-	<p>We offer two additional illustrative examples.</p>
+	
+	<p lang="en" its-locale-filter-list="en">We offer two additional illustrative examples.</p>
+	<p lang="ja" its-locale-filter-list="ja">さらに2つの具体例をご紹介します。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">我們再提供兩個說明性例子。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">我们再提供两个说明性例子。</p>
 
         <figure id="f20211101001">
-          <img src="./img/rdr001.svg" alt="Double-sided ruby example 1" width="65" height="54" />
+          <img src="./img/rdr001.svg" alt="Double-sided ruby example 1" width="65" height="54">
           <figcaption><span lang="ja">東洋</span> features an upper-side ruby annotation <span lang="ja">オリエント</span> and a lower-side ruby annotation <span lang="ja">とうよう</span></figcaption>
         </figure>
-        <p>
-	  In this example, <span lang="ja">とうよう</span> serves as [=Furigana=], while <span lang="ja">オリエント</span> is used as [=Gikun=]
-        </p>
+        
+        <p lang="en" its-locale-filter-list="en">In this example, <span lang="ja">とうよう</span> serves as [=Furigana=], while <span lang="ja">オリエント</span> is used as [=Gikun=]</p>
+        <p lang="ja" its-locale-filter-list="ja">この例では、「<span lang="ja">とうよう</span>」<span lang="ja">が</span>[=ふりがな=]として機能し、「<span lang="ja">オリエント</span>」が[=語幹=]として使用されています</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在此示例中<span lang="ja">，“とうよう</span>”作爲[=假名注音=]，而<span lang="ja">“オリエント</span>”作爲[=詞義=]</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在此示例中<span lang="ja">，“とうよう</span>”作为[=假名注音=]，而<span lang="ja">“オリエント</span>”作为[=词义=]</p>
         <figure id="f20211101002">
-          <img src="./img/rdr002.svg" alt="Double-sided ruby example 2" width="110" height="53" />
+          <img src="./img/rdr002.svg" alt="Double-sided ruby example 2" width="110" height="53">
           <figcaption><span lang="ja">織田信長</span> features an upper-side ruby annotation <span lang="ja">"1534〜82"</span> and a lower-side ruby annotation <span lang="ja">おだのぶなが</span></figcaption>
         </figure>
-        <p>
-          In this example, <span lang="ja">おだのぶなが</span> serves as [=Furigana=], while <span lang="ja">"1534〜82"</span> is presented as an [=interlinear note=].
-        </p>
+        
+        <p lang="en" its-locale-filter-list="en">In this example, <span lang="ja">おだのぶなが</span> serves as [=Furigana=], while <span lang="ja">"1534〜82"</span> is presented as an [=interlinear note=].</p>
+        <p lang="ja" its-locale-filter-list="ja">この例では、「<span lang="ja">おだのぶなが」が</span>[=ふりがな=]として機能し、<span lang="ja">「1534〜82」</span>は[=行間注釈=]として表示されています。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在此示例中<span lang="ja">，“おだのぶなが</span>”作爲[=假名注音=]，而<span lang="ja">“1534〜82”</span>則作爲[=行間註釋=]呈現。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在此示例中<span lang="ja">，“おだのぶなが</span>”作为[=假名注音=]，而<span lang="ja">“1534〜82”</span>则作为[=行间注释=]呈现。</p>
       </section>
 
        <section id="double-sided-ruby-background-CN" class="no-secno notoc">
-        <h5>(2) Chinese case</h5>
-      <p>Double-sided ruby, as used in Japanese to convey both
+        <h5><span lang="en" its-locale-filter-list="en">(2) Chinese case</span><span lang="ja" its-locale-filter-list="ja">(2) 中国の事例</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">(2) 中文案例</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">(2) 中文案例</span></h5>
+      
+      <p lang="en" its-locale-filter-list="en">Double-sided ruby, as used in Japanese to convey both
 	  phonetic and semantic information simultaneously, is not
 	  part of traditional Chinese typographic
 	  practices.</p>
+      <p lang="ja" its-locale-filter-list="ja">日本語において音と意味の両方の情報を同時に伝えるために用いられる「両面ルビー」は、
+      伝統的な中国語の組版
+      慣行には含まれていない。</p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant">這種雙面紅寶石字，在日本被用來同時傳達
+      音義信息，但這並非
+      傳統中文排版
+      慣例。</p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans">这种双面红宝石字，在日本被用来同时传达
+      音义信息，但这并非
+      传统中文排版
+      惯例。</p>
 
-	<p>While isolated or experimental uses cannot be entirely
+	
+	<p lang="en" its-locale-filter-list="en">While isolated or experimental uses cannot be entirely
 	ruled out, Chinese ruby annotations—typically expressed using
 	pinyin or bopomofo—are generally used to convey pronunciation
 	only and are not systematically combined with additional ruby
 	annotations serving different roles.</p>
+	<p lang="ja" its-locale-filter-list="ja">孤立した事例や実験的な用法が完全に
+    排除できるわけではないものの、中国語のルビ表記（通常は
+    ピンインやボポモフォを用いて表記される）は、一般的に発音を示す
+    ためだけに用いられ、異なる役割を果たす他のルビ表記と
+    体系的に組み合わされることはない。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">雖然不能完全排除個別或實驗性的用法，
+    但中文的注音——通常採用拼音或注音符號表示——
+    一般僅用於標註發音，
+    且不會系統地與其他具有不同功能的注音
+    結合使用。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">虽然不能完全排除个别或实验性的用法，
+    但中文的注音——通常采用拼音或注音符号表示——
+    一般仅用于标注发音，
+    且不会系统地与其他具有不同功能的注音
+    结合使用。</p>
   </section>
 
 </section>
       </section>   
     
     <section id="which_should_be_read_aloud">
-      <h2>Which should be read aloud, ruby bases or ruby annotations, or both?</h2>
-      <p>
-        There are three possible strategies for text-to-speech rendering: (1) reading aloud both ruby bases and ruby annotations,
+      <h2><span lang="en" its-locale-filter-list="en">Which should be read aloud, ruby bases or ruby annotations, or both?</span><span lang="ja" its-locale-filter-list="ja">「ruby bases」と「ruby annotations」、どちらを声に出して読むべきでしょうか？それとも両方でしょうか？</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">應該朗讀“Ruby 基礎”還是“Ruby 註釋”，還是兩者都要讀？</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">应该朗读“Ruby 基础”还是“Ruby 注释”，还是两者都要读？</span></h2>
+      
+      <p lang="en" its-locale-filter-list="en">There are three possible strategies for text-to-speech rendering: (1) reading aloud both ruby bases and ruby annotations,
 	(2) reading aloud ruby annotations only, and (3) reading aloud ruby bases only. This section evaluates the consequences
-	of these strategies, assuming the roles and semantics of ruby annotations described in  [[[#practices-and-roles]]].
-      </p>
+	of these strategies, assuming the roles and semantics of ruby annotations described in  [[[#practices-and-roles]]].</p>
+      <p lang="ja" its-locale-filter-list="ja">テキスト読み上げのレンダリングには、次の3つの戦略が考えられます。(1) ルビの基底語とルビ注釈の両方を読み上げる、
+    (2) ルビ注釈のみを読み上げる、および (3) ルビの基底語のみを読み上げる。本節では、[[[#practices-and-roles]]] で説明されているルビ注釈の役割と意味論を前提として、
+    これらの戦略がもたらす影響を評価します。</p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant">文本轉語音渲染有三種可能的策略：(1) 同時朗讀紅字底文本和紅字註釋，
+    (2) 僅朗讀紅字註釋，以及 (3) 僅朗讀紅字底文本。本節將評估這些策略的後果，
+    並假設紅字註釋的角色和語義如 [[[#practices-and-roles]]] 中所述。</p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans">文本转语音渲染有三种可能的策略：(1) 同时朗读红字底文本和红字注释，
+    (2) 仅朗读红字注释，以及 (3) 仅朗读红字底文本。本节将评估这些策略的后果，
+    并假设红字注释的角色和语义如 [[[#practices-and-roles]]] 中所述。</p>
 
       <section id="language-dependent-considerations">
-  <h3>Language-dependent considerations for reading aloud content with ruby annotations</h3>
+  <h3><span lang="en" its-locale-filter-list="en">Language-dependent considerations for reading aloud content with ruby annotations</span><span lang="ja" its-locale-filter-list="ja">ルビ付きコンテンツを音読する際の言語ごとの留意点</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">關於朗讀帶有紅字註釋內容的語言相關注意事項</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">关于朗读带有红字注释内容的语言相关注意事项</span></h3>
 
-  <p>
-    The strategies discussed in this section for reading aloud content that contains
+  
+  <p lang="en" its-locale-filter-list="en">The strategies discussed in this section for reading aloud content that contains
     ruby annotations are inherently language-dependent. The presence of ruby
     annotations does not necessarily imply that the annotations themselves should be
     read aloud. The appropriateness, effectiveness, and potential drawbacks of a given
     strategy depend on the writing system, linguistic conventions, and typical roles
-    that ruby annotations play in each language.
-  </p>
+    that ruby annotations play in each language.</p>
+  <p lang="ja" its-locale-filter-list="ja">このセクションで論じる、ルビ注釈を含むコンテンツを音声読み上げする際の戦略は、
+    本質的に言語に依存するものである。ルビ注釈が存在するからといって、
+    必ずしもその注釈自体を読み上げるべきとは限らない。特定の戦略の適切性、
+    有効性、および潜在的な欠点は、各言語の文字体系、言語的慣習、
+    そしてルビ注釈が果たす典型的な役割によって左右される。</p>
+  <p lang="zh-Hant" its-locale-filter-list="zh-Hant">本節討論的關於朗讀包含
+    紅字註釋內容的策略，本質上取決於具體語言。紅字註釋
+    的存在並不一定意味着註釋本身也應被
+    朗讀出來。特定策略的適用性、有效性以及潛在弊端，
+    取決於各語言的書寫系統、語言慣例，以及紅字註釋
+    在每種語言中通常所扮演的角色。</p>
+  <p lang="zh-Hans" its-locale-filter-list="zh-Hans">本节讨论的关于朗读包含
+    红字注释内容的策略，本质上取决于具体语言。红字注释
+    的存在并不一定意味着注释本身也应被
+    朗读出来。特定策略的适用性、有效性以及潜在弊端，
+    取决于各语言的书写系统、语言惯例，以及红字注释
+    在每种语言中通常所扮演的角色。</p>
 
-  <p>
-  This Note focuses primarily on Japanese and Chinese, which both employ ruby
+  
+  <p lang="en" its-locale-filter-list="en">This Note focuses primarily on Japanese and Chinese, which both employ ruby
   annotations but do so in fundamentally different ways. In Japanese, ruby
   annotations can be essential for correct interpretation and comprehension of
   the base text in read-aloud scenarios. As a result, how ruby annotations are
   handled during read-aloud processing can have a significant impact on user
-  experience, and careful selection among alternative strategies is required.
-  </p>
+  experience, and careful selection among alternative strategies is required.</p>
+  <p lang="ja" its-locale-filter-list="ja">本稿では主に日本語と中国語に焦点を当てる。これら両言語ともルビ
+  注釈を採用しているが、その扱いは根本的に異なる。日本語において、ルビ
+  注釈は、読み上げの場面で原文を正しく解釈・理解するために不可欠な
+  要素となり得る。その結果、読み上げ処理においてルビ注釈を
+  どのように扱うかは、ユーザー体験に大きな影響を及ぼす可能性があり、
+  複数の戦略の中から慎重に選択することが求められる。</p>
+  <p lang="zh-Hant" its-locale-filter-list="zh-Hant">本說明主要關注日語和中文，這兩種語言雖然都使用注音標註，
+但其實現方式卻截然不同。在日語中，注音標註對於在朗讀場景下
+正確解讀和理解原文至關重要。因此，在朗讀處理過程中如何處理注音標註
+會對用戶體驗產生重大影響，需要從多種策略中進行審慎選擇。</p>
+  <p lang="zh-Hans" its-locale-filter-list="zh-Hans">本说明主要关注日语和中文，这两种语言虽然都使用注音标注，
+但其实现方式却截然不同。在日语中，注音标注对于在朗读场景下
+正确解读和理解原文至关重要。因此，在朗读处理过程中如何处理注音标注
+会对用户体验产生重大影响，需要从多种策略中进行审慎选择。</p>
 
-  <p>
-        In contrast, in Chinese, ruby annotations such as pinyin or zhuyin are typically
+  
+  <p lang="en" its-locale-filter-list="en">In contrast, in Chinese, ruby annotations such as pinyin or zhuyin are typically
     used as auxiliary pronunciation aids and are not generally required for
     intelligible read-aloud output. In many practical reading scenarios, text-to-speech
     (TTS) or other read-aloud output based solely on the ruby base text is sufficient.
     Reading ruby annotations aloud may in some cases introduce confusion, particularly
     when the assumptions underlying the annotations do not align with those of the
-    read-aloud output.
-  </p>
+    read-aloud output.</p>
+  <p lang="ja" its-locale-filter-list="ja">対照的に、中国語では、ピンインや注音などのルビは通常、
+    発音の補助として用いられるものであり、
+    明瞭な読み上げ出力には一般的に必要とされません。多くの実際の読解場面では、テキスト読み上げ
+    （TTS）や、ルビの基となるテキストのみに基づいたその他の読み上げ出力で十分です。
+    ルビ注釈を音声で読み上げることは、場合によっては混乱を招く可能性があります。特に、
+    注釈の根底にある前提が、音声読み上げの出力の前提と一致しない場合には、
+    その傾向が強まります。</p>
+  <p lang="zh-Hant" its-locale-filter-list="zh-Hant">相比之下，在中文中，拼音或注音等行內註釋通常
+    僅作爲輔助發音工具，一般並非
+    清晰可懂的朗讀輸出所必需。在許多實際閱讀場景中，僅基於行內註釋文本的
+    文本轉語音（TTS）或其他朗讀輸出已足夠。
+    在某些情況下，朗讀注音可能會造成混淆，特別是
+    當注音背後的假設與
+    朗讀輸出的假設不一致時。</p>
+  <p lang="zh-Hans" its-locale-filter-list="zh-Hans">相比之下，在中文中，拼音或注音等行内注释通常
+    仅作为辅助发音工具，一般并非
+    清晰可懂的朗读输出所必需。在许多实际阅读场景中，仅基于行内注释文本的
+    文本转语音（TTS）或其他朗读输出已足够。
+    在某些情况下，朗读注音可能会造成混淆，特别是
+    当注音背后的假设与
+    朗读输出的假设不一致时。</p>
 
-<p>
-  The analysis of Chinese reading practices in this Note is limited. While some
+
+<p lang="en" its-locale-filter-list="en">The analysis of Chinese reading practices in this Note is limited. While some
   general observations are provided to inform the discussion of read-aloud
-  strategies, a comprehensive treatment of Chinese reading practices &mdash;
+  strategies, a comprehensive treatment of Chinese reading practices —
   including dialectal variation, prosodic information, and phonological detail
-  &mdash; is beyond the scope of this version of the Note.
-</p>
+  — is beyond the scope of this version of the Note.</p>
+<p lang="ja" its-locale-filter-list="ja">本ノートにおける中国語の読解実践に関する分析は限定的なものである。
+  音読戦略に関する議論の参考となるよう、いくつかの
+  一般的な考察は提示されているものの、方言による差異、
+  韻律情報、音韻論的な詳細などを含む中国語の読解実践の
+  包括的な考察は、本ノートの今回の版では範囲外である。</p>
+<p lang="zh-Hant" its-locale-filter-list="zh-Hant">本文對中文閱讀實踐的分析較爲有限。雖然文中提出了一些
+  一般性觀察，以供討論朗讀策略時參考，但對中文閱讀實踐的全面探討——
+  包括方言差異、韻律信息和音系細節
+  ——已超出本文的討論範圍。</p>
+<p lang="zh-Hans" its-locale-filter-list="zh-Hans">本文对中文阅读实践的分析较为有限。虽然文中提出了一些
+  一般性观察，以供讨论朗读策略时参考，但对中文阅读实践的全面探讨——
+  包括方言差异、韵律信息和音系细节
+  ——已超出本文的讨论范围。</p>
 
-  <p>
-    The strategies described in the following subsections should therefore not be
+  
+  <p lang="en" its-locale-filter-list="en">The strategies described in the following subsections should therefore not be
     interpreted as universally applicable recommendations. User agents and assistive
     technologies are expected to take the target language, content type, and usage
     context into account when selecting or implementing a strategy for reading aloud
-    content that includes ruby annotations.
-  </p>
+    content that includes ruby annotations.</p>
+  <p lang="ja" its-locale-filter-list="ja">したがって、以下の各節で説明する戦略は、
+    普遍的に適用可能な推奨事項として解釈されるべきではありません。ユーザーエージェントや支援技術は、
+    ルビ注釈を含むコンテンツを音声読み上げする際の戦略を選択または実装する際、
+    対象言語、コンテンツの種類、および使用状況を
+    考慮に入れることが求められます。</p>
+  <p lang="zh-Hant" its-locale-filter-list="zh-Hant">因此，下文各小節中描述的策略不應
+    被視爲放之四海皆準的建議。用戶代理和輔助
+    技術在爲包含紅字註釋的內容選擇或實施朗讀策略時，
+    應考慮目標語言、內容類型以及使用
+    場景。</p>
+  <p lang="zh-Hans" its-locale-filter-list="zh-Hans">因此，下文各小节中描述的策略不应
+    被视为放之四海皆准的建议。用户代理和辅助
+    技术在为包含红字注释的内容选择或实施朗读策略时，
+    应考虑目标语言、内容类型以及使用
+    场景。</p>
 
   <aside class="note">
-    <p>
-    In read-aloud scenarios using Cantonese or other non-Mandarin spoken varieties,
+    
+    <p lang="en" its-locale-filter-list="en">In read-aloud scenarios using Cantonese or other non-Mandarin spoken varieties,
     ruby annotations that encode Mandarin-based pronunciation assumptions should not
     be used as input for read-aloud output, as doing so may result in misleading or
-    unintelligible output.
-    </p>
+    unintelligible output.</p>
+    <p lang="ja" its-locale-filter-list="ja">広東語やその他の北京語以外の言語を用いた読み上げの場面では、
+    北京語に基づく発音の仮定を反映したルビー文字は、
+    読み上げ出力の入力として使用すべきではありません。そうすると、
+    誤解を招く、あるいは理解不能な出力となる恐れがあるためです。</p>
+    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在使用粵語或其他非普通話方言進行朗讀的情境中，
+    不應將基於普通話發音假設的紅字註釋
+    用作朗讀輸出的輸入，因爲這樣做可能會導致輸出內容產生誤導或
+    難以理解。</p>
+    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在使用粤语或其他非普通话方言进行朗读的情境中，
+    不应将基于普通话发音假设的红字注释
+    用作朗读输出的输入，因为这样做可能会导致输出内容产生误导或
+    难以理解。</p>
   </aside>
 
   <aside class="note">
-  <p>
-    In Japanese, read-aloud behavior may differ between the first occurrence of a term
+  
+  <p lang="en" its-locale-filter-list="en">In Japanese, read-aloud behavior may differ between the first occurrence of a term
     and subsequent occurrences, which can in some cases interfere with comprehension.
     Such differences in read-aloud treatment based on first occurrence are not
-    generally observed in Chinese.
-  </p>
+    generally observed in Chinese.</p>
+  <p lang="ja" its-locale-filter-list="ja">日本語では、ある用語が初めて登場する際と
+    それ以降に登場する際とで、声に出して読む際の扱いが異なることがあり、
+    場合によっては理解の妨げとなることがある。
+    このような、初出に基づく声に出して読む際の扱いの違いは、
+    中国語では一般的に見られない。</p>
+  <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在日語中，朗讀時的處理方式在某個術語首次出現時
+    與後續出現時可能有所不同，這在某些情況下會妨礙理解。
+    而基於首次出現情況對朗讀方式進行的此類區別處理，
+    在漢語中通常並不存在。</p>
+  <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在日语中，朗读时的处理方式在某个术语首次出现时
+    与后续出现时可能有所不同，这在某些情况下会妨碍理解。
+    而基于首次出现情况对朗读方式进行的此类区别处理，
+    在汉语中通常并不存在。</p>
   </aside>
   
 </section>
 
       
       <section id="reading_aloud_both">
-        <h3>Reading aloud both ruby bases and ruby annotations</h3>
-        <p>
-	  This strategy reads aloud both ruby bases and ruby annotations (double reading).
+        <h3><span lang="en" its-locale-filter-list="en">Reading aloud both ruby bases and ruby annotations</span><span lang="ja" its-locale-filter-list="ja">ルビの基底語とルビの注釈の両方を読み上げる</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">朗讀 Ruby 基礎語法和 Ruby 註釋</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">朗读 Ruby 基础语法和 Ruby 注释</span></h3>
+        
+        <p lang="en" its-locale-filter-list="en">This strategy reads aloud both ruby bases and ruby annotations (double reading).
           Many implementations (screen readers, in particular) support only this strategy.
-          For example, <ruby><rb>foo</rb><rt>bar</rt></ruby> is read aloud as 'foo bar' or 'bar foo'.
-        </p>
+          For example, <ruby><rb>foo</rb><rt>bar</rt></ruby> is read aloud as 'foo bar' or 'bar foo'.</p>
+        <p lang="ja" its-locale-filter-list="ja">この戦略では、ルビのベーステキストとルビの注釈の両方を読み上げます（二重読み上げ）。
+          多くの実装（特にスクリーンリーダー）は、この戦略のみをサポートしています。
+          例えば、<ruby><rb>foo</rb><rt>bar</rt></ruby> は「foo bar」または「bar foo」として読み上げられます。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">該策略會同時朗讀 Ruby 代碼和 Ruby 註釋（雙重朗讀）。
+          許多實現（尤其是屏幕閱讀器）僅支持此策略。
+          例如，<ruby><rb>foo</rb><rt>bar</rt></ruby> 會被朗讀爲“foo bar”或“bar foo”。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">该策略会同时朗读 Ruby 代码和 Ruby 注释（双重朗读）。
+          许多实现（尤其是屏幕阅读器）仅支持此策略。
+          例如，<ruby><rb>foo</rb><rt>bar</rt></ruby> 会被朗读为“foo bar”或“bar foo”。</p>
 
         <section>
-          <h4 id="furigana_both_read_aloud">Furigana, when both read aloud</h4>
-          <p>
-            The strategy of reading aloud both interferes with readers' understanding significantly. 
-          </p>
+          <h4 id="furigana_both_read_aloud"><span lang="en" its-locale-filter-list="en">Furigana, when both read aloud</span><span lang="ja" its-locale-filter-list="ja">ふりがな（両方とも声に出して読む場合）</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">讀音符號，當兩者都朗讀時</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">读音符号，当两者都朗读时</span></h4>
+          
+          <p lang="en" its-locale-filter-list="en">The strategy of reading aloud both interferes with readers' understanding significantly.</p>
+          <p lang="ja" its-locale-filter-list="ja">声に出して読むという手法は、読者の理解を著しく妨げる。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">大聲朗讀的做法在很大程度上妨礙了讀者的理解。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">大声朗读的做法在很大程度上妨碍了读者的理解。</p>
 	  <section>
-	    <h5>Examples of harmful double reading: Japanese</h5>
+	    <h5><span lang="en" its-locale-filter-list="en">Examples of harmful double reading: Japanese</span><span lang="ja" its-locale-filter-list="ja">有害な二重読解の例：日本語</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">有害的雙重解讀示例：日語</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">有害的双重解读示例：日语</span></h5>
 
-	    <p lang="ja">彼の名前は<ruby><rb>出羽内</rb><rt>でわない</rt></ruby>です。</p>
+	    
+	    <p lang="en" its-locale-filter-list="en">彼の名前は<ruby><rb>出羽内</rb><rt>でわない</rt></ruby>です。</p>
+	    <p lang="ja" its-locale-filter-list="ja">彼の名前は<ruby><rb>出羽内</rb><rt>でわない</rt></ruby>です。</p>
+	    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">他的名字是<ruby><rb>出羽内</rb><rt>でわない</rt></ruby>。</p>
+	    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">他的名字是<ruby><rb>出羽内</rb><rt>でわない</rt></ruby>。</p>
 
-	    <p>This sentence is intended to mean "His name is
+	    
+	    <p lang="en" its-locale-filter-list="en">This sentence is intended to mean "His name is
 	    Dewanai".  Double reading completely changes the meaning:
 	    it will be interpreted as "His name is <em>not</em> Dewanai".</p>
+	    <p lang="ja" its-locale-filter-list="ja">この文は「彼の名前は
+        デワナイだ」という意味です。しかし、文字通りそのまま読めば、意味が全く変わってしまいます。
+        「彼の名前はデワナイ<em>ではない</em>」と解釈されてしまうからです。</p>
+	    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">這句話本意是“他的名字是
+        德瓦奈”。但若反過來讀，意思就完全不同了：
+        它會被理解爲“他的名字<em>不是</em>德瓦奈”。</p>
+	    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">这句话本意是“他的名字是
+        德瓦奈”。但若反过来读，意思就完全不同了：
+        它会被理解为“他的名字<em>不是</em>德瓦奈”。</p>
 
-	    <p lang="ja">それでは<ruby><rb>話</rb><rt>はなし</rt></ruby>にならない。</p>
+	    
+	    <p lang="en" its-locale-filter-list="en">それでは<ruby><rb>話</rb><rt>はなし</rt></ruby>にならない。</p>
+	    <p lang="ja" its-locale-filter-list="ja">それでは<ruby><rb>話</rb><rt>はなし</rt></ruby>にならない。</p>
+	    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">那樣的話就不會變成<ruby><rb>話</rb><rt>はなし</rt></ruby>。</p>
+	    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">那样的话就不会变成<ruby><rb>話</rb><rt>はなし</rt></ruby>。</p>
 
-	    <p>This sentence is intened to mean "Nonsense!".  Double
+	    
+	    <p lang="en" its-locale-filter-list="en">This sentence is intened to mean "Nonsense!".  Double
 	    reading completely changes the meaning: it will be
 	    interpreted as "You have to deal with it".</p>
+	    <p lang="ja" its-locale-filter-list="ja">この文は本来「とんでもない！」という意味です。しかし、
+        二度読みすると意味が完全に変わってしまいます。つまり、
+        「それに対処しなければならない」と解釈されてしまうのです。</p>
+	    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">這句話本意是“胡說八道！”。
+        但若反過來讀，意思就完全不同了：
+        會被理解爲“你得處理這件事”。</p>
+	    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">这句话本意是“胡说八道！”。
+        但若反过来读，意思就完全不同了：
+        会被理解为“你得处理这件事”。</p>
 	  </section>
 
 	  <section>
-	    <h5>Examples of harmful double reading: English</h5>
+	    <h5><span lang="en" its-locale-filter-list="en">Examples of harmful double reading: English</span><span lang="ja" its-locale-filter-list="ja">有害な二重読解の例：英語</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">有害的雙重解讀示例：英語</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">有害的双重解读示例：英语</span></h5>
 
-	    <p>Consider this English sentence having a ruby annotation: "My name is <ruby><rb>Knot</rb><rt>not</rt></ruby>".</p>
+	    
+	    <p lang="en" its-locale-filter-list="en">Consider this English sentence having a ruby annotation: "My name is <ruby><rb>Knot</rb><rt>not</rt></ruby>".</p>
+	    <p lang="ja" its-locale-filter-list="ja">ルビー注釈が付いた次の英語の文を考えてみましょう。「My name is <ruby><rb>Knot</rb><rt>not</rt></ruby>」。</p>
+	    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">請看這條帶有 Ruby 註釋的英語句子：“My name is <ruby><rb>Knot</rb><rt>not</rt></ruby>”。</p>
+	    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">请看这条带有 Ruby 注释的英语句子：“My name is <ruby><rb>Knot</rb><rt>not</rt></ruby>”。</p>
 
-	    <p>Double reading completely changes the meaning: it will be interpreted as "My name is not Knot".</p>
+	    
+	    <p lang="en" its-locale-filter-list="en">Double reading completely changes the meaning: it will be interpreted as "My name is not Knot".</p>
+	    <p lang="ja" its-locale-filter-list="ja">二度読みすると意味がガラリと変わります。「私の名前はノットではない」と解釈されることになるでしょう。</p>
+	    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">換個角度讀，意思就完全不同了：這句話會被理解爲“我的名字不是Knot”。</p>
+	    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">换个角度读，意思就完全不同了：这句话会被理解为“我的名字不是Knot”。</p>
 
-	    <p>Another example: "There is a road in Austin spelled
+	    
+	    <p lang="en" its-locale-filter-list="en">Another example: "There is a road in Austin spelled
 	    both <ruby><rb>Manchaca</rb><rt>Man-Chack</rt></ruby>
 	    and <ruby><rb>Menchaca</rb><rt>Man-Chack</rt></ruby>".</p>
+	    <p lang="ja" its-locale-filter-list="ja">もう一つの例：「オースティンには、
+        <ruby><rb>Manchaca</rb><rt>Man-Chack</rt></ruby>
+        と <ruby><rb>Menchaca</rb><rt>Man-Chack</rt></ruby>
+        の両方の綴りがある道路がある」。</p>
+	    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">另一個例子：“奧斯汀有一條路，其拼寫形式
+        既有 <ruby><rb>Manchaca</rb><rt>Man-Chack</rt></ruby>
+        也有 <ruby><rb>Menchaca</rb><rt>Man-Chack</rt></ruby>”。</p>
+	    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">另一个例子：“奥斯汀有一条路，其拼写形式
+        既有 <ruby><rb>Manchaca</rb><rt>Man-Chack</rt></ruby>
+        也有 <ruby><rb>Menchaca</rb><rt>Man-Chack</rt></ruby>”。</p>
 
-	    <p>Double reading makes the road name read aloud twice,
+	    
+	    <p lang="en" its-locale-filter-list="en">Double reading makes the road name read aloud twice,
 	    possibly differently.</p>
+	    <p lang="ja" its-locale-filter-list="ja">「ダブルリーディング」では、道路名が2回読み上げられ、
+        その読み方が異なる場合があります。</p>
+	    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">雙重朗讀會讓路名被朗讀兩遍，
+        可能讀法不同。</p>
+	    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">双重朗读会让路名被朗读两遍，
+        可能读法不同。</p>
 
-	  <p>Yet another example: "<ruby><rb>Oxoerythromycin</rb><rt>oxo-eur-ithro-mycin</rt></ruby>
+	  
+	  <p lang="en" its-locale-filter-list="en">Yet another example: "<ruby><rb>Oxoerythromycin</rb><rt>oxo-eur-ithro-mycin</rt></ruby>
 	    is a ketone derived from erythromycin".</p>
+	  <p lang="ja" its-locale-filter-list="ja">もう一つの例：「<ruby><rb>Oxoerythromycin</rb><rt>oxo-eur-ithro-mycin</rt></ruby>
+        はエリスロマイシンに由来するケトンである」。</p>
+	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant">再舉一個例子：“<ruby><rb>Oxoerythromycin</rb><rt>oxo-eur-ithro-mycin</rt></ruby>
+        是一種源自紅黴素的酮”。</p>
+	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans">再举一个例子：“<ruby><rb>Oxoerythromycin</rb><rt>oxo-eur-ithro-mycin</rt></ruby>
+        是一种源自红霉素的酮”。</p>
 
-	  <p>Double reading makes this compound name read aloud twice,
+	  
+	  <p lang="en" its-locale-filter-list="en">Double reading makes this compound name read aloud twice,
 	    possibly differently.</p>
+	  <p lang="ja" its-locale-filter-list="ja">二重読みにより、この複合語は声に出して二度読み上げられ、
+        その読み方が異なる可能性があります。</p>
+	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant">雙重讀法使得這個複合名詞在朗讀時會被讀兩遍，
+        且讀法可能不同。</p>
+	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans">双重读法使得这个复合名词在朗读时会被读两遍，
+        且读法可能不同。</p>
 	</section>
 	</section>
 
         <section>
-          <h4 id="gikun_both_read_aloud">Gikun, when both read aloud</h4>
-          <p>
-            The strategy of reading aloud both is sensible.  It is common to read aloud ruby annotations first then ruby bases next, but it is sometimes better to read aloud ruby bases first and ruby annotations next [[?Transliteration_Training_Course]]).
-          </p>
-	  <p>
-            <span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> is read aloud as TEKI TOMO or TOMO TEKI, which means 'enemy friend' or 'friend enemy'  (equal to 'frenemy').</p>
+          <h4 id="gikun_both_read_aloud"><span lang="en" its-locale-filter-list="en">Gikun, when both read aloud</span><span lang="ja" its-locale-filter-list="ja">ギクン、二人が声に出して読んだとき</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">吉君，當兩人一起朗讀時</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">吉君，当两人一起朗读时</span></h4>
+          
+          <p lang="en" its-locale-filter-list="en">The strategy of reading aloud both is sensible.  It is common to read aloud ruby annotations first then ruby bases next, but it is sometimes better to read aloud ruby bases first and ruby annotations next [[?Transliteration_Training_Course]]).</p>
+          <p lang="ja" its-locale-filter-list="ja">どちらの読み上げ方にも一理あります。通常は、まずルビの注釈を読み上げ、次にルビの基語を読み上げるのが一般的ですが、ルビの基語を先に読み上げ、その後にルビの注釈を読み上げたほうが良い場合もあります [[?Transliteration_Training_Course]]。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">這兩種朗讀策略都很有道理。通常的做法是先朗讀紅字註釋，再朗讀紅字基礎詞，但有時先朗讀紅字基礎詞，再朗讀紅字註釋會更好 [[?Transliteration_Training_Course]]。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">这两种朗读策略都很有道理。通常的做法是先朗读红字注释，再朗读红字基础词，但有时先朗读红字基础词，再朗读红字注释会更好 [[?Transliteration_Training_Course]]。</p>
+	  
+	  <p lang="en" its-locale-filter-list="en"><span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> is read aloud as TEKI TOMO or TOMO TEKI, which means 'enemy friend' or 'friend enemy'  (equal to 'frenemy').</p>
+	  <p lang="ja" its-locale-filter-list="ja"><span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> は「テキ・トモ」または「トモ・テキ」と読み、「敵であり友人」あるいは「友人であり敵」という意味になります（「フレネミー」に相当します）。</p>
+	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> 讀作 TEKI TOMO 或 TOMO TEKI，意爲“敵友”或“友敵”（相當於“frenemy”）。</p>
+	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> 读作 TEKI TOMO 或 TOMO TEKI，意为“敌友”或“友敌”（相当于“frenemy”）。</p>
 		      
-          <p>
-            <span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> is read aloud as SEIMEI INOCHI or INOCHI SEIMEI, 
-            where SEIMEI is a loan word from Chinese and INOCHI is a native Japanese word.  Both mean life.
-          </p>
+          
+          <p lang="en" its-locale-filter-list="en"><span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> is read aloud as SEIMEI INOCHI or INOCHI SEIMEI, 
+            where SEIMEI is a loan word from Chinese and INOCHI is a native Japanese word.  Both mean life.</p>
+          <p lang="ja" its-locale-filter-list="ja"><span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> <span lang="ja">は</span>「セイメイ・イノチ」または「イノチ・セイメイ」と読みます。
+            ここで、「セイメイ」は中国からの借用語であり、「イノチ」は日本語の固有語です。どちらも「命」を意味します。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> 讀作 SEIMEI INOCHI 或 INOCHI SEIMEI，
+            其中 SEIMEI 是從漢語借來的詞，INOCHI 是日語本土詞。兩者都表示“生命”。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> 读作 SEIMEI INOCHI 或 INOCHI SEIMEI，
+            其中 SEIMEI 是从汉语借来的词，INOCHI 是日语本土词。两者都表示“生命”。</p>
         </section>
 
         <section>
-          <h4 id="unusual_names_both_read_aloud">Unusual names of people and places, when both read aloud</h4>
-          <p>
-            The strategy of reading aloud both interferes with readers' understanding significantly. 
-          </p>
-          <p>
-            <span lang="ja"><ruby><rb>不死川玄弥</rb><rt>しなずがわげんや</rt></ruby></span>
-            is read aloud as FUSHIKAWA GENYA SHINAZUGAWA GENYA or SHINAZUGAWA GENYA FUSHIKAWA GENYA, which suggests two persons rather than one person.
-          </p>
+          <h4 id="unusual_names_both_read_aloud"><span lang="en" its-locale-filter-list="en">Unusual names of people and places, when both read aloud</span><span lang="ja" its-locale-filter-list="ja">人名や地名の変わった読み方（声に出して読んだ場合）</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">人名和地名若讀出來，聽起來會很特別</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">人名和地名若读出来，听起来会很特别</span></h4>
+          
+          <p lang="en" its-locale-filter-list="en">The strategy of reading aloud both interferes with readers' understanding significantly.</p>
+          <p lang="ja" its-locale-filter-list="ja">声に出して読むという手法は、読者の理解を著しく妨げる。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">大聲朗讀的做法在很大程度上妨礙了讀者的理解。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">大声朗读的做法在很大程度上妨碍了读者的理解。</p>
+          
+          <p lang="en" its-locale-filter-list="en"><span lang="ja"><ruby><rb>不死川玄弥</rb><rt>しなずがわげんや</rt></ruby></span>
+            is read aloud as FUSHIKAWA GENYA SHINAZUGAWA GENYA or SHINAZUGAWA GENYA FUSHIKAWA GENYA, which suggests two persons rather than one person.</p>
+          <p lang="ja" its-locale-filter-list="ja"><span lang="ja"><ruby><rb>不死川玄弥</rb><rt>しなずがわげんや</rt></ruby> は</span>
+            「フシカワ・ゲニャ、シナズガワ・ゲニャ」あるいは「シナズガワ・ゲニャ、フシカワ・ゲニャ」と読み上げられるが、これは一人の人物ではなく、二人の人物であることを示唆している。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja"><ruby><rb>不死川玄弥</rb><rt>しなずがわげんや</rt></ruby></span>
+            讀作“FUSHIKAWA GENYA SHINAZUGAWA GENYA”或“SHINAZUGAWA GENYA FUSHIKAWA GENYA”，這暗示的是兩個人而非同一人。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja"><ruby><rb>不死川玄弥</rb><rt>しなずがわげんや</rt></ruby></span>
+            读作“FUSHIKAWA GENYA SHINAZUGAWA GENYA”或“SHINAZUGAWA GENYA FUSHIKAWA GENYA”，这暗示的是两个人而非同一人。</p>
         </section>
 
         <section>
-          <h4 id="interlinear_note_both_read_aloud">Interlinear notes, when both read aloud</h4>
-          <p>
-            The strategy of reading aloud both is sensible.  It is necessary to read aloud ruby bases first then ruby annotations next.
-          </p>
-          <p>
-            For example, <span lang="ja"><ruby><rb>徳川慶喜</rb><rt>1837-1913 江戸幕府最後の将軍</rt></ruby></span> 
+          <h4 id="interlinear_note_both_read_aloud"><span lang="en" its-locale-filter-list="en">Interlinear notes, when both read aloud</span><span lang="ja" its-locale-filter-list="ja">行間注釈（両方を声に出して読む場合）</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">當兩者都朗讀時，行間註釋</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">当两者都朗读时，行间注释</span></h4>
+          
+          <p lang="en" its-locale-filter-list="en">The strategy of reading aloud both is sensible.  It is necessary to read aloud ruby bases first then ruby annotations next.</p>
+          <p lang="ja" its-locale-filter-list="ja">両方とも声に出して読むという方法は理にかなっています。まずルビの原文を読み、次にルビの注釈を読み上げる必要があります。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">這兩種朗讀策略都很合理。必須先朗讀紅字基礎內容，然後再朗讀紅字註釋。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">这两种朗读策略都很合理。必须先朗读红字基础内容，然后再朗读红字注释。</p>
+          
+          <p lang="en" its-locale-filter-list="en">For example, <span lang="ja"><ruby><rb>徳川慶喜</rb><rt>1837-1913 江戸幕府最後の将軍</rt></ruby></span> 
             is read aloud as TOKUGAWA YOSHINOBU 1837-1913 EDO BAKUFU SAIGONO SHOUGUN, 
-            which means 'Tokugawa Yoshinobu 1837-1913, the last shogun of the Edo shogunate'.        
-          </p>
+            which means 'Tokugawa Yoshinobu 1837-1913, the last shogun of the Edo shogunate'.</p>
+          <p lang="ja" its-locale-filter-list="ja">例えば、<span lang="ja"><ruby><rb>徳川慶喜</rb><rt>1837-1913 江戸幕府最後の将軍</rt></ruby></span> 
+            は「徳川慶喜 1837-1913 江戸幕府最後の将軍」と読み上げられ、
+            これは「徳川慶喜 1837-1913、江戸幕府最後の将軍」という意味です。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">例如<span lang="ja">，<ruby><rb>徳川慶喜</rb><rt>1837-1913 江戸幕府最後の将軍</rt></ruby></span> 
+            讀作“德川義信 1837-1913 江戶幕府最後一位將軍”，
+            意爲“德川義信 1837-1913，江戶幕府的最後一位將軍”。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">例如<span lang="ja">，<ruby><rb>徳川慶喜</rb><rt>1837-1913 江戸幕府最後の将軍</rt></ruby></span> 
+            读作“德川义信 1837-1913 江户幕府最后一位将军”，
+            意为“德川义信 1837-1913，江户幕府的最后一位将军”。</p>
         </section>
 
         <section>
-          <h4>Double-sided ruby, when both read aloud</h4>
-          <p>
-            Since there are two ruby annotations, double-sided ruby leads to reading aloud three times. 
+          <h4><span lang="en" its-locale-filter-list="en">Double-sided ruby, when both read aloud</span><span lang="ja" its-locale-filter-list="ja">両面ルビー、両方を声に出して読むと</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">雙面紅寶石，當兩面都朗讀時</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">双面红宝石，当两面都朗读时</span></h4>
+          
+          <p lang="en" its-locale-filter-list="en">Since there are two ruby annotations, double-sided ruby leads to reading aloud three times. 
             One of the ruby annotations is typically furigana, so the description in  <a href="#furigana_both_read_aloud"><span class="secno">3.2.1</span></a> applies. 
             If the other ruby annotation is a Gikun, the description in <a href="#gikun_both_read_aloud"><span class="secno">3.2.2</span></a> applies; 
-            if it is an interlinear note, the description in <a href="#interlinear_note_both_read_aloud"><span class="secno">3.2.4</span></a> applies.
-          </p>
+            if it is an interlinear note, the description in <a href="#interlinear_note_both_read_aloud"><span class="secno">3.2.4</span></a> applies.</p>
+          <p lang="ja" its-locale-filter-list="ja">ルビが2つある場合、両面ルビでは3回読み上げることになります。
+            ルビの1つは通常、ふりがなであるため、<a href="#furigana_both_read_aloud"><span class="secno">3.2.1</span></a>の説明が適用されます。
+            もう1つのルビが「ギクン」である場合は、<a href="#gikun_both_read_aloud"><span class="secno">3.2.2</span></a>の説明が適用されます。
+            行間注釈である場合は、<a href="#interlinear_note_both_read_aloud"><span class="secno">3.2.4</span></a>の説明が適用されます。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">由於存在兩處注音，雙面注音會導致朗讀三次。
+            其中一處注音通常是假名注音，因此適用 <a href="#furigana_both_read_aloud"><span class="secno">3.2.1</span></a> 中的說明。
+            如果另一處注音是“義注”，則適用 <a href="#gikun_both_read_aloud"><span class="secno">3.2.2</span></a> 中的說明；
+            如果是行間註釋，則適用 <a href="#interlinear_note_both_read_aloud"><span class="secno">3.2.4</span></a> 中的說明。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">由于存在两处注音，双面注音会导致朗读三次。
+            其中一处注音通常是假名注音，因此适用 <a href="#furigana_both_read_aloud"><span class="secno">3.2.1</span></a> 中的说明。
+            如果另一处注音是“义注”，则适用 <a href="#gikun_both_read_aloud"><span class="secno">3.2.2</span></a> 中的说明；
+            如果是行间注释，则适用 <a href="#interlinear_note_both_read_aloud"><span class="secno">3.2.4</span></a> 中的说明。</p>
 
 	  <aside class="note">Further discussion is not possible until the markup representation of double-sided ruby is clearly defined.</aside>
         </section>
       </section>
 
       <section id="reading_aloud_ruby_annotations_only">
-        <h3>Reading aloud ruby annotations only</h3>
-        <p>
-	  This strategy reads aloud ruby annotations without reading the ruby bases.
+        <h3><span lang="en" its-locale-filter-list="en">Reading aloud ruby annotations only</span><span lang="ja" its-locale-filter-list="ja">Rubyの注釈のみを音声で読み上げる</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">僅朗讀 Ruby 註釋</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">仅朗读 Ruby 注释</span></h3>
+        
+        <p lang="en" its-locale-filter-list="en">This strategy reads aloud ruby annotations without reading the ruby bases.
 	  For example, <ruby><rb>foo</rb><rt>bar</rt></ruby> is
-	  read aloud as 'bar'.
-        </p>
+	  read aloud as 'bar'.</p>
+        <p lang="ja" its-locale-filter-list="ja">この戦略では、ルビの基となる文字列を読み上げずに、ルビの注釈のみを読み上げます。
+      たとえば、<ruby><rb>foo</rb><rt>bar</rt></ruby> は
+      「bar」と読み上げられます。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">該策略會朗讀註釋文本，但不會朗讀其對應的基文本。
+      例如，<ruby><rb>foo</rb><rt>bar</rt></ruby> 會被
+      朗讀爲“bar”。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">该策略会朗读注释文本，但不会朗读其对应的基文本。
+      例如，<ruby><rb>foo</rb><rt>bar</rt></ruby> 会被
+      朗读为“bar”。</p>
         <section>
-          <h4 id="furigana_annotation_read_aloud">Furigana, when ruby annotations read aloud</h4>
-          <p>
-	    Even native Japanese speakers may easily assume, without
+          <h4 id="furigana_annotation_read_aloud"><span lang="en" its-locale-filter-list="en">Furigana, when ruby annotations read aloud</span><span lang="ja" its-locale-filter-list="ja">ふりがな、ルビが読み上げられるとき</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">假名讀音，即朗讀紅字注音時</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">假名读音，即朗读红字注音时</span></h4>
+          
+          <p lang="en" its-locale-filter-list="en">Even native Japanese speakers may easily assume, without
 	    thorough consideration, that reading only ruby
 	    annotations used as furigana aloud will provide reasonable results. This common
-	    assumption, however, is not always correct.
-          </p>
+	    assumption, however, is not always correct.</p>
+          <p lang="ja" its-locale-filter-list="ja">日本語を母語とする人でも、深く考えずに、
+        ふりがなとして使われるルビの注釈だけを声に出して読めば、
+        それなりに正しい結果が得られると簡単に思い込んでしまいがちです。しかし、この一般的な
+        思い込みは、必ずしも正しいとは限りません。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">即使是日語母語者，如果不加
+        深思熟慮，也可能會輕易認爲，只要大聲朗讀作爲注音使用的
+        紅字註釋，就能得到合理的結果。然而，這種普遍的
+        假設並不總是正確的。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">即使是日语母语者，如果不加
+        深思熟虑，也可能会轻易认为，只要大声朗读作为注音使用的
+        红字注释，就能得到合理的结果。然而，这种普遍的
+        假设并不总是正确的。</p>
 
 	  <section>
-	    <h5>Incorrect pitch accent</h5>
+	    <h5><span lang="en" its-locale-filter-list="en">Incorrect pitch accent</span><span lang="ja" its-locale-filter-list="ja">強勢の位置が間違っている</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">重音位置錯誤</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">重音位置错误</span></h5>
 
-	    <p>Each hiragana character represents a mora (a basic timing
+	    
+	    <p lang="en" its-locale-filter-list="en">Each hiragana character represents a mora (a basic timing
 	      unit in phonology), which is typically a single vowel or a
 	      consonant followed by a single vowel.  The same sequence of
 	      moras may mean different words depending on the pitch accent.
@@ -771,39 +1725,157 @@
 	      However, if the Tokyo accent is used as a basis, the first mora in <span lang="ja">雨</span> has a
 	      high pitch, and the second has a low pitch;
 	      <span lang="ja">飴</span> has the opposite pitch accent.</p>
+	    <p lang="ja" its-locale-filter-list="ja">ひらがなの一文字は、それぞれモーラ（音韻論における基本的な時間単位）を表しており、
+          通常は単一の母音、あるいは子音に続いて単一の母音で構成されます。
+          同じモーラの並びであっても、ピッチアクセントによって異なる単語を意味する場合があります。
+	      例えば、「<span lang="ja">雨</span>」と
+          「<span lang="ja">飴</span>」は、どちらも同じモーラ、
+          <span lang="ja">「あ」</span>と<span lang="ja">「め」</span>で構成されています。
+          しかし、東京弁を基準とすると、<span lang="ja">「雨」</span>の最初のモーラは
+          高いピッチを持ち、2番目のモーラは低いピッチを持ちます。
+          一方、<span lang="ja">「飴」</span>は逆のピッチアクセントを持ちます。</p>
+	    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">每個平假名代表一個音節（音韻學中的基本時間
+          單位），通常是一個元音，或者是一個
+          輔音後跟一個元音。相同的音節序列
+          可能因聲調的不同而表示不同的詞。
+	      例如<span lang="ja">，“雨”</span>（雨）和
+          <span lang="ja">“飴”</span>（糖果）都由相同的音節構成：
+          <span lang="ja">“あ</span>”和<span lang="ja">“め”</span>。
+          然而，如果以東京口音爲基準<span lang="ja">，“雨</span>”的第一個音節
+          音調較高，第二個音節音調較低；
+          而<span lang="ja">“飴”</span>的音調重音則恰好相反。</p>
+	    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">每个平假名代表一个音节（音韵学中的基本时间
+          单位），通常是一个元音，或者是一个
+          辅音后跟一个元音。相同的音节序列
+          可能因声调的不同而表示不同的词。
+	      例如<span lang="ja">，“雨”</span>（雨）和
+          <span lang="ja">“飴”</span>（糖果）都由相同的音节构成：
+          <span lang="ja">“あ</span>”和<span lang="ja">“め”</span>。
+          然而，如果以东京口音为基准<span lang="ja">，“雨</span>”的第一个音节
+          音调较高，第二个音节音调较低；
+          而<span lang="ja">“飴”</span>的音调重音则恰好相反。</p>
 
-	    <p>Reading aloud ruby annotations rather than ruby bases often
+	    
+	    <p lang="en" its-locale-filter-list="en">Reading aloud ruby annotations rather than ruby bases often
 	      leads to incorrect pitch accent. As an example, consider
 	      <span lang="ja"><ruby><rb>雨</rb><rt>あめ</rt></ruby>が好き</span>
 	      (I like rain) and <span lang="ja"><ruby><rb>飴</rb><rt>あめ</rt></ruby>が好き</span>
 	      (I like candy). In both cases, reading aloud ruby annotations
 	      rather than ruby bases implies that the TTS engine will receive
 	      <span lang="ja">あめが好き</span> and create the same result.</p>
+	    <p lang="ja" its-locale-filter-list="ja">ルビの基語ではなくルビの注釈を音声出力すると、
+          しばしば不適切なピッチアクセントが生じます。例として、
+	      <span lang="ja"><ruby><rb>雨</rb><rt>あめ</rt></ruby>が好き</span>
+	      
+          （雨が好きな）と <span lang="ja"><ruby><rb>飴</rb><rt>あめ</rt></ruby>が好き</span>
+	      （お菓子が好きな）を考えてみましょう。どちらの場合も、ルビの基語ではなくルビの注釈を音声出力すると、
+          TTSエンジンは「
+	      <span lang="ja">あめが好き</span>
+	      」と認識し、同じ結果が生成されてしまいます。</p>
+	    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">如果經常朗讀註釋文字（ruby annotations）而非基礎文本（ruby bases），
+          往往會導致音調重音不正確。例如，
+	      <span lang="ja">考慮<ruby><rb>雨</rb><rt>あめ</rt></ruby>が好き</span>
+	      
+          （我喜歡雨）和 <span lang="ja"><ruby><rb>飴</rb><rt>あめ</rt></ruby>が好き</span>
+	      （我喜歡糖果）。在這兩種情況下，如果朗讀註釋文字
+          而非基礎文本，會導致語音合成引擎接收
+	      <span lang="ja">“あめが好き</span>
+	      ”並生成相同的結果。</p>
+	    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">如果经常朗读注释文字（ruby annotations）而非基础文本（ruby bases），
+          往往会导致音调重音不正确。例如，
+	      <span lang="ja">考虑<ruby><rb>雨</rb><rt>あめ</rt></ruby>が好き</span>
+	      
+          （我喜欢雨）和 <span lang="ja"><ruby><rb>飴</rb><rt>あめ</rt></ruby>が好き</span>
+	      （我喜欢糖果）。在这两种情况下，如果朗读注释文字
+          而非基础文本，会导致语音合成引擎接收
+	      <span lang="ja">“あめが好き</span>
+	      ”并生成相同的结果。</p>
 
-	    <p>A similar example is <span lang="ja"><ruby><rb>牡蠣</rb><rt>かき</rt></ruby>を食べる</span>
+	    
+	    <p lang="en" its-locale-filter-list="en">A similar example is <span lang="ja"><ruby><rb>牡蠣</rb><rt>かき</rt></ruby>を食べる</span>
 	      (I eat oysters) and <span lang="ja"><ruby><rb>柿</rb><rt>かき</rt></ruby>を食べる</span>
 	      (I eat persimmons), where <span lang="ja">牡蠣</span> and
 	      <span lang="ja">柿</span> have the same two moras but opposite
 	      pitch accents.</p>
+	    <p lang="ja" its-locale-filter-list="ja">同様の例として、<span lang="ja"><ruby><rb>牡蠣</rb><rt>かき</rt></ruby>を食べる</span>
+          （牡蠣を食べる）や<span lang="ja"><ruby><rb>柿</rb><rt>かき</rt></ruby>を食べる</span>
+          （柿を食べる）があり、<span lang="ja">牡蠣</span>と
+          <span lang="ja">柿は</span>同じ2モーラを持つが、
+          ピッチアクセントの方向が逆である。</p>
+	    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">一個類似的例子是 <span lang="ja"><ruby><rb>牡蠣</rb><rt>かき</rt></ruby> を食べる</span>
+          （我喫牡蠣）和 <span lang="ja"><ruby><rb>柿</rb><rt>かき</rt></ruby> を食べる</span>
+          （我喫柿子），其中<span lang="ja">“牡蠣</span>”和
+          <span lang="ja">“柿子</span>”雖然音節數相同，但
+          音調重音方向相反。</p>
+	    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">一个类似的例子是 <span lang="ja"><ruby><rb>牡蠣</rb><rt>かき</rt></ruby> を食べる</span>
+          （我吃牡蛎）和 <span lang="ja"><ruby><rb>柿</rb><rt>かき</rt></ruby> を食べる</span>
+          （我吃柿子），其中<span lang="ja">“牡蛎</span>”和
+          <span lang="ja">“柿子</span>”虽然音节数相同，但
+          音调重音方向相反。</p>
 	  </section>	    
 
 	  <section>
-	    <h5>Incorrectly pronouncing non-particle は or へ as particles</h5>
+	    <h5><span lang="en" its-locale-filter-list="en">Incorrectly pronouncing non-particle は or へ as particles</span><span lang="ja" its-locale-filter-list="ja">助詞ではない「は」や「へ」を誤って助詞として発音すること</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">將非助詞的“は”或“へ”誤讀爲助詞</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">将非助词的“は”或“へ”误读为助词</span></h5>
 
-	    <p>In modern Japanese, there is basically only one way to read
+	    
+	    <p lang="en" its-locale-filter-list="en">In modern Japanese, there is basically only one way to read
 	      each hiragana character. But <span lang="ja">は</span> and
 	      <span lang="ja">へ</span> are exceptions. <span lang="ja">は</span>
 	      is usually read aloud as HA but is read aloud as WA when
 	      it is used as a particle. Likewise, <span lang="ja">へ</span>
 	      is usually read aloud as HE but is read aloud as E when
 	      it is used as a particle.</p>
+	    <p lang="ja" its-locale-filter-list="ja">現代日本語では、基本的にひらがなの一文字につき読み方は一つだけです。
+          しかし、<span lang="ja">「は」</span>
+	      と
+          <span lang="ja">「へ」</span>
+	      は例外です。<span lang="ja">「は」は</span>
+	      
+          通常「ハ」と読みますが、助詞として使われる場合は
+          「ワ」と読みます。同様に、<span lang="ja">「へ」</span>
+	      は通常「ヘ」と読みますが、
+          助詞として使われる場合は「エ」と読みます。</p>
+	    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在現代日語中，每個平假名基本上只有一種讀法。
+          但<span lang="ja">“は</span>
+	      ”和
+          <span lang="ja">“へ</span>
+	      ”是例外。<span lang="ja">“は”</span>
+	      
+          通常讀作“HA”，但當它用作助詞時，
+          則讀作“WA”。同樣<span lang="ja">，“へ</span>
+	      ”通常讀作“HE”，但當它用作助詞時，
+          則讀作“E”。</p>
+	    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在现代日语中，每个平假名基本上只有一种读法。
+          但<span lang="ja">“は</span>
+	      ”和
+          <span lang="ja">“へ</span>
+	      ”是例外。<span lang="ja">“は”</span>
+	      
+          通常读作“HA”，但当它用作助词时，
+          则读作“WA”。同样<span lang="ja">，“へ</span>
+	      ”通常读作“HE”，但当它用作助词时，
+          则读作“E”。</p>
 
-	    <p>Reading aloud ruby annotations rather than ruby bases implies
+	    
+	    <p lang="en" its-locale-filter-list="en">Reading aloud ruby annotations rather than ruby bases implies
 	      that CJK ideographic characters in ruby bases will not be
 	      passed to the TTS engine, only hiragana characters in ruby
 	      annotations will be.</p>
+	    <p lang="ja" its-locale-filter-list="ja">ルビのベースではなくルビの注釈を読み上げるということは、
+          ルビのベースに含まれるCJK表意文字は
+          TTSエンジンに渡されず、ルビの注釈に含まれる
+          ひらがな文字のみが渡されることを意味します。</p>
+	    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">朗讀“ruby註釋”而非“ruby基文本”意味着
+          ruby基文本中的中日韓表意文字將不會
+          傳遞給語音合成引擎，只有ruby註釋中的
+          平假名字符會被傳遞。</p>
+	    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">朗读“ruby注释”而非“ruby基文本”意味着
+          ruby基文本中的中日韩表意文字将不会
+          传递给语音合成引擎，只有ruby注释中的
+          平假名字符会被传递。</p>
 
-	    <p>Without CJK ideographic characters, Japanese morphological
+	    
+	    <p lang="en" its-locale-filter-list="en">Without CJK ideographic characters, Japanese morphological
 	      analysis is likely to fail. For example, consider  
 	      <span lang="ja">やがて<ruby><rb>廃止</rb><rt>はいし</rt></ruby>になる</span>.
 	      This sentence means "It will be abolished eventually".  But
@@ -816,26 +1888,106 @@
 	      When <span lang="ja">へ</span> appears in ruby annotations
 	      without the corresponding CJK ideographic characters,
 	      it may also be misinterpreted as a particle and read aloud as
-	      E rather than HE.
-	    </p>
+	      E rather than HE.</p>
+	    <p lang="ja" its-locale-filter-list="ja">CJK表意文字がなければ、日本語の形態素解析は
+          失敗する可能性が高い。例えば、
+          <span lang="ja">やがて<ruby><rb>廃止</rb><rt>はいし</rt></ruby>になるという</span>文を考えてみよう。
+          この文は「いずれ廃止される」という意味である。しかし、
+          「<span lang="ja">やがてはいしになる</span>」という文を
+          TTSエンジンに渡すと、<span lang="ja">「は」</span>が誤って
+	      助詞と誤認され、
+          「HA」ではなく「WA」として読み上げられる可能性があります。その結果、発話内容は
+          「私はいずれ医者になる」という意味になってしまいます。
+          同様の問題は<span lang="ja">「へ</span>」でも発生します。
+          対応するCJK表意文字を伴わずに
+          ルビ注釈として<span lang="ja">「へ」</span>が現れる場合、
+          これも助詞と誤認され、
+          「HE」ではなく「E」として読み上げられる可能性があります。</p>
+	    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">如果沒有中日韓表意文字，日語的形態
+          分析很可能無法進行。例如，考慮  
+          <span lang="ja">やがて<ruby><rb>廃止</rb><rt>はいし</rt></ruby>になる</span>。
+          這句話的意思是“它最終會被廢除”。  但是
+          如果將 <span lang="ja">やがてはいしになる</span> 輸入到
+          語音合成引擎中，<span lang="ja">は</span> 很可能被誤
+	      被誤判爲助詞，
+          並被朗讀爲“WA”而非“HA”。
+          由此產生的語音結果將變成
+          “我最終會成爲一名醫生”。
+          <span lang="ja">“へ</span>”也會引發類似的問題。
+          當<span lang="ja">“へ</span>”出現在注音標記中
+          且沒有對應的CJK表意文字時，
+          它也可能被誤判爲助詞，並被朗讀爲
+          “E”而非“HE”。</p>
+	    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">如果没有中日韩表意文字，日语的形态
+          分析很可能无法进行。例如，考虑  
+          <span lang="ja">やがて<ruby><rb>廃止</rb><rt>はいし</rt></ruby>になる</span>。
+          这句话的意思是“它最终会被废除”。  但是
+          如果将 <span lang="ja">やがてはいしになる</span> 输入到
+          语音合成引擎中，<span lang="ja">は</span> 很可能被误
+	      被误判为助词，
+          并被朗读为“WA”而非“HA”。
+          由此产生的语音结果将变成
+          “我最终会成为一名医生”。
+          <span lang="ja">“へ</span>”也会引发类似的问题。
+          当<span lang="ja">“へ</span>”出现在注音标记中
+          且没有对应的CJK表意文字时，
+          它也可能被误判为助词，并被朗读为
+          “E”而非“HE”。</p>
 
-	    <p>Here are some further examples.  All occurrences of
+	    
+	    <p lang="en" its-locale-filter-list="en">Here are some further examples.  All occurrences of
 	      <span lang="ja">は</span> and <span lang="ja">へ</span>
 	      in ruby annotations are likely to be mistakenly read aloud.</p>
+	    <p lang="ja" its-locale-filter-list="ja">さらにいくつかの例を挙げます。Rubyの注釈に含まれる「
+	      <span lang="ja">は</span>
+	      」や「<span lang="ja">へ</span>
+	      」は、読み上げられる際に誤って読み上げられてしまう可能性が高いです。</p>
+	    <p lang="zh-Hant" its-locale-filter-list="zh-Hant">以下是一些進一步的示例。Ruby註釋中所有出現的
+	      <span lang="ja">“は</span>
+	      ”和<span lang="ja">“へ</span>
+	      ”都有可能被誤讀出來。</p>
+	    <p lang="zh-Hans" its-locale-filter-list="zh-Hans">以下是一些进一步的示例。Ruby注释中所有出现的
+	      <span lang="ja">“は</span>
+	      ”和<span lang="ja">“へ</span>
+	      ”都有可能被误读出来。</p>
 	    
 	    <ul>
-	      <li><span lang="ja">人員<ruby><rb>配置</rb><rt>はいち</rt></ruby></span> </li>
-	      <li><span lang="ja">自然<ruby><rb>破壊</rb><rt>はかい</rt></ruby></span> </li>
-	      <li><span lang="ja">社会<ruby><rb>波紋</rb><rt>はもん</rt></ruby></span> </li>
-	      <li><span lang="ja">天皇<ruby><rb>陛下</rb><rt>へいか</rt></ruby></span></li>
-	      <li><span lang="ja">大学<ruby><rb>併願</rb><rt>へいがん</ruby></span></li>
-	      <li><span lang="ja">学級<ruby><rb>閉鎖</rb><rt>へいさ</rt></ruby></span></li>
+	      
+	      <li lang="en" its-locale-filter-list="en"><span lang="ja">人員<ruby><rb>配置</rb><rt>はいち</rt></ruby></span></li>
+	      <li lang="ja" its-locale-filter-list="ja"><span lang="ja">人員<ruby><rb>配置</rb><rt>はいち</rt></ruby></span></li>
+	      <li lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja">人員<ruby><rb>配置</rb><rt>はいち</rt></ruby></span></li>
+	      <li lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja">人員<ruby><rb>配置</rb><rt>はいち</rt></ruby></span></li>
+	      
+	      <li lang="en" its-locale-filter-list="en"><span lang="ja">自然<ruby><rb>破壊</rb><rt>はかい</rt></ruby></span></li>
+	      <li lang="ja" its-locale-filter-list="ja"><span lang="ja">自然<ruby><rb>破壊</rb><rt>はかい</rt></ruby></span></li>
+	      <li lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja">自然<ruby><rb>破壊</rb><rt>はかい</rt></ruby></span></li>
+	      <li lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja">自然<ruby><rb>破壊</rb><rt>はかい</rt></ruby></span></li>
+	      
+	      <li lang="en" its-locale-filter-list="en"><span lang="ja">社会<ruby><rb>波紋</rb><rt>はもん</rt></ruby></span></li>
+	      <li lang="ja" its-locale-filter-list="ja"><span lang="ja">社会<ruby><rb>波紋</rb><rt>はもん</rt></ruby></span></li>
+	      <li lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja">社會<ruby><rb>波紋</rb><rt>はもん</rt></ruby></span></li>
+	      <li lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja">社会<ruby><rb>波紋</rb><rt>はもん</rt></ruby></span></li>
+	      
+	      <li lang="en" its-locale-filter-list="en"><span lang="ja">天皇<ruby><rb>陛下</rb><rt>へいか</rt></ruby></span></li>
+	      <li lang="ja" its-locale-filter-list="ja"><span lang="ja">天皇<ruby><rb>陛下</rb><rt>へいか</rt></ruby></span></li>
+	      <li lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja">天皇<ruby><rb>陛下</rb><rt>へいか</rt></ruby></span></li>
+	      <li lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja">天皇<ruby><rb>陛下</rb><rt>へいか</rt></ruby></span></li>
+	      
+	      <li lang="en" its-locale-filter-list="en"><span lang="ja">大学<ruby><rb>併願</rb><rt>へいがん</rt></ruby></span></li>
+	      <li lang="ja" its-locale-filter-list="ja"><span lang="ja">大学<ruby><rb>併願</rb><rt>へいがん</rt></ruby></span></li>
+	      <li lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja">大學<ruby><rb>併願</rb><rt>へいがん</rt></ruby></span></li>
+	      <li lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja">大学<ruby><rb>併願</rb><rt>へいがん</rt></ruby></span></li>
+	      
+	      <li lang="en" its-locale-filter-list="en"><span lang="ja">学級<ruby><rb>閉鎖</rb><rt>へいさ</rt></ruby></span></li>
+	      <li lang="ja" its-locale-filter-list="ja"><span lang="ja">学級<ruby><rb>閉鎖</rb><rt>へいさ</rt></ruby></span></li>
+	      <li lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja">班級<ruby><rb>閉鎖</rb><rt>へいさ</rt></ruby></span></li>
+	      <li lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja">班级<ruby><rb>閉鎖</rb><rt>へいさ</rt></ruby></span></li>
 	    </ul>
 	  </section>
 	  <section>
-	    <h5>Inconsistency between the first and subsequent occurrences</h5>
-            <p>
-	      As described in <a href="#furigana-background"><span class="secno">2.2</span></a>,
+	    <h5><span lang="en" its-locale-filter-list="en">Inconsistency between the first and subsequent occurrences</span><span lang="ja" its-locale-filter-list="ja">最初の出現とそれ以降の出現との間の不一致</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">首次出現與後續出現之間的不一致</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">首次出现与后续出现之间的不一致</span></h5>
+            
+            <p lang="en" its-locale-filter-list="en">As described in <a href="#furigana-background"><span class="secno">2.2</span></a>,
 	      furigana as a ruby annotation may be attached to only the
 	      first occurrence of a CJK ideographic character or a word
 	      composed from such characters.  Thus, there is a risk that
@@ -849,6 +2001,50 @@
 	      and the other occurrences may be read as <span lang="ja">ともこ</span>.
 	      The reader would then think that <span lang="ja">さとこ</span>
 	      and <span lang="ja">ともこ</span> are different characters.</p>
+            <p lang="ja" its-locale-filter-list="ja"><a href="#furigana-background"><span class="secno">2.2</span></a>で説明されているように、
+          ルビとして付加されるふりがなは、
+          CJK表意文字、またはそのような文字で構成される単語の
+          最初の出現箇所にのみ付加することができます。そのため、
+          最初の出現箇所とそれ以降の箇所で読み方が異なるというリスクがあります。
+          例えば、小説に登場する人物の名前として
+          <span lang="ja">「智子」</span>を例に考えてみましょう。  この名前には、
+          <span lang="ja">「さとこ」</span>や
+          <span lang="ja">「ともこ」</span>など、いくつかの読み方が考えられます。もし<span lang="ja">「さとこ」</span>という
+          ルビが名前の最初の出現箇所にのみ
+          付加された場合、そこは<span lang="ja">「さとこ」</span>と
+          読み上げられ、それ以外の箇所は<span lang="ja">「ともこ」</span>と
+          読み上げられる可能性があります。
+          その結果、読者は<span lang="ja">「さとこ」</span>と
+          <span lang="ja">「ともこ」</span>が別々の登場人物だと
+          誤解してしまうでしょう。</p>
+            <p lang="zh-Hant" its-locale-filter-list="zh-Hant">如 <a href="#furigana-background"><span class="secno">2.2</span></a> 中所述，
+          作爲注音標記的假名注音只能附加在
+          中日韓表意文字或由這些文字組成的單詞
+          的首次出現處。因此，存在
+          首次出現與後續出現處的讀音不同的風險。
+          例如，假設 <span lang="ja">智子</span> 是小說中
+          某角色的名字。  這個名字有多種可能的讀法，例如
+          <span lang="ja">“さとこ</span>”和
+          <span lang="ja">“ともこ”</span>。如果將<span lang="ja">“さとこ”</span>
+          作爲注音僅附加在該名字的首次出現處，
+          它將被讀作<span lang="ja">“さとこ</span>”，
+          而其他出現處則可能被讀作<span lang="ja">“ともこ</span>”。
+          讀者可能會因此認爲“<span lang="ja">さとこ</span>”
+          和<span lang="ja">“ともこ</span>”是不同的漢字。</p>
+            <p lang="zh-Hans" its-locale-filter-list="zh-Hans">如 <a href="#furigana-background"><span class="secno">2.2</span></a> 中所述，
+          作为注音标记的假名注音只能附加在
+          中日韩表意文字或由这些文字组成的单词
+          的首次出现处。因此，存在
+          首次出现与后续出现处的读音不同的风险。
+          例如，假设 <span lang="ja">智子</span> 是小说中
+          某角色的名字。  这个名字有多种可能的读法，例如
+          <span lang="ja">“さとこ</span>”和
+          <span lang="ja">“ともこ”</span>。如果将<span lang="ja">“さとこ”</span>
+          作为注音仅附加在该名字的首次出现处，
+          它将被读作<span lang="ja">“さとこ</span>”，
+          而其他出现处则可能被读作<span lang="ja">“ともこ</span>”。
+          读者可能会因此认为“<span lang="ja">さとこ</span>”
+          和<span lang="ja">“ともこ</span>”是不同的汉字。</p>
           <aside class="note" title="" id="n20211101002">
             One approach to avoid this problem is to create a table of
 	    ruby base-annotation pairs. When a CJK ideographic character
@@ -862,182 +2058,340 @@
 	  </section>
 	  
         <section>
-          <h4 id="gikun_annotation_read_aloud">Gikun, when ruby annotations read aloud</h4>
-          <p>
-            The strategy of reading aloud ruby annotations only provides an understandable result but does not properly convey the author's intention.
-          </p>
-  	  <p>
-            <span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> is read aloud as TOMO, which means 'friend', but 'frenemy' is intended.</p>
+          <h4 id="gikun_annotation_read_aloud"><span lang="en" its-locale-filter-list="en">Gikun, when ruby annotations read aloud</span><span lang="ja" its-locale-filter-list="ja">ギクン、Rubyの注釈を読み上げるとき</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">Gikun，當 Ruby 註釋被朗讀出來時</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">Gikun，当 Ruby 注释被朗读出来时</span></h4>
+          
+          <p lang="en" its-locale-filter-list="en">The strategy of reading aloud ruby annotations only provides an understandable result but does not properly convey the author's intention.</p>
+          <p lang="ja" its-locale-filter-list="ja">Rubyの注釈を音声で読み上げるという手法は、理解しやすい結果をもたらすものの、作者の意図を適切に伝えることはできません。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">僅朗讀 Ruby 註釋的策略雖然能得出可理解的結果，但無法準確傳達作者的意圖。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">仅朗读 Ruby 注释的策略虽然能得出可理解的结果，但无法准确传达作者的意图。</p>
+  	  
+  	  <p lang="en" its-locale-filter-list="en"><span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> is read aloud as TOMO, which means 'friend', but 'frenemy' is intended.</p>
+  	  <p lang="ja" its-locale-filter-list="ja"><span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> は「トモ」と読み、「友達」という意味ですが、ここでは「フレンミー（敵であり友人）」を指しています。</p>
+  	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> 讀作“TOMO”，意爲“朋友”，但此處的本意是“友敵”。</p>
+  	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> 读作“TOMO”，意为“朋友”，但此处的本意是“友敌”。</p>
 
-          <p>
-            <span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> will be read aloud as INOCHI(<span lang="ja">いのち</span>).
-          </p>
+          
+          <p lang="en" its-locale-filter-list="en"><span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> will be read aloud as INOCHI(<span lang="ja">いのち</span>).</p>
+          <p lang="ja" its-locale-filter-list="ja"><span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> <span lang="ja">は</span>「<span lang="ja">いのち</span>」と読みます。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> 將被讀作 INOCHI（<span lang="ja">いのち</span>）。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> 将被读作 INOCHI（<span lang="ja">いのち</span>）。</p>
         </section>
 
         <section>
-          <h4>Unusual names of people and places, when ruby annotations read aloud</h4>
-          <p>
-            The strategy of reading aloud ruby annotations only works correctly. 
+          <h4><span lang="en" its-locale-filter-list="en">Unusual names of people and places, when ruby annotations read aloud</span><span lang="ja" its-locale-filter-list="ja">ルビー注釈が読み上げられる際、人や場所の珍しい名前</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">當 Ruby 註釋被朗讀出來時，那些不同尋常的人名和地名</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">当 Ruby 注释被朗读出来时，那些不同寻常的人名和地名</span></h4>
+          
+          <p lang="en" its-locale-filter-list="en">The strategy of reading aloud ruby annotations only works correctly. 
             However, if the first occurrence of a name is accompanied by a ruby annotation and the other occurrences are not, 
-            the first occurrence is read aloud differently from the others thus suggesting different persons or places.
-          </p>
-          <p>
-            For example, <span lang="ja"><ruby><rb>不死川玄弥</rb><rt>しなずがわげんや</rt></ruby></span> 
+            the first occurrence is read aloud differently from the others thus suggesting different persons or places.</p>
+          <p lang="ja" its-locale-filter-list="ja">ルビ注釈を読み上げるという手法は、正しく機能する場合に限られます。
+            しかし、ある名称の最初の出現箇所にルビ注釈が付いており、それ以降の出現箇所には付いていない場合、
+            最初の出現箇所は他の箇所とは異なる読み方がされるため、別の人物や場所であるかのように誤解を招く恐れがあります。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">“朗讀紅字註釋”的策略僅在以下情況下能正常工作：
+            如果某個名稱的首次出現帶有紅字註釋，而後續出現時則沒有，
+            那麼首次出現的名稱會被朗讀得與其他出現方式不同，從而讓人誤以爲是指不同的人或地點。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">“朗读红字注释”的策略仅在以下情况下能正常工作：
+            如果某个名称的首次出现带有红字注释，而后续出现时则没有，
+            那么首次出现的名称会被朗读得与其他出现方式不同，从而让人误以为是指不同的人或地点。</p>
+          
+          <p lang="en" its-locale-filter-list="en">For example, <span lang="ja"><ruby><rb>不死川玄弥</rb><rt>しなずがわげんや</rt></ruby></span> 
             is read aloud as SHINAZUGAWA GENYA correctly. 
-            But later occurrences of <span lang="ja">不死川玄弥</span> are read aloud as FUSHIKAWA GENYA if they do not have ruby annotations.
-          </p>
+            But later occurrences of <span lang="ja">不死川玄弥</span> are read aloud as FUSHIKAWA GENYA if they do not have ruby annotations.</p>
+          <p lang="ja" its-locale-filter-list="ja">例えば、<span lang="ja"><ruby><rb>不死川玄弥</rb><rt>しなずがわげんや</rt></ruby></span> 
+            は「不死川玄弥」と正しく読み上げられます。
+            しかし、その後に出てくる「<span lang="ja">不死川玄弥</span>」は、ルビが付いていない場合、「フシカワ・ゲニャ」と読み上げられます。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">例如，<span lang="ja"><ruby><rb>不死川玄弥</rb><rt>しなずがわげんや</rt></ruby></span> 
+            會被正確讀作“SHINAZUGAWA GENYA”。
+            但如果後續出現的“<span lang="ja">不死川玄彌</span>”沒有注音標記，則會被讀作“FUSHIKAWA GENYA”。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">例如，<span lang="ja"><ruby><rb>不死川玄弥</rb><rt>しなずがわげんや</rt></ruby></span> 
+            会被正确读作“SHINAZUGAWA GENYA”。
+            但如果后续出现的“<span lang="ja">不死川玄弥</span>”没有注音标记，则会被读作“FUSHIKAWA GENYA”。</p>
           <aside class="note" title="" id="n20211101003">
             The workaround as described in the note in <a href="#furigana_annotation_read_aloud"><span class="secno">3.3.1</span></a> is available.
           </aside>
         </section>
 
         <section>
-          <h4 id="interlinear_note_annotation_read_aloud">Interlinear notes, when ruby annotations read aloud</h4>
-          <p>
-            The strategy of reading aloud ruby annotations only provides incomprehensible results often.
-          </p>
-          <p>
-            If <span lang="ja">"1837-1913 江戸幕府最後の将軍"</span> is attached to <span lang="ja">徳川慶喜</span> as a ruby annotation, 
+          <h4 id="interlinear_note_annotation_read_aloud"><span lang="en" its-locale-filter-list="en">Interlinear notes, when ruby annotations read aloud</span><span lang="ja" its-locale-filter-list="ja">行間注釈、ルビ読み上げ時</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">行間註釋，當紅字註釋被朗讀時</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">行间注释，当红字注释被朗读时</span></h4>
+          
+          <p lang="en" its-locale-filter-list="en">The strategy of reading aloud ruby annotations only provides incomprehensible results often.</p>
+          <p lang="ja" its-locale-filter-list="ja">ルビの注釈を声に出して読むという手法では、理解できない結果になることがよくあります。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">僅朗讀 Ruby 註釋的策略往往只會得到令人費解的結果。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">仅朗读 Ruby 注释的策略往往只会得到令人费解的结果。</p>
+          
+          <p lang="en" its-locale-filter-list="en">If <span lang="ja">"1837-1913 江戸幕府最後の将軍"</span> is attached to <span lang="ja">徳川慶喜</span> as a ruby annotation, 
             it will be read aloud as 1837-1913 EDOBAKUFU SAIGO NO SHOGUN
             (1837-1913 the last shogun of the Edo shogunate), which is reasonable.
-            But if only "1837-1913" is attached as a ruby annotation, the result is 1837-1913, which does not make any sense.
-          </p>
+            But if only "1837-1913" is attached as a ruby annotation, the result is 1837-1913, which does not make any sense.</p>
+          <p lang="ja" its-locale-filter-list="ja">もし<span lang="ja">「1837-1913 江戸幕府最後の将軍」</span>というルビが<span lang="ja">徳川慶喜</span>に付けられている場合、
+            音声読み上げでは「1837-1913 EDOBAKUFU SAIGO NO SHOGUN
+            （1837-1913 江戸幕府最後の将軍）」と読み上げられ、これは妥当な結果です。
+            しかし、ルビとして「1837-1913」のみが付けられた場合、結果は「1837-1913」となり、これは全く意味を成さない。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">如果將<span lang="ja">“1837-1913 江戶幕府最後的將軍</span>”作爲注音標註附加到<span lang="ja">“德川慶喜</span>”上，
+            系統會將其朗讀爲 1837-1913 EDOBAKUFU SAIGO NO SHOGUN
+            （1837-1913 江戶幕府最後的將軍），這很合理。
+            但如果僅將“1837-1913”作爲注音附加，結果將是“1837-1913”，這毫無意義。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">如果将<span lang="ja">“1837-1913 江户幕府最后的将军</span>”作为注音标注附加到<span lang="ja">“德川庆喜</span>”上，
+            系统会将其朗读为 1837-1913 EDOBAKUFU SAIGO NO SHOGUN
+            （1837-1913 江户幕府最后的将军），这很合理。
+            但如果仅将“1837-1913”作为注音附加，结果将是“1837-1913”，这毫无意义。</p>
         </section>
 
 
         <section>
-          <h4>Double-sided ruby, when ruby annotations read aloud</h4>
-          <p>
-            The strategy of reading aloud ruby annotations only makes two ruby annotations be read aloud while ignoring their ruby base. 
+          <h4><span lang="en" its-locale-filter-list="en">Double-sided ruby, when ruby annotations read aloud</span><span lang="ja" its-locale-filter-list="ja">両面ルビー：ルビー注釈が読み上げられる場合</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">雙面紅寶石，當紅寶石註釋被朗讀出來時</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">双面红宝石，当红宝石注释被朗读出来时</span></h4>
+          
+          <p lang="en" its-locale-filter-list="en">The strategy of reading aloud ruby annotations only makes two ruby annotations be read aloud while ignoring their ruby base. 
             Since one of the two ruby annotations is typically furigana, the description in <a href="#furigana_annotation_read_aloud"><span class="secno">3.3.1</span></a> applies. 
             If the other ruby annotation is a Gikun, the description in <a href="#gikun_annotation_read_aloud"><span class="secno">3.3.2</span></a> applies; 
-            if it is an interlinear note, the description in <a href="#interlinear_note_annotation_read_aloud"><span class="secno">3.3.4</span></a> applies.
-          </p>
+            if it is an interlinear note, the description in <a href="#interlinear_note_annotation_read_aloud"><span class="secno">3.3.4</span></a> applies.</p>
+          <p lang="ja" its-locale-filter-list="ja">ルビ注釈を音声読み上げするこの処理では、2つのルビ注釈のみが読み上げられ、それらのルビの基となる文字は無視されます。
+            通常、これら2つのルビ注釈のうち1つはふりがなであるため、<a href="#furigana_annotation_read_aloud"><span class="secno">3.3.1</span></a>の説明が適用されます。 
+            もう一方のルビ注釈が「ギクン」である場合は、<a href="#gikun_annotation_read_aloud"><span class="secno">3.3.2</span></a>の記述が適用されます。
+            行間注釈である場合は、<a href="#interlinear_note_annotation_read_aloud"><span class="secno">3.3.4</span></a>の記述が適用されます。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">“僅朗讀紅字註釋”的策略僅會朗讀兩個紅字註釋，同時忽略其對應的紅字基文本。
+            由於這兩個紅字註釋中通常有一個是假名注音，因此適用 <a href="#furigana_annotation_read_aloud"><span class="secno">3.3.1</span></a> 中的說明。 
+            如果另一個註釋是“義訓”，則適用 <a href="#gikun_annotation_read_aloud"><span class="secno">3.3.2</span></a> 中的說明；
+            如果是行間註釋，則適用 <a href="#interlinear_note_annotation_read_aloud"><span class="secno">3.3.4</span></a> 中的說明。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">“仅朗读红字注释”的策略仅会朗读两个红字注释，同时忽略其对应的红字基文本。
+            由于这两个红字注释中通常有一个是假名注音，因此适用 <a href="#furigana_annotation_read_aloud"><span class="secno">3.3.1</span></a> 中的说明。 
+            如果另一个注释是“义训”，则适用 <a href="#gikun_annotation_read_aloud"><span class="secno">3.3.2</span></a> 中的说明；
+            如果是行间注释，则适用 <a href="#interlinear_note_annotation_read_aloud"><span class="secno">3.3.4</span></a> 中的说明。</p>
   	  <aside class="note">Further discussion is not possible until the markup representation of double-sided ruby is clearly defined.</aside>
         </section>
       </section>
 
       <section id="reading_aloud_ruby_bases_only">
-        <h3>Reading aloud ruby bases only</h3>
-        <p>
-	  This strategy reads aloud ruby bases without reading ruby annotations.
-          For example, <ruby><rb>foo</rb><rt>bar</rt></ruby> is read aloud as foo.
-        </p>
+        <h3><span lang="en" its-locale-filter-list="en">Reading aloud ruby bases only</span><span lang="ja" its-locale-filter-list="ja">ルビのベース部分のみを声に出して読む</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">僅朗讀 Ruby 基礎內容</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">仅朗读 Ruby 基础内容</span></h3>
+        
+        <p lang="en" its-locale-filter-list="en">This strategy reads aloud ruby bases without reading ruby annotations.
+          For example, <ruby><rb>foo</rb><rt>bar</rt></ruby> is read aloud as foo.</p>
+        <p lang="ja" its-locale-filter-list="ja">この戦略では、ルビの注釈を読み上げずに、ルビのベースを音声で読み上げます。
+          たとえば、<ruby><rb>foo</rb><rt>bar</rt></ruby> は「foo」と読み上げられます。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">該策略會朗讀 Ruby 基礎代碼，但不會朗讀 Ruby 註釋。
+          例如，<ruby><rb>foo</rb><rt>bar</rt></ruby> 會被朗讀爲 foo。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">该策略会朗读 Ruby 基础代码，但不会朗读 Ruby 注释。
+          例如，<ruby><rb>foo</rb><rt>bar</rt></ruby> 会被朗读为 foo。</p>
         <aside class="note" title="" id="n20211101004">
           This strategy does not necessarily ignore ruby annotations. 
           Although text-to-speech engines mainly use ruby bases, they may also use ruby annotations as a hint.
         </aside>
 
         <section>
-          <h4 id="furigana_base_read_aloud">Furigana, when bases read aloud</h4>
-          <p>
-            The strategy of reading aloud ruby bases only may or may not provide good results, depending on text-to-speech engines.
-          </p>
-          <p>
-            The following is a quote from [[?ACCESSIBLE_E_BOOKS]].
-          </p>
+          <h4 id="furigana_base_read_aloud"><span lang="en" its-locale-filter-list="en">Furigana, when bases read aloud</span><span lang="ja" its-locale-filter-list="ja">ふりがな（音読用）</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">讀音標，即讀出假名時</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">读音标，即读出假名时</span></h4>
+          
+          <p lang="en" its-locale-filter-list="en">The strategy of reading aloud ruby bases only may or may not provide good results, depending on text-to-speech engines.</p>
+          <p lang="ja" its-locale-filter-list="ja">ルビーのみを読み上げるという手法は、テキスト読み上げエンジンによっては、良い結果が得られる場合もあれば、そうでない場合もあります。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">僅朗讀 Ruby 基礎內容這一策略能否取得良好效果，取決於文本轉語音引擎的表現。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">仅朗读 Ruby 基础内容这一策略能否取得良好效果，取决于文本转语音引擎的表现。</p>
+          
+          <p lang="en" its-locale-filter-list="en">The following is a quote from [[?ACCESSIBLE_E_BOOKS]].</p>
+          <p lang="ja" its-locale-filter-list="ja">以下は[[?ACCESSIBLE_E_BOOKS]]からの引用です。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">以下內容引自[[?ACCESSIBLE_E_BOOKS]]。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">以下内容引自[[?ACCESSIBLE_E_BOOKS]]。</p>
           <aside class="note" title="" id="n20211101005">
             Many TTS engines support characters in JIS X 0208:1997 but do not typically support characters beyond it.
             Thus, more than a half of the JIS CJK ideographic characters cannot be read aloud.
           </aside>
-          <p>
-            Furthermore, compound words made up from CJK ideographic characters in JIS X 0208 are sometimes read aloud incorrectly.
-          </p>
-          <p>
-            As the importance of accessibility is well recognized and text-to-speech engines are improved, 
+          
+          <p lang="en" its-locale-filter-list="en">Furthermore, compound words made up from CJK ideographic characters in JIS X 0208 are sometimes read aloud incorrectly.</p>
+          <p lang="ja" its-locale-filter-list="ja">さらに、JIS X 0208に含まれる中日韓の表意文字から成る複合語は、読み方が間違って発音されることがある。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">此外，由JIS X 0208中中日韓表意文字構成的複合詞，有時會被讀錯。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">此外，由JIS X 0208中中日韩表意文字构成的复合词，有时会被读错。</p>
+          
+          <p lang="en" its-locale-filter-list="en">As the importance of accessibility is well recognized and text-to-speech engines are improved, 
             more and more words will be read aloud correctly. 
             However, there are some words, such as the aforementioned YAMAZAKI, 
-            that cannot be read aloud correctly by text-to-speech engines and even native Japanese speakers.
-          </p>
+            that cannot be read aloud correctly by text-to-speech engines and even native Japanese speakers.</p>
+          <p lang="ja" its-locale-filter-list="ja">アクセシビリティの重要性が広く認識され、テキスト読み上げエンジンが改良されるにつれ、
+            正しく読み上げられる単語はますます増えていくでしょう。
+            しかし、前述の「YAMAZAKI」のように、
+            テキスト読み上げエンジンや日本語ネイティブスピーカーでさえも正しく読み上げることができない単語がいくつか存在します。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">隨着無障礙訪問的重要性日益受到重視，以及文本轉語音引擎的不斷改進，
+            越來越多的詞彙將能被準確朗讀出來。
+            然而，有些詞彙，例如前文提到的“YAMAZAKI”，
+            即使對文本轉語音引擎乃至日語母語者而言，也無法被準確朗讀出來。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">随着无障碍访问的重要性日益受到重视，以及文本转语音引擎的不断改进，
+            越来越多的词汇将能被准确朗读出来。
+            然而，有些词汇，例如前文提到的“YAMAZAKI”，
+            即使对文本转语音引擎乃至日语母语者而言，也无法被准确朗读出来。</p>
         </section>
 
         <section>
-          <h4 id="gikun_base_read_aloud">Gikun, when bases read aloud</h4>
-          <p>
-            The strategy of reading aloud ruby bases only results in a perfectly understandable result. 
-            However, since gikun is ignored, the author's intent is not completely conveyed.
-          </p>
-	  <p>
-            <span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> is read aloud as TEKI, which means 'enemy', but 'frenemy' is intended.</p>
+          <h4 id="gikun_base_read_aloud"><span lang="en" its-locale-filter-list="en">Gikun, when bases read aloud</span><span lang="ja" its-locale-filter-list="ja">ギクン、ベースが読み上げられるとき</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">Gikun，當壘位被大聲讀出時</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">Gikun，当垒位被大声读出时</span></h4>
+          
+          <p lang="en" its-locale-filter-list="en">The strategy of reading aloud ruby bases only results in a perfectly understandable result. 
+            However, since gikun is ignored, the author's intent is not completely conveyed.</p>
+          <p lang="ja" its-locale-filter-list="ja">ルビー表記を声に出して読むという手法では、結果として完全に理解できる内容になる。
+            しかし、「gikun」は無視されてしまうため、著者の意図が完全に伝わるわけではない。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">僅朗讀 Ruby 基礎代碼的策略只能得到完全通順的結果。
+            然而，由於忽略了 gikun，作者的意圖並未完全傳達出來。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">仅朗读 Ruby 基础代码的策略只能得到完全通顺的结果。
+            然而，由于忽略了 gikun，作者的意图并未完全传达出来。</p>
+	  
+	  <p lang="en" its-locale-filter-list="en"><span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> is read aloud as TEKI, which means 'enemy', but 'frenemy' is intended.</p>
+	  <p lang="ja" its-locale-filter-list="ja"><span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> は「テキ」と読み、「敵」を意味しますが、ここでは「敵であり友人」という意味で用いられています。</p>
+	  <p lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> 讀作 TEKI，意爲“敵人”，但此處意指“友敵”。</p>
+	  <p lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja"><ruby><rb>敵</rb><rt>とも</rt></ruby></span> 读作 TEKI，意为“敌人”，但此处意指“友敌”。</p>
 
-          <p>
-            <span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> is read out as SEIMEI.
-          </p>
+          
+          <p lang="en" its-locale-filter-list="en"><span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> is read out as SEIMEI.</p>
+          <p lang="ja" its-locale-filter-list="ja"><span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> <span lang="ja">は</span>「セイメイ」と読みます。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> 讀作“SEIMEI”。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja"><ruby><rb>生命</rb><rt>いのち</rt></ruby></span> 读作“SEIMEI”。</p>
         </section>
 
         <section>
-          <h4>Unusual names of people and places, when bases read aloud</h4>
-          <p>
-            The strategy of reading ruby bases only leads to incorrect results. 
-            However, since every occurrence of a name is read aloud in the same way, users will not be confused.
-          </p>
-          <p>
-            Every occurrence <span lang="ja"><ruby><rb>不死川 玄弥</rb><rt>しなずがわ　げんや</rt></ruby></span> 
-            will always be incorrectly read aloud as FUSHIKAWA GENYA, regardless of the presence or absence of ruby annotations.
-          </p>
+          <h4><span lang="en" its-locale-filter-list="en">Unusual names of people and places, when bases read aloud</span><span lang="ja" its-locale-filter-list="ja">人名や地名の聞き慣れない名前は、声に出して読むと</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">當基地人員大聲讀出這些人名和地名時，聽起來會很特別</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">当基地人员大声读出这些人名和地名时，听起来会很特别</span></h4>
+          
+          <p lang="en" its-locale-filter-list="en">The strategy of reading ruby bases only leads to incorrect results. 
+            However, since every occurrence of a name is read aloud in the same way, users will not be confused.</p>
+          <p lang="ja" its-locale-filter-list="ja">ルビの基底文字のみを読み上げるという手法は、誤った結果を招くだけです。
+            しかし、名前が読み上げられるたびに同じ読み方がされるため、ユーザーが混乱することはありません。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">僅讀取 Ruby 字符串的策略只會導致錯誤的結果。
+            不過，由於每個名稱的讀法都是一樣的，用戶不會感到困惑。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">仅读取 Ruby 字符串的策略只会导致错误的结果。
+            不过，由于每个名称的读法都是一样的，用户不会感到困惑。</p>
+          
+          <p lang="en" its-locale-filter-list="en">Every occurrence <span lang="ja"><ruby><rb>不死川 玄弥</rb><rt>しなずがわ　げんや</rt></ruby></span> 
+            will always be incorrectly read aloud as FUSHIKAWA GENYA, regardless of the presence or absence of ruby annotations.</p>
+          <p lang="ja" its-locale-filter-list="ja"><span lang="ja"><ruby><rb>不死川 玄弥</rb><rt>しなずがわ　げんや</rt></ruby></span> がどこに現れても、
+            ルビの有無にかかわらず、常に「フシカワ・ゲニャ」と誤って読み上げられてしまいます。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">每次出現 <span lang="ja"><ruby><rb>不死川 玄弥</rb><rt>しなずがわ　げんや</rt></ruby></span> 
+            時，無論是否有注音標記，都會被錯誤地讀作“FUSHIKAWA GENYA”。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">每次出现 <span lang="ja"><ruby><rb>不死川 玄弥</rb><rt>しなずがわ　げんや</rt></ruby></span> 
+            时，无论是否有注音标记，都会被错误地读作“FUSHIKAWA GENYA”。</p>
         </section>
 
         <section>
-          <h4 id="interlinear_note_base_read_aloud">Interlinear notes, when bases read aloud</h4>
-          <p>
-            The strategy of reading ruby bases only provides a perfectly understandable result. 
-            However, since interlinear notes are ignored, the author's intention is not conveyed well.
-          </p>
-          <p>
-            <span lang="ja"><ruby><rb>徳川慶喜</rb><rt>1837-1913 江戸幕府最後の将軍</rt></ruby></span>
+          <h4 id="interlinear_note_base_read_aloud"><span lang="en" its-locale-filter-list="en">Interlinear notes, when bases read aloud</span><span lang="ja" its-locale-filter-list="ja">行間注釈（音読する場合）</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">行間註釋（當基音被朗讀時）</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">行间注释（当基音被朗读时）</span></h4>
+          
+          <p lang="en" its-locale-filter-list="en">The strategy of reading ruby bases only provides a perfectly understandable result. 
+            However, since interlinear notes are ignored, the author's intention is not conveyed well.</p>
+          <p lang="ja" its-locale-filter-list="ja">ルビのみを読み取るという手法では、結果として完全に理解できる文章が得られる。
+            しかし、行間注釈が無視されるため、著者の意図が十分に伝わらない。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">僅讀取 Ruby 代碼的策略確實能得出完全合理的結果。
+            然而，由於忽略了行間註釋，作者的意圖未能得到充分傳達。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">仅读取 Ruby 代码的策略确实能得出完全合理的结果。
+            然而，由于忽略了行间注释，作者的意图未能得到充分传达。</p>
+          
+          <p lang="en" its-locale-filter-list="en"><span lang="ja"><ruby><rb>徳川慶喜</rb><rt>1837-1913 江戸幕府最後の将軍</rt></ruby></span>
               (Tokugawa Yoshinobu 1837-1913, the last shogun of the Edo shogunate), 
-              will be read aloud as <span lang="ja">とくがわよしのぶ</span> (Tokugawa Yoshinobu).
-          </p>
+              will be read aloud as <span lang="ja">とくがわよしのぶ</span> (Tokugawa Yoshinobu).</p>
+          <p lang="ja" its-locale-filter-list="ja"><span lang="ja"><ruby><rb>徳川慶喜</rb><rt>1837-1913 江戸幕府最後の将軍</rt></ruby></span>
+              （徳川慶喜 1837-1913、江戸幕府最後の将軍）は、
+              「<span lang="ja">とくがわよしのぶ</span>」と読みます。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant"><span lang="ja"><ruby><rb>徳川慶喜</rb><rt>1837-1913 江戸幕府最後の将軍</rt></ruby></span>
+              （德川慶喜 1837-1913，江戶幕府的最後一位幕府將軍），
+              <span lang="ja">讀作“德川慶喜”</span>（Tokugawa Yoshinobu）。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans"><span lang="ja"><ruby><rb>徳川慶喜</rb><rt>1837-1913 江戸幕府最後の将軍</rt></ruby></span>
+              （德川庆喜 1837-1913，江户幕府的最后一位幕府将军），
+              <span lang="ja">读作“德川庆喜”</span>（Tokugawa Yoshinobu）。</p>
         </section>
 
 
         <section>
-          <h4>Double-sided ruby, when bases read aloud</h4>
-          <p>
-            The strategy of reading ruby bases only will ignore the two ruby annotations and read their ruby base only. 
+          <h4><span lang="en" its-locale-filter-list="en">Double-sided ruby, when bases read aloud</span><span lang="ja" its-locale-filter-list="ja">両面ルビー、音読されるベース</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">雙面紅寶石，當基底被朗讀時</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">双面红宝石，当基底被朗读时</span></h4>
+          
+          <p lang="en" its-locale-filter-list="en">The strategy of reading ruby bases only will ignore the two ruby annotations and read their ruby base only. 
             When one of the two ruby annotations is furigana, the description in <a href="#furigana_base_read_aloud"><span class="secno">3.4.1</span></a> applies. 
-            If the other is a gikun, the description in <a href="#gikun_base_read_aloud"><span class="secno">3.4.2</span></a> applies, and if it is an interlinear note, the description in <a href="#interlinear_note_base_read_aloud"><span class="secno">3.4.4</span></a> applies.
-          </p>
+            If the other is a gikun, the description in <a href="#gikun_base_read_aloud"><span class="secno">3.4.2</span></a> applies, and if it is an interlinear note, the description in <a href="#interlinear_note_base_read_aloud"><span class="secno">3.4.4</span></a> applies.</p>
+          <p lang="ja" its-locale-filter-list="ja">ルビのベースのみを読み込むという戦略では、2つのルビ注釈を無視し、それぞれのルビのベースのみを読み込みます。
+            2つのルビ注釈のうち1つがふりがなである場合は、<a href="#furigana_base_read_aloud"><span class="secno">3.4.1</span></a>の説明が適用されます。
+            もう1つがギクンである場合は<a href="#gikun_base_read_aloud"><span class="secno">3.4.2</span></a>の説明が適用され、行間注釈である場合は<a href="#interlinear_note_base_read_aloud"><span class="secno">3.4.4</span></a>の説明が適用されます。</p>
+          <p lang="zh-Hant" its-locale-filter-list="zh-Hant">僅讀取註釋基底的策略將忽略這兩個註釋，並僅讀取其註釋基底。
+            當這兩個註釋中的一個是假名注音時，適用 <a href="#furigana_base_read_aloud"><span class="secno">3.4.1</span></a> 中的說明。
+            如果另一個是“gikun”，則適用 <a href="#gikun_base_read_aloud"><span class="secno">3.4.2</span></a> 中的說明；如果是行間註釋，則適用 <a href="#interlinear_note_base_read_aloud"><span class="secno">3.4.4</span></a> 中的說明。</p>
+          <p lang="zh-Hans" its-locale-filter-list="zh-Hans">仅读取注释基底的策略将忽略这两个注释，并仅读取其注释基底。
+            当这两个注释中的一个是假名注音时，适用 <a href="#furigana_base_read_aloud"><span class="secno">3.4.1</span></a> 中的说明。
+            如果另一个是“gikun”，则适用 <a href="#gikun_base_read_aloud"><span class="secno">3.4.2</span></a> 中的说明；如果是行间注释，则适用 <a href="#interlinear_note_base_read_aloud"><span class="secno">3.4.4</span></a> 中的说明。</p>
   	  <aside class="note">Further discussion is not possible until the markup representation of double-sided ruby is clearly defined.</aside>
         </section>
       </section>
     </section>
 
     <section>
-      <h2>Miscellaneous issues around ruby markup</h2>
+      <h2><span lang="en" its-locale-filter-list="en">Miscellaneous issues around ruby markup</span><span lang="ja" its-locale-filter-list="ja">Rubyのマークアップに関するその他の問題</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">關於 Ruby 標記的各種問題</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">关于 Ruby 标记的各种问题</span></h2>
 
       <section>
-        <h3>Conversion from small kana characters to full-size kana characters</h3>
-        <p>
-          Small kana characters <span lang="ja">ゃ</span>, <span lang="ja">ゅ</span>, <span lang="ja">ょ</span>, and 
+        <h3><span lang="en" its-locale-filter-list="en">Conversion from small kana characters to full-size kana characters</span><span lang="ja" its-locale-filter-list="ja">小書き仮名から大書き仮名への変換</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">將小假名轉換爲標準假名</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">将小假名转换为标准假名</span></h3>
+        
+        <p lang="en" its-locale-filter-list="en">Small kana characters <span lang="ja">ゃ</span>, <span lang="ja">ゅ</span>, <span lang="ja">ょ</span>, and 
           <span lang="ja">っ</span> are too small when they appear in ruby annotations. 
           For this reason, instead of these small characters, full-size kana characters <span lang="ja">や</span>, 
-          <span lang="ja">ゆ</span>, <span lang="ja">よ</span>, and <span lang="ja">つ</span> are used in ruby annotations.
-        </p>
-        <p>
-          However, since full-size kana characters are pronounced differently from small kana, 
-          ruby annotations containing full-size kana are read aloud differently.
-        </p>
-        <p>
-          CSS has a mechanism for overcoming this problem. 
+          <span lang="ja">ゆ</span>, <span lang="ja">よ</span>, and <span lang="ja">つ</span> are used in ruby annotations.</p>
+        <p lang="ja" its-locale-filter-list="ja">ルビ表記に表示される小仮名「<span lang="ja">ゃ</span>」「<span lang="ja">ゅ</span>」「<span lang="ja">ょ</span>」および<span lang="ja">「っ」</span>は、文字が小さすぎます。
+          そのため、ルビ表記ではこれらの小仮名の代わりに、通常サイズの仮名「<span lang="ja">や</span>」「<span lang="ja">ゆ</span>」「<span lang="ja">よ</span>」「<span lang="ja">つ</span>」が使用されます。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在注音標註中，小寫假名 <span lang="ja">ゃ</span>、<span lang="ja">ゅ</span>、<span lang="ja">ょ</span> 和 
+          <span lang="ja">っ</span> 顯得過於微小。
+          因此，在注音標註中，不再使用這些小寫假名，而是使用標準大小的假名 <span lang="ja">や</span>、
+          <span lang="ja">ゆ</span>、<span lang="ja">よ</span> 和 <span lang="ja">つ</span>。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在注音标注中，小写假名 <span lang="ja">ゃ</span>、<span lang="ja">ゅ</span>、<span lang="ja">ょ</span> 和 
+          <span lang="ja">っ</span> 显得过于微小。
+          因此，在注音标注中，不再使用这些小写假名，而是使用标准大小的假名 <span lang="ja">や</span>、
+          <span lang="ja">ゆ</span>、<span lang="ja">よ</span> 和 <span lang="ja">つ</span>。</p>
+        
+        <p lang="en" its-locale-filter-list="en">However, since full-size kana characters are pronounced differently from small kana, 
+          ruby annotations containing full-size kana are read aloud differently.</p>
+        <p lang="ja" its-locale-filter-list="ja">ただし、全角の仮名は半角の仮名とは発音が異なるため、
+          全角の仮名を含むルビの読み上げ方は異なります。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">然而，由於全角假名與半角假名的發音不同，
+          包含全角假名的注音標記在朗讀時的發音也會有所不同。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">然而，由于全角假名与半角假名的发音不同，
+          包含全角假名的注音标记在朗读时的发音也会有所不同。</p>
+        
+        <p lang="en" its-locale-filter-list="en">CSS has a mechanism for overcoming this problem. 
           Value '<a data-cite="css-text-3" data-xref-type="css-value" data-xref-for="text-transform">full-size-kana</a>' of 
           the <a data-cite="css-text-3" data-xref-type="css-property">text-transform</a> property as specified in CSS Text converts 
           small kana characters to full-size kana. 
           It is thus possible to use small kana in ruby annotations while rendering them using full-size kana. 
-          Text-to-speech engines can provide correct results even when ruby annotations are read aloud.
-        </p>
+          Text-to-speech engines can provide correct results even when ruby annotations are read aloud.</p>
+        <p lang="ja" its-locale-filter-list="ja">CSSには、この問題を解決するための仕組みが用意されています。
+          CSS Textで規定されている
+          <a data-cite="css-text-3" data-xref-type="css-property">text-transform</a>プロパティの値「<a data-cite="css-text-3" data-xref-type="css-value" data-xref-for="text-transform">full-size-kana</a>」を使用すると、
+          小仮名を全角仮名に変換することができます。
+          これにより、ルビ注釈には小仮名を使用しつつ、表示時には全角仮名でレンダリングすることが可能になります。
+          また、ルビ注釈を音声で読み上げる場合でも、テキスト読み上げエンジンは正確な結果を提供できます。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">CSS 提供了一種解決此問題的機制。
+          根據《CSS 文本規範》的規定，
+          <a data-cite="css-text-3" data-xref-type="css-property">text-transform</a> 屬性的值 '<a data-cite="css-text-3" data-xref-type="css-value" data-xref-for="text-transform">full-size-kana</a>' 可將
+          小假名轉換爲全尺寸假名。
+          因此，在註釋中可以使用小假名，同時在渲染時將其顯示爲全尺寸假名。
+          即使朗讀註釋內容時，語音合成引擎也能提供正確的結果。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">CSS 提供了一种解决此问题的机制。
+          根据《CSS 文本规范》的规定，
+          <a data-cite="css-text-3" data-xref-type="css-property">text-transform</a> 属性的值 '<a data-cite="css-text-3" data-xref-type="css-value" data-xref-for="text-transform">full-size-kana</a>' 可将
+          小假名转换为全尺寸假名。
+          因此，在注释中可以使用小假名，同时在渲染时将其显示为全尺寸假名。
+          即使朗读注释内容时，语音合成引擎也能提供正确的结果。</p>
       </section>
 
       <section>
-        <h3>A single ruby element or multiple ruby elements per one compound word</h3>
-        <p>When attaching a ruby annotation to a compound word consisting of multiple CJK ideographic characters in an HTML or EPUB document, one way is to create a single HTML <code>ruby</code> element for the entire word. However, in some cases, a separate <code>ruby</code> element is created for each CJK ideographic character. 
+        <h3><span lang="en" its-locale-filter-list="en">A single ruby element or multiple ruby elements per one compound word</span><span lang="ja" its-locale-filter-list="ja">1つの複合語につき、ルビを1つまたは複数付ける</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">一個複合詞中包含一個或多個紅字元素</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">一个复合词中包含一个或多个红字元素</span></h3>
+        
+        <p lang="en" its-locale-filter-list="en">When attaching a ruby annotation to a compound word consisting of multiple CJK ideographic characters in an HTML or EPUB document, one way is to create a single HTML <code>ruby</code> element for the entire word. However, in some cases, a separate <code>ruby</code> element is created for each CJK ideographic character. 
 For example, to attach the ruby annotation <span lang="ja">せいめい</span> to the word <span lang="ja">生命</span> (meaning “life” in Japanese), the typical approach is to create a single <code>ruby</code> element for this word.  This <code>ruby</code> element may have a single <code>rt</code> element for “せいめい” or two <code>rt</code> elements (one for “せい” and another for “めい”).  However, it is not entirely uncommon to see two <code>ruby</code> elements for this word: one for “生” and another for “命”.</p>
+        <p lang="ja" its-locale-filter-list="ja">HTMLやEPUB文書において、複数のCJK表意文字から成る複合語にルビを付ける場合、その単語全体に対して単一のHTML <code>ruby</code> 要素を作成する方法があります。しかし、場合によっては、CJK表意文字ごとに個別の <code>ruby</code> 要素を作成することもあります。 
+例えば、単語「<span lang="ja">生命</span>」（日本語で「いのち」を意味する）にルビ「<span lang="ja">せいめい</span>」を付ける場合、一般的な手法はこの単語に対して単一の <code>ruby</code> 要素を作成することです。  この <code>ruby</code> 要素には、「せいめい」に対応する単一の <code>rt</code> 要素が含まれる場合もあれば、2つの <code>rt</code> 要素（「せい」用と「めい」用）が含まれる場合もあります。しかし、この単語に対して「生」用と「命」用の2つの <code>ruby</code> 要素が使用されることも、決して珍しくありません。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在 HTML 或 EPUB 文檔中，爲由多箇中日韓表意文字組成的複合詞添加註音時，一種方法是爲整個詞創建一個 HTML <code>ruby</code> 元素。但在某些情況下，會爲每個中日韓表意文字分別創建一個 <code>ruby</code> 元素。 
+例如，要爲詞語<span lang="ja">“生命”</span>（日語中意爲“生命”）添加<span lang="ja">“せいめい</span>”的注音，通常的做法是爲該詞創建一個單獨的 <code>ruby</code> 元素。  該 <code>ruby</code> 元素可能包含一個用於“せいめい”的 <code>rt</code> 元素，或兩個 <code>rt</code> 元素（一個用於“せい”，另一個用於“めい”）。不過，爲該詞使用兩個 <code>ruby</code> 元素的情況也並不罕見：一個用於“生”，另一個用於“命”。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在 HTML 或 EPUB 文档中，为由多个中日韩表意文字组成的复合词添加注音时，一种方法是为整个词创建一个 HTML <code>ruby</code> 元素。但在某些情况下，会为每个中日韩表意文字分别创建一个 <code>ruby</code> 元素。 
+例如，要为词语<span lang="ja">“生命”</span>（日语中意为“生命”）添加<span lang="ja">“せいめい</span>”的注音，通常的做法是为该词创建一个单独的 <code>ruby</code> 元素。  该 <code>ruby</code> 元素可能包含一个用于“せいめい”的 <code>rt</code> 元素，或两个 <code>rt</code> 元素（一个用于“せい”，另一个用于“めい”）。不过，为该词使用两个 <code>ruby</code> 元素的情况也并不罕见：一个用于“生”，另一个用于“命”。</p>
 
-	<p>Some people argue that 
+	
+	<p lang="en" its-locale-filter-list="en">Some people argue that 
           creating a ruby element per compound word is better than creating a ruby element for each character in a compound word. They argue that 
-it becomes easier for the text-to-speech engine to maintain a correspondence table between ruby bases and ruby annotations so that subsequent occurrences of the compound word without ruby can be pronounced correctly.
-        </p>
-	<p>Meanwhile, others argue that there is a good reason to attach ruby
+it becomes easier for the text-to-speech engine to maintain a correspondence table between ruby bases and ruby annotations so that subsequent occurrences of the compound word without ruby can be pronounced correctly.</p>
+	<p lang="ja" its-locale-filter-list="ja">一部の人々は、
+          複合語ごとに1つのルビ要素を作成する方が、複合語を構成する各文字ごとにルビ要素を作成するよりも優れていると主張している。彼らは、
+そうすることで、テキスト読み上げエンジンがルビの基となる文字とルビの注釈との対応表を管理しやすくなり、その結果、ルビが付いていない複合語が後に登場した場合でも正しく発音できるようになると主張している。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">有人認爲，
+          爲每個複合詞創建一個注音元素，比爲複合詞中的每個字符分別創建注音元素更好。他們認爲，
+這樣可以更方便文本轉語音引擎維護注音基詞與注音標註之間的對應表，從而確保後續出現且未標註注音的複合詞也能被正確發音。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">有人认为，
+          为每个复合词创建一个注音元素，比为复合词中的每个字符分别创建注音元素更好。他们认为，
+这样可以更方便文本转语音引擎维护注音基词与注音标注之间的对应表，从而确保后续出现且未标注注音的复合词也能被正确发音。</p>
+	
+	<p lang="en" its-locale-filter-list="en">Meanwhile, others argue that there is a good reason to attach ruby
 	  annotations to some, but not all, characters in a compound word.
 	  For example, consider <span lang="ja">佳人</span>, where
 	  <span lang="ja">佳</span> is taught in junior high schools while
@@ -1049,23 +2403,69 @@ it becomes easier for the text-to-speech engine to maintain a correspondence tab
 	  annotations to the first and third CJK ideographic characters in
 	  <span lang="ja">屯田兵</span> only but not to the second one (thus,
 	  two <code>ruby</code> elements).</p>
+	<p lang="ja" its-locale-filter-list="ja">一方、複合語の漢字のうち、すべてではなく一部の漢字にのみルビを付けるべき
+      正当な理由があるとする意見もある。
+      例えば、<span lang="ja">「佳人</span>」という語を考えてみよう。「
+	  <span lang="ja">佳</span>」は中学校で習うが、
+      <span lang="ja">「人」</span>は小学校1年生で習う。
+      したがって、「
+	  <span lang="ja">佳</span>」にのみルビを付けるのは理にかなっている
+	  <span lang="ja">「佳」</span>のみにルビを付ける（「<span lang="ja">佳」</span>に対して1つの<code>ruby</code>要素を
+      付け、「<span lang="ja">人</span>」に対しては<code>ruby</code>要素を
+      付けない）ことは理にかなっている。同様に、「
+	  <span lang="ja">屯田兵</span>」においては、
+      最初の漢字と3番目の漢字にのみルビを付け、2番目の漢字には付けない（つまり、
+      2つの<code>ruby</code>要素）ことも合理的である。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">與此同時，也有人認爲，在複合詞中，對某些漢字添加註音
+      是合理的，但並非所有漢字都需要。
+      例如，以<span lang="ja">“佳人</span>”爲例，其中“
+	  <span lang="ja">佳</span>”在初中階段教授，而
+      <span lang="ja">“人</span>”則在小學一年級
+      教授。因此，僅對
+	  （即爲<span lang="ja">“佳</span>”添加一個 <code>ruby</code> 元素，而
+      不爲<span lang="ja">“人</span>”添加 <code>ruby</code> 元素）。同樣，僅爲
+	  <span lang="ja">“屯田兵</span>”中的
+      第一個和第三個漢字添加註音，而不爲第二個添加（因此，
+      需要兩個 <code>ruby</code> 元素），也是合理的。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">与此同时，也有人认为，在复合词中，对某些汉字添加注音
+      是合理的，但并非所有汉字都需要。
+      例如，以<span lang="ja">“佳人</span>”为例，其中“
+	  <span lang="ja">佳</span>”在初中阶段教授，而
+      <span lang="ja">“人</span>”则在小学一年级
+      教授。因此，仅对
+	  （即为<span lang="ja">“佳</span>”添加一个 <code>ruby</code> 元素，而
+      不为<span lang="ja">“人</span>”添加 <code>ruby</code> 元素）。同样，仅为
+	  <span lang="ja">“屯田兵</span>”中的
+      第一个和第三个汉字添加注音，而不为第二个添加（因此，
+      需要两个 <code>ruby</code> 元素），也是合理的。</p>
       </section>
 
       <section>
-        <h3>Distinguishing furigana added for enhanced accessibility</h3>
-        <p>
-          Although furigana added for enhanced accessibility is necessary for those readers who have particular 
+        <h3><span lang="en" its-locale-filter-list="en">Distinguishing furigana added for enhanced accessibility</span><span lang="ja" its-locale-filter-list="ja">アクセシビリティ向上のために追加された区別用のふりがな</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">爲提高可讀性而添加的注音標記</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">为提高可读性而添加的注音标记</span></h3>
+        
+        <p lang="en" its-locale-filter-list="en">Although furigana added for enhanced accessibility is necessary for those readers who have particular 
           difficulties with CJK ideographic characters, it is unnecessary or slightly disturbing for others. 
           If furigana added for enhanced accessibility is distinguishable from normal furigana, 
           it can be made visible or invisible depending on user preferences. 
-          It is thus desirable to have a standardized way to indicate furigana added for enhanced accessibility.
-        </p>
+          It is thus desirable to have a standardized way to indicate furigana added for enhanced accessibility.</p>
+        <p lang="ja" its-locale-filter-list="ja">アクセシビリティ向上のために追加されたふりがなは、CJK表意文字の読み書きに特に困難を抱える読者にとっては必要不可欠ですが、それ以外の読者にとっては不要であるか、あるいはわずかに邪魔に感じられることもあります。
+          アクセシビリティ向上のために追加されたふりがなが通常のふりがなと区別できる場合、
+          ユーザーの好みに応じて表示・非表示を切り替えることが可能です。
+          したがって、アクセシビリティ向上のために追加されたふりがなを示すための標準化された方法を設けることが望まれます。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">雖然爲提高可訪問性而添加的假名注音對於那些在閱讀中日韓表意文字時遇到特殊困難的讀者來說是必要的，但對其他人而言則既非必要，甚至可能略顯干擾。
+          如果爲提高可訪問性而添加的假名注音能與普通假名注音區分開來，
+          則可根據用戶偏好將其顯示或隱藏。
+          因此，最好能有一種標準化的方法來標識爲提高可訪問性而添加的假名注音。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">虽然为提高可访问性而添加的假名注音对于那些在阅读中日韩表意文字时遇到特殊困难的读者来说是必要的，但对其他人而言则既非必要，甚至可能略显干扰。
+          如果为提高可访问性而添加的假名注音能与普通假名注音区分开来，
+          则可根据用户偏好将其显示或隐藏。
+          因此，最好能有一种标准化的方法来标识为提高可访问性而添加的假名注音。</p>
       </section>
 
       <section>
-        <h3>Distinguishing ruby annotations used as gikun or interlinear notes</h3>
-        <p>
-          In [[[#which_should_be_read_aloud]]], we have seen that ruby
+        <h3><span lang="en" its-locale-filter-list="en">Distinguishing ruby annotations used as gikun or interlinear notes</span><span lang="ja" its-locale-filter-list="ja">「ギクン」や行間注として使用されるルビー注釈の見分け方</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">區分用作“gikun”或行間註釋的紅字註釋</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">区分用作“gikun”或行间注释的红字注释</span></h3>
+        
+        <p lang="en" its-locale-filter-list="en">In [[[#which_should_be_read_aloud]]], we have seen that ruby
           annotations used as gikun or interlinear notes should be
           read aloud differently from the other cases.  Therefore, it
           is important to be able to distinguish ruby annotations used
@@ -1073,29 +2473,74 @@ it becomes easier for the text-to-speech engine to maintain a correspondence tab
           order to support appropriate reading behavior.  How such
           distinctions are made — whether through linguistic
           analysis, lexical resources, markup conventions, or other
-          means — is outside the scope of this document.
-        </p>
+          means — is outside the scope of this document.</p>
+        <p lang="ja" its-locale-filter-list="ja">[[[#which_should_be_read_aloud]]] で見たように、ギクンや行間注として使用されるルビ
+          注釈は、他のケースとは異なる読み方をすべきです。したがって、
+          適切な読み方をサポートするためには、ギクンや行間注として使用される
+          ルビ注釈を、他のルビ注釈と区別できることが重要です。  そのような
+          区別をどのように行うか（言語
+          解析、語彙リソース、マークアップの規約、あるいはその他の
+          手段によるか）については、本ドキュメントの範囲外である。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在[[[#which_should_be_read_aloud]]]中，我們已經看到，作爲“gikun”或行間註釋使用的紅字註釋
+          在朗讀時的處理方式應與其他情況有所不同。因此，
+          能夠區分作爲“gikun”或行間註釋使用的紅字註釋與其他紅字註釋
+          至關重要，以便支持正確的朗讀行爲。  如何進行此類
+          區分——無論是通過語言
+          分析、詞彙資源、標記約定，還是其他
+          手段——均超出本文檔的討論範圍。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在[[[#which_should_be_read_aloud]]]中，我们已经看到，作为“gikun”或行间注释使用的红字注释
+          在朗读时的处理方式应与其他情况有所不同。因此，
+          能够区分作为“gikun”或行间注释使用的红字注释与其他红字注释
+          至关重要，以便支持正确的朗读行为。  如何进行此类
+          区分——无论是通过语言
+          分析、词汇资源、标记约定，还是其他
+          手段——均超出本文档的讨论范围。</p>
       </section>
     </section>
 
     <section>
-      <h2>Alternatives to ruby</h2>
+      <h2><span lang="en" its-locale-filter-list="en">Alternatives to ruby</span><span lang="ja" its-locale-filter-list="ja">Rubyの代替手段</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">Ruby 的替代方案</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">Ruby 的替代方案</span></h2>
 
-      <p>[[?SSML]] and [[?PRONUNCIATION-LEXICON]] offer alternatives for
+      
+      <p lang="en" its-locale-filter-list="en">[[?SSML]] and [[?PRONUNCIATION-LEXICON]] offer alternatives for
       conveying phonemic and phonetic pronunciations of CJK ideographic 
       characters to speech synthesis engines. These methods are not intended for visual 
       presentations but can offer superior control over text-to-speech compared to using ruby annotations.</p>
+      <p lang="ja" its-locale-filter-list="ja">[[?SSML]] および [[?PRONUNCIATION-LEXICON]] は、
+      CJK表意文字の音素的および音声学的発音を
+      音声合成エンジンに伝えるための代替手段を提供します。これらの手法は視覚的な
+      表示を目的としたものではありませんが、ルビ表記を使用する場合と比較して、テキスト読み上げをより精緻に制御することができます。</p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant">[[?SSML]] 和 [[?PRONUNCIATION-LEXICON]] 爲
+      向語音合成引擎傳達中日韓表意文字的
+      音位和音素髮音提供了替代方案。這些方法並非用於視覺
+      呈現，但與使用紅字註釋相比，它們能對文本轉語音過程提供更精細的控制。</p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans">[[?SSML]] 和 [[?PRONUNCIATION-LEXICON]] 为
+      向语音合成引擎传达中日韩表意文字的
+      音位和音素发音提供了替代方案。这些方法并非用于视觉
+      呈现，但与使用红字注释相比，它们能对文本转语音过程提供更精细的控制。</p>
       
       <section>
-        <h3>SSML</h3>
-	<p>
-	  [[?SSML]] employs symbol collections (such as IPA and
+        <h3><span lang="en" its-locale-filter-list="en">SSML</span><span lang="ja" its-locale-filter-list="ja">性感染症および生殖器感染症</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">性傳播和生殖傳播感染</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">性传播和生殖传播感染</span></h3>
+	
+	<p lang="en" its-locale-filter-list="en">[[?SSML]] employs symbol collections (such as IPA and
 	  [[?JEITA_IT-4006]]) to represent the sounds of human
 	  languages. Phonemic and phonetic pronunciations are conveyed
-	  through sequences of these symbols.
-	</p>
-	<p>
-	  [[?epub-32]] allows the use of SSML attributes within
+	  through sequences of these symbols.</p>
+	<p lang="ja" its-locale-filter-list="ja">[[?SSML]]は、人間の言語の音を表現するために、
+      IPAや
+      [[?JEITA_IT-4006]]などの記号体系を採用しています。
+      音素や音声学的な発音は、これらの記号の並びによって
+      表現されます。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">[[?SSML]] 採用符號集合（如國際音標和
+      [[?JEITA_IT-4006]]）來表示人類
+      語言的發音。音位和音素的發音通過
+      這些符號的序列來表達。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">[[?SSML]] 采用符号集合（如国际音标和
+      [[?JEITA_IT-4006]]）来表示人类
+      语言的发音。音位和音素的发音通过
+      这些符号的序列来表达。</p>
+	
+	<p lang="en" its-locale-filter-list="en">[[?epub-32]] allows the use of SSML attributes within
 	  <a data-cite="epub-33#dfn-xhtml-content-document">XHTML
 	  content documents</a> in EPUB publications. In [[?epub-33]],
 	  these attributes are relocated to
@@ -1103,9 +2548,33 @@ it becomes easier for the text-to-speech engine to maintain a correspondence tab
 	  Architectures Working Group is developing [[?spoken-html]],
 	  which outlines two potential methods for incorporating SSML
 	  attributes into HTML elements.</p>
+	<p lang="ja" its-locale-filter-list="ja">[[?epub-32]] では、EPUB 出版物内の
+      <a data-cite="epub-33#dfn-xhtml-content-document">XHTML
+	  content documents</a> 内で SSML 属性を使用することが許可されています。[[?epub-33]] では、
+      これらの属性は
+      [[?epub-tts-10]] に移管されました。 一方、W3Cアクセシブル・プラットフォーム・アーキテクチャ・ワーキンググループは
+      [[?spoken-html]] を策定中であり、
+      これには、SSML属性をHTML要素に組み込むための
+      2つの手法が概説されている。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">[[?epub-32]] 允許在 EPUB 出版物中的
+      <a data-cite="epub-33#dfn-xhtml-content-document">XHTML
+	  content documents</a> 內使用 SSML 屬性。在 [[?epub-33]] 中，
+      這些屬性被移至
+      [[?epub-tts-10]]。 與此同時，W3C無障礙平臺
+      架構工作組正在開發[[?spoken-html]]，
+      該規範概述了將SSML
+      屬性整合到HTML元素中的兩種潛在方法。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">[[?epub-32]] 允许在 EPUB 出版物中的
+      <a data-cite="epub-33#dfn-xhtml-content-document">XHTML
+	  content documents</a> 内使用 SSML 属性。在 [[?epub-33]] 中，
+      这些属性被移至
+      [[?epub-tts-10]]。 与此同时，W3C无障碍平台
+      架构工作组正在开发[[?spoken-html]]，
+      该规范概述了将SSML
+      属性整合到HTML元素中的两种潜在方法。</p>
 
-	<p>
-	  In Japan, SSML finds extensive application in digital
+	
+	<p lang="en" its-locale-filter-list="en">In Japan, SSML finds extensive application in digital
 	  textbooks, adopted by the biggest textbook publisher in
 	  Japan. However, it has been noted that attaching SSML
 	  attributes to CJK ideographic characters significantly
@@ -1113,63 +2582,204 @@ it becomes easier for the text-to-speech engine to maintain a correspondence tab
 	  Japan, SSML is not used, as they contain recorded voice.
 	  Trade books in Japan do not typically employ SSML
 	  either.</p>
+	<p lang="ja" its-locale-filter-list="ja">日本では、SSMLはデジタル
+      教科書において広く活用されており、国内最大の
+      教科書出版社でも採用されています。しかし、CJK表意文字にSSML
+      属性を付与すると、オーサリングコストが大幅に
+      増加することが指摘されています。日本のDAISY教科書の場合、
+      音声が収録されているため、SSMLは使用されていません。
+	  日本の一般書籍においても、通常SSMLは
+      採用されていません。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">在日本，SSML在數字
+      教科書中得到了廣泛應用，並已被日本最大的
+      教科書出版商採用。然而，有研究指出，爲中日韓表意文字添加SSML
+      屬性會顯著
+      增加製作成本。在日本的DAISY教科書中，
+      由於包含語音錄音，因此未採用SSML。
+	  日本的通俗讀物通常也不採用SSML
+      。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">在日本，SSML在数字
+      教科书中得到了广泛应用，并已被日本最大的
+      教科书出版商采用。然而，有研究指出，为中日韩表意文字添加SSML
+      属性会显著
+      增加制作成本。在日本的DAISY教科书中，
+      由于包含语音录音，因此未采用SSML。
+	  日本的通俗读物通常也不采用SSML
+      。</p>
       </section>
 
       <section>
-        <h3>PLS</h3>
-	<p>PLS ([[PRONUNCIATION-LEXICON]]) enables the use of pronunciation lexicons, which map words to
+        <h3><span lang="en" its-locale-filter-list="en">PLS</span><span lang="ja" its-locale-filter-list="ja">お願いします</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">請</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">请</span></h3>
+	
+	<p lang="en" its-locale-filter-list="en">PLS ([[PRONUNCIATION-LEXICON]]) enables the use of pronunciation lexicons, which map words to
 	  sequences of symbol collections such as those found in IPA or
-	  [[?JEITA_IT-4006]].
-	  </p>
-        <p>
-          While SSML attributes are embedded within <a data-cite="epub-33#dfn-xhtml-content-document">XHTML content 
+	  [[?JEITA_IT-4006]].</p>
+	<p lang="ja" its-locale-filter-list="ja">PLS ([[PRONUNCIATION-LEXICON]]) を使用すると、単語を
+      IPA や
+      [[?JEITA_IT-4006]] に見られるような記号の集合の列にマッピングする発音辞書を利用できます。</p>
+	<p lang="zh-Hant" its-locale-filter-list="zh-Hant">PLS ([[PRONUNCIATION-LEXICON]]) 支持使用發音詞典，這些詞典將單詞映射到
+      符號集合序列，例如國際音標（IPA）或
+      [[?JEITA_IT-4006]] 中所包含的符號集合。</p>
+	<p lang="zh-Hans" its-locale-filter-list="zh-Hans">PLS ([[PRONUNCIATION-LEXICON]]) 支持使用发音词典，这些词典将单词映射到
+      符号集合序列，例如国际音标（IPA）或
+      [[?JEITA_IT-4006]] 中所包含的符号集合。</p>
+        
+        <p lang="en" its-locale-filter-list="en">While SSML attributes are embedded within <a data-cite="epub-33#dfn-xhtml-content-document">XHTML content 
             documents</a> in EPUB publications, PLS lexicons 
 	  in EPUB publications are stored
           externally to and referenced by <a data-cite="epub-33#dfn-xhtml-content-document">XHTML content documents</a>
           (see <a data-cite="epub-tts-10#pls">Pronunciation Lexicons
           section</a> in [[?epub-tts-10]]).  As of the present,
           [[?spoken-html]] does not offer a mechanism for associating
-          PLS lexicons with HTML documents.
-        </p>
-        <p>
-	  PLS is a robust tool for rendering unusual names of people
+          PLS lexicons with HTML documents.</p>
+        <p lang="ja" its-locale-filter-list="ja">EPUB出版物においてSSML属性は<a data-cite="epub-33#dfn-xhtml-content-document">XHTML content 
+            documents</a>内に埋め込まれているのに対し、EPUB出版物内のPLS辞書は
+      <a data-cite="epub-33#dfn-xhtml-content-document">XHTML content documents</a>の外部に保存され、
+          <a data-cite="epub-33#dfn-xhtml-content-document">XHTML content documents</a>から参照される
+          （[[?epub-tts-10]]の<a data-cite="epub-tts-10#pls">Pronunciation Lexicons
+          section</a>を参照）。  現時点では、
+          [[?spoken-html]] には、
+          PLS レキシコンを HTML 文書に関連付ける仕組みは提供されていません。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">雖然在 EPUB 出版物中 SSML 屬性嵌入在 <a data-cite="epub-33#dfn-xhtml-content-document">XHTML content 
+            documents</a> 中，但 EPUB 出版物中的 PLS 詞彙表
+      則存儲在
+          <a data-cite="epub-33#dfn-xhtml-content-document">XHTML content documents</a> 之外，並由其引用
+          （參見 [[?epub-tts-10]] 中的 <a data-cite="epub-tts-10#pls">Pronunciation Lexicons
+          section</a>）。  截至目前，
+          [[?spoken-html]] 尚未提供將
+          PLS詞彙表與HTML文檔關聯的機制。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">虽然在 EPUB 出版物中 SSML 属性嵌入在 <a data-cite="epub-33#dfn-xhtml-content-document">XHTML content 
+            documents</a> 中，但 EPUB 出版物中的 PLS 词汇表
+      则存储在
+          <a data-cite="epub-33#dfn-xhtml-content-document">XHTML content documents</a> 之外，并由其引用
+          （参见 [[?epub-tts-10]] 中的 <a data-cite="epub-tts-10#pls">Pronunciation Lexicons
+          section</a>）。  截至目前，
+          [[?spoken-html]] 尚未提供将
+          PLS词汇表与HTML文档关联的机制。</p>
+        
+        <p lang="en" its-locale-filter-list="en">PLS is a robust tool for rendering unusual names of people
 	  and places in text-to-speech applications.  In particular, PLS allows
 	  every occurrence of a word or phrase to be consistently pronounced, 
 	  regardless of the presence of ruby annotations.  At the time of this writing, PLS is
-	  used by at least one digital textbook publisher in Japan.
-        </p>
+	  used by at least one digital textbook publisher in Japan.</p>
+        <p lang="ja" its-locale-filter-list="ja">PLSは、テキスト読み上げアプリケーションにおいて、
+      人名や地名などの特殊な名称を正確に発音するための強力なツールです。
+      特にPLSを使用すれば、ルビの有無にかかわらず、
+      単語やフレーズが毎回一貫して発音されるようになります。
+      本稿執筆時点で、PLSは
+      日本の少なくとも1社のデジタル教科書出版社で採用されています。</p>
+        <p lang="zh-Hant" its-locale-filter-list="zh-Hant">PLS 是一款功能強大的工具，用於在文本轉語音應用中處理
+      人名和地名等特殊名稱。特別是，PLS 能夠確保
+      每個單詞或短語的每次出現都能被一致地發音，
+      無論是否存在紅字註釋。截至本文撰寫之時，PLS 已被
+      日本至少一家電子教科書出版商採用。</p>
+        <p lang="zh-Hans" its-locale-filter-list="zh-Hans">PLS 是一款功能强大的工具，用于在文本转语音应用中处理
+      人名和地名等特殊名称。特别是，PLS 能够确保
+      每个单词或短语的每次出现都能被一致地发音，
+      无论是否存在红字注释。截至本文撰写之时，PLS 已被
+      日本至少一家电子教科书出版商采用。</p>
       </section>
     </section>
     <section>
-      <h2>Information sources relevant to text-to-speech rendering</h2>
+      <h2><span lang="en" its-locale-filter-list="en">Information sources relevant to text-to-speech rendering</span><span lang="ja" its-locale-filter-list="ja">テキスト読み上げのレンダリングに関連する情報源</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">與文本轉語音渲染相關的信息來源</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">与文本转语音渲染相关的信息来源</span></h2>
 
-      <p>This section summarizes the kinds of information that may be
+      
+      <p lang="en" its-locale-filter-list="en">This section summarizes the kinds of information that may be
       relevant to text-to-speech rendering of content containing ruby
       annotations. It does not introduce new requirements or prescribe
       how such information is to be used, but instead enumerates the
       information sources discussed in previous sections.</p>
+      <p lang="ja" its-locale-filter-list="ja">このセクションでは、ルビ注釈を含むコンテンツの
+      テキスト読み上げ処理に関連し得る情報の種類について要約する。
+      ここでは新たな要件を導入したり、そのような情報の
+      使用方法を規定したりするものではなく、代わりに、
+      前のセクションで論じた情報源を列挙するものである。</p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant">本節總結了可能與包含
+      紅字註釋的內容的文本轉語音渲染相關的
+      各類信息。本節既不引入新的要求，也不規定
+      此類信息應如何使用，而是列舉了
+      前幾節中討論的信息來源。</p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans">本节总结了可能与包含
+      红字注释的内容的文本转语音渲染相关的
+      各类信息。本节既不引入新的要求，也不规定
+      此类信息应如何使用，而是列举了
+      前几节中讨论的信息来源。</p>
 
-      <p>These information sources include, but are not limited to:</p>
+      
+      <p lang="en" its-locale-filter-list="en">These information sources include, but are not limited to:</p>
+      <p lang="ja" its-locale-filter-list="ja">これらの情報源には、以下が含まれますが、これらに限定されるものではありません：</p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant">這些信息來源包括但不限於：</p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans">这些信息来源包括但不限于：</p>
 
       <ol>
-	<li>Ruby base</li>
-	<li>Ruby annotation</li>
-	<li>Morphological analysis (for particle pronunciation and word segmentation)</li>
-	<li>Contextual reuse of ruby base/annotation pairs:
+	
+	<li lang="en" its-locale-filter-list="en">Ruby base</li>
+	<li lang="ja" its-locale-filter-list="ja">Rubyベース</li>
+	<li lang="zh-Hant" its-locale-filter-list="zh-Hant">Ruby 基礎</li>
+	<li lang="zh-Hans" its-locale-filter-list="zh-Hans">Ruby 基础</li>
+	
+	<li lang="en" its-locale-filter-list="en">Ruby annotation</li>
+	<li lang="ja" its-locale-filter-list="ja">Rubyの注釈</li>
+	<li lang="zh-Hant" its-locale-filter-list="zh-Hant">Ruby 註解</li>
+	<li lang="zh-Hans" its-locale-filter-list="zh-Hans">Ruby 注解</li>
+	
+	<li lang="en" its-locale-filter-list="en">Morphological analysis (for particle pronunciation and word segmentation)</li>
+	<li lang="ja" its-locale-filter-list="ja">形態素解析（音節の発音および単語の区切りに関するもの）</li>
+	<li lang="zh-Hant" its-locale-filter-list="zh-Hant">形態學分析（用於詞素髮音和詞分隔）</li>
+	<li lang="zh-Hans" its-locale-filter-list="zh-Hans">形态学分析（用于词素发音和词分隔）</li>
+	
+	<li lang="en" its-locale-filter-list="en">Contextual reuse of ruby base/annotation pairs:
 	  as described in <a href="#furigana-background-JP"><span class="secno">2.2 (1)</span></a>, previously provided ruby base/annotation pairs may be reused to determine pronunciation for later occurrences without ruby, although the prior occurrence may be out of scope (e.g., earlier in a long HTML document or in a different EPUB content document).</li>
-	<li>Author-supplied pronunciation hints (e.g., via PLS or SSML)</li>
-	<li>Heuristics or AI-based inference</li>
+	<li lang="ja" its-locale-filter-list="ja">ルビのベース／注釈ペアの文脈に応じた再利用：
+      <a href="#furigana-background-JP"><span class="secno">2.2 (1)</span></a> で説明されているように、以前に提供されたルビのベース／注釈ペアは、ルビが付いていない後の出現箇所の発音を決定するために再利用されることがあります。ただし、その前の出現箇所は範囲外（例えば、長いHTMLドキュメントの先頭部分や、別のEPUBコンテンツドキュメント内など）にある場合もあります。</li>
+	<li lang="zh-Hant" its-locale-filter-list="zh-Hant">Ruby 基詞/註釋對的上下文複用：
+      如 <a href="#furigana-background-JP"><span class="secno">2.2 (1)</span></a> 中所述，先前提供的 Ruby 基詞/註釋對可用於確定後續未標註 Ruby 的詞彙的發音，即使該詞彙的先前出現位置已超出當前範圍（例如，出現在較長的 HTML 文檔的前面，或位於另一個 EPUB 內容文檔中）。</li>
+	<li lang="zh-Hans" its-locale-filter-list="zh-Hans">Ruby 基词/注释对的上下文复用：
+      如 <a href="#furigana-background-JP"><span class="secno">2.2 (1)</span></a> 中所述，先前提供的 Ruby 基词/注释对可用于确定后续未标注 Ruby 的词汇的发音，即使该词汇的先前出现位置已超出当前范围（例如，出现在较长的 HTML 文档的前面，或位于另一个 EPUB 内容文档中）。</li>
+	
+	<li lang="en" its-locale-filter-list="en">Author-supplied pronunciation hints (e.g., via PLS or SSML)</li>
+	<li lang="ja" its-locale-filter-list="ja">著者による発音のヒント（例：PLSやSSMLなどを通じて）</li>
+	<li lang="zh-Hant" its-locale-filter-list="zh-Hant">作者提供的發音提示（例如通過 PLS 或 SSML）</li>
+	<li lang="zh-Hans" its-locale-filter-list="zh-Hans">作者提供的发音提示（例如通过 PLS 或 SSML）</li>
+	
+	<li lang="en" its-locale-filter-list="en">Heuristics or AI-based inference</li>
+	<li lang="ja" its-locale-filter-list="ja">ヒューリスティックまたはAIに基づく推論</li>
+	<li lang="zh-Hant" its-locale-filter-list="zh-Hant">啓發式方法或基於人工智能的推理</li>
+	<li lang="zh-Hans" its-locale-filter-list="zh-Hans">启发式方法或基于人工智能的推理</li>
       </ol>
 	  
-      <p>In many cases, multiple sources of information may be
+      
+      <p lang="en" its-locale-filter-list="en">In many cases, multiple sources of information may be
       considered together. For example, morphological analysis of the
       ruby base may affect how adjacent particles are pronounced,
       while PLS or SSML data may override default
       pronunciations. Inconsistencies between ruby base and annotation
       can also provide clues for determining whether the ruby is
       phonetic or non-phonetic in nature.</p>
+      <p lang="ja" its-locale-filter-list="ja">多くの場合、複数の情報源を
+      合わせて検討することがあります。例えば、ルビの基底形に対する
+      形態論的解析の結果が、隣接する音節の発音に影響を与える
+      一方で、PLSやSSMLのデータによってデフォルトの
+      発音が上書きされることもあります。また、ルビの基底形と注釈との
+      間に不一致が見られる場合は、そのルビが
+      発音に基づくものか、そうでないかを判断する手がかりとなります。</p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在許多情況下，可能需要綜合考慮
+      多種信息來源。例如，對
+      注音基底的形態學分析可能會影響相鄰音節的發音，
+      而PLS或SSML數據則可能覆蓋默認
+      發音。注音基底與標註之間的不一致
+      也能爲判斷該注音是
+      音標性質還是非音標性質提供線索。</p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在许多情况下，可能需要综合考虑
+      多种信息来源。例如，对
+      注音基底的形态学分析可能会影响相邻音节的发音，
+      而PLS或SSML数据则可能覆盖默认
+      发音。注音基底与标注之间的不一致
+      也能为判断该注音是
+      音标性质还是非音标性质提供线索。</p>
 
-      <p>In summary, text-to-speech rendering of content containing ruby
+      
+      <p lang="en" its-locale-filter-list="en">In summary, text-to-speech rendering of content containing ruby
       annotations may draw on multiple layers of information,
       including linguistic, typographic, and author-supplied
       data. This document identifies these information sources but
@@ -1178,22 +2788,67 @@ it becomes easier for the text-to-speech engine to maintain a correspondence tab
       decisions may evolve through heuristics, rule-based systems, or
       AI-based approaches, and are expected to be documented
       elsewhere.</p>
+      <p lang="ja" its-locale-filter-list="ja">要約すると、ルビ注釈を含むコンテンツのテキスト読み上げ処理では、
+      言語学的情報、組版情報、および著者が提供したデータなど、
+      複数の情報層が活用される可能性がある。本ドキュメントでは、
+      これらの情報源を特定するが、アルゴリズムや優先順位付けの
+      戦略、重み付けの仕組みについては、意図的に規定しない。 このような実装上の
+      決定は、ヒューリスティック、ルールベースのシステム、あるいは
+      AIベースのアプローチを通じて進化する可能性があり、
+      それらは別の場所で文書化されることが期待される。</p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant">總而言之，包含紅字註釋的內容在進行文本轉語音渲染時，
+      可能會利用多層信息，
+      包括語言學、排版以及作者提供的
+      數據。本文件指出了這些信息來源，但
+      有意避免規定具體算法、優先級
+      策略或權重機制。 此類實現
+      決策可通過啓發式方法、基於規則的系統或
+      基於人工智能的方法逐步完善，並預計將在
+      其他文檔中予以說明。</p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans">总而言之，包含红字注释的内容在进行文本转语音渲染时，
+      可能会利用多层信息，
+      包括语言学、排版以及作者提供的
+      数据。本文件指出了这些信息来源，但
+      有意避免规定具体算法、优先级
+      策略或权重机制。 此类实现
+      决策可通过启发式方法、基于规则的系统或
+      基于人工智能的方法逐步完善，并预计将在
+      其他文档中予以说明。</p>
     </section>
     <section>
-      <h2>Use of ruby for automatic braille translation</h2>
-      <p>
-	The conversion of HTML documents and EPUB publications to
+      <h2><span lang="en" its-locale-filter-list="en">Use of ruby for automatic braille translation</span><span lang="ja" its-locale-filter-list="ja">自動点字変換におけるRubyの利用</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">使用Ruby進行自動盲文翻譯</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">使用Ruby进行自动盲文翻译</span></h2>
+      
+      <p lang="en" its-locale-filter-list="en">The conversion of HTML documents and EPUB publications to
 	braille is expected to become increasingly important in the
-	near future.
-      </p>
-      <p>
-	Japanese braille lacks CJK ideographic characters and does not
+	near future.</p>
+      <p lang="ja" its-locale-filter-list="ja">HTML文書やEPUB形式の出版物を
+    点字に変換することの重要性は、
+    近い将来、ますます高まると予想される。</p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant">將HTML文檔和EPUB出版物轉換爲
+    盲文，預計在
+    不久的將來將變得越來越重要。</p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans">将HTML文档和EPUB出版物转换为
+    盲文，预计在
+    不久的将来将变得越来越重要。</p>
+      
+      <p lang="en" its-locale-filter-list="en">Japanese braille lacks CJK ideographic characters and does not
 	distinguish between hiragana and katakana. (Note: Han braille
 	in Japan does include CJK ideographic characters, but it is
-	not widely used.)
-      </p>
-      <p>
-	Braille exhibits some syntactical differences from the
+	not widely used.)</p>
+      <p lang="ja" its-locale-filter-list="ja">日本語点字にはCJK表意文字が含まれておらず、
+    ひらがなとカタカナの区別もありません。（注：日本の漢点字には
+    CJK表意文字が含まれていますが、
+    広く普及しているわけではありません。）</p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant">日語盲文不包含中日韓表意文字，且不
+    區分平假名和片假名。（注：日本的漢字盲文
+    確實包含中日韓表意文字，但
+    並未廣泛使用。）</p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans">日语盲文不包含中日韩表意文字，且不
+    区分平假名和片假名。（注：日本的汉字盲文
+    确实包含中日韩表意文字，但
+    并未广泛使用。）</p>
+      
+      <p lang="en" its-locale-filter-list="en">Braille exhibits some syntactical differences from the
 	Japanese writing system. First, space characters are inserted
 	as delimiters between words. Second, two Japanese particles,
 	<span lang="ja">は</span> and <span lang="ja">へ</span>, are transcribed as they are pronounced, meaning
@@ -1202,31 +2857,104 @@ it becomes easier for the text-to-speech engine to maintain a correspondence tab
 	respectively. Third, <span lang="ja">う</span> pronounced as an elongated sound is
 	represented using the long vowel character. For example,
 	to tranlsate <span lang="ja">たいよう</span> to braille,
-	<span lang="ja">たいよう</span> is first converted to <span lang="ja">たいよー</span> and then translated to braille.
-      </p>
-      <p>
-	Natural language processing is required to handle these
+	<span lang="ja">たいよう</span> is first converted to <span lang="ja">たいよー</span> and then translated to braille.</p>
+      <p lang="ja" its-locale-filter-list="ja">点字は、
+    日本語の表記体系とはいくつかの構文上の違いがあります。第一に、単語の区切りとして
+    スペース文字が挿入されます。第二に、日本語の助詞である「
+	<span lang="ja">は</span>」と<span lang="ja">「へ」</span>は、発音通りに表記されるため、「
+	<span lang="ja">は」</span>と<span lang="ja">「へ」は</span>、それぞれ
+    <span lang="ja">「わ</span>」と<span lang="ja">「え</span>」のように
+    表されます。 第三に、長母音として発音される<span lang="ja">「う」</span>は、
+    長母音記号を用いて表されます。例えば、
+    <span lang="ja">「たいよう」</span>を点字に書き換える場合、
+    まず<span lang="ja">「たいよう」</span>を<span lang="ja">「たいよー」</span>に変換してから、点字に書き換えます。</p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant">盲文在語法上與
+    日語書寫系統存在一些差異。首先，會在單詞之間插入
+    空格作爲分隔符。其次，日語中的兩個助詞
+	<span lang="ja">“は</span>”和<span lang="ja">“へ</span>”按照發音進行轉寫，也就是說，“
+	<span lang="ja">は</span>”和<span lang="ja">“へ”</span>分別被表示爲
+    <span lang="ja">“わ</span>”和<span lang="ja">“え</span>”，
+    。 第三，發音爲長音的<span lang="ja">“う”</span>
+    使用長元音符號來表示。例如，
+    要將<span lang="ja">“たいよう”</span>轉寫爲盲文時，
+    需先<span lang="ja">將其</span>轉換爲<span lang="ja">“たいよー</span>”，再轉寫爲盲文。</p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans">盲文在语法上与
+    日语书写系统存在一些差异。首先，会在单词之间插入
+    空格作为分隔符。其次，日语中的两个助词
+	<span lang="ja">“は</span>”和<span lang="ja">“へ</span>”按照发音进行转写，也就是说，“
+	<span lang="ja">は</span>”和<span lang="ja">“へ”</span>分别被表示为
+    <span lang="ja">“わ</span>”和<span lang="ja">“え</span>”，
+    。 第三，发音为长音的<span lang="ja">“う”</span>
+    使用长元音符号来表示。例如，
+    要将<span lang="ja">“たいよう”</span>转写为盲文时，
+    需先<span lang="ja">将其</span>转换为<span lang="ja">“たいよー</span>”，再转写为盲文。</p>
+      
+      <p lang="en" its-locale-filter-list="en">Natural language processing is required to handle these
 	differences during the conversion to braille. However, unlike
-	the case of text-to-speech, intonation is not relevant.
-      </p>
-      <p>
-	When converting HTML or EPUB content to braille, it is
+	the case of text-to-speech, intonation is not relevant.</p>
+      <p lang="ja" its-locale-filter-list="ja">点字への変換において、こうした
+    違いを処理するには自然言語処理が必要となります。しかし、
+    テキスト読み上げの場合とは異なり、イントネーションは関係ありません。</p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在將文本轉換爲盲文的過程中，需要藉助自然語言處理技術來處理這些
+    差異。然而，與
+    文本轉語音不同，語調在此並不重要。</p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在将文本转换为盲文的过程中，需要借助自然语言处理技术来处理这些
+    差异。然而，与
+    文本转语音不同，语调在此并不重要。</p>
+      
+      <p lang="en" its-locale-filter-list="en">When converting HTML or EPUB content to braille, it is
 	essential to select the correct reading for each CJK
 	ideographic character. Choosing an incorrect reading can
 	result in erroneous braille output. Similar to text-to-speech,
 	ruby annotations provide valuable hints, while [[?SSML]] and PLS
-	([[?PRONUNCIATION-LEXICON]]) serve as effective alternatives.
-      </p>
-      <p>
-	For furigana and the transcription of unusual names of people
+	([[?PRONUNCIATION-LEXICON]]) serve as effective alternatives.</p>
+      <p lang="ja" its-locale-filter-list="ja">HTMLやEPUBのコンテンツを点字に変換する際には、
+    各CJK表意文字に対して正しい読み方を指定することが
+    不可欠です。誤った読み方を選択すると、
+    点字の出力に誤りが生じる可能性があります。テキスト読み上げと同様に、
+    ルビ注釈は有用な手がかりとなりますが、[[?SSML]]やPLS
+    ([[?PRONUNCIATION-LEXICON]])も効果的な代替手段となります。</p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在將 HTML 或 EPUB 內容轉換爲盲文時，
+    爲每個中日韓表意文字選擇正確的讀音
+    至關重要。若選擇錯誤的讀音，
+    可能會導致盲文輸出出現錯誤。與文本轉語音功能類似，
+    注音標註提供了有價值的提示，而 [[?SSML]] 和 PLS
+    ([[?PRONUNCIATION-LEXICON]]) 則是有效的替代方案。</p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在将 HTML 或 EPUB 内容转换为盲文时，
+    为每个中日韩表意文字选择正确的读音
+    至关重要。若选择错误的读音，
+    可能会导致盲文输出出现错误。与文本转语音功能类似，
+    注音标注提供了有价值的提示，而 [[?SSML]] 和 PLS
+    ([[?PRONUNCIATION-LEXICON]]) 则是有效的替代方案。</p>
+      
+      <p lang="en" its-locale-filter-list="en">For furigana and the transcription of unusual names of people
         and places, natural language processing is more effective when
         using ruby bases (typically containing CJK ideographic
         characters) as the foundation. In contrast, the correct
         readings are chosen when using ruby annotations as the
         basis. It is also possible to combine both ruby bases and ruby
-        annotations.
-      </p>
+        annotations.</p>
+      <p lang="ja" its-locale-filter-list="ja">人名や地名など、読み方が特殊なもののふりがなや転写については、
+        ルビベース（通常はCJK表意文字を含む）を基盤として使用する場合、
+        自然言語処理がより効果的です。対照的に、ルビ注釈を
+        基盤として使用する場合、正しい読み方が選択されます。また、
+        ルビベースとルビ注釈の両方を組み合わせることも可能です。</p>
+      <p lang="zh-Hant" its-locale-filter-list="zh-Hant">對於假名注音以及人名和地名中不常見的讀音轉寫，
+        若以紅字基底（通常包含中日韓表意文字）
+        作爲基礎，自然語言處理的效果會更佳。
+        相比之下，若以紅字註釋作爲基礎，
+        則會選擇正確的讀音。
+        此外，也可以將紅字基底與紅字註釋
+        相結合。</p>
+      <p lang="zh-Hans" its-locale-filter-list="zh-Hans">对于假名注音以及人名和地名中不常见的读音转写，
+        若以红字基底（通常包含中日韩表意文字）
+        作为基础，自然语言处理的效果会更佳。
+        相比之下，若以红字注释作为基础，
+        则会选择正确的读音。
+        此外，也可以将红字基底与红字注释
+        相结合。</p>
     </section>
 
-  </body>
-</html>
+  
+
+</body></html>
