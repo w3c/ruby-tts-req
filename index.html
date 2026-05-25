@@ -1,7 +1,9 @@
 <html lang="en"><head>
     <meta charset="utf-8">
-    <title>Text-to-Speech Rendering of Electronic Documents Containing Ruby: User Requirements ルビを含む電子文書の音声読み上げに関するユーザー要求</title>
+    <title>Text-to-Speech Rendering of Electronic Documents Containing Ruby: User Requirements ルビを含む電子文書の音声読み上げに関するユーザー要求 含有 Ruby 的電子文件之文字轉語音：使用者需求
+ 包含 Ruby 的电子文档的文本转语音：用户需求</title>
     <script defer="" class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
+    <script defer="" src="script.js"></script>
     <script class="remove">
       var respecConfig = {
         shortName: "ruby-tts-req",
@@ -101,11 +103,101 @@
         postProcess: [  ],
       };
     </script>
-    <style>
-      .todo {
-        background-color: #BBEFFC;
-      }
-    </style>
+<style>
+.todo {
+  background-color: #BBEFFC;
+}
+
+/*
+ * JLReq / CLReq style language switcher
+ */
+
+#langSwitch {
+
+  position: fixed;
+
+  top: 5.5rem;
+  right: 1rem;
+
+  z-index: 2000;
+
+  background: rgba(255,255,255,0.96);
+
+  border: 1px solid #ddd;
+  border-radius: 0.4rem;
+
+  padding:
+    0.3rem
+    0.7rem;
+
+  box-shadow:
+    0 1px 4px rgba(0,0,0,0.12);
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+
+  text-align: right;
+}
+
+/*
+ * vertical links
+ */
+
+#langSwitch a {
+
+  display: block;
+
+  color: #005a9c;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+/*
+ * hover
+ */
+
+#langSwitch a:hover {
+
+  text-decoration: underline;
+}
+
+/*
+ * selected language
+ */
+
+#langSwitch a[style*="font-weight: bold"] {
+
+  color: black;
+}
+
+/*
+ * spacing between links
+ */
+
+#langSwitch a + a {
+
+  margin-top: 0.15rem;
+}
+
+/*
+ * mobile / narrow screen
+ */
+
+@media screen and (max-width: 800px) {
+
+  #langSwitch {
+
+    position: static;
+
+    margin-bottom: 1rem;
+
+    text-align: right;
+  }
+}
+</style>
   </head>
   <body>
     <section id="abstract">
@@ -136,6 +228,7 @@
     不规定具体算法或实现细节。</p>
     </section>
     <section id="sotd">
+      <p id="langSwitch"></p>
      
       <p lang="en" its-locale-filter-list="en"></p>
       <p lang="ja" its-locale-filter-list="ja"></p>
