@@ -773,7 +773,7 @@
       </section>
       </section>
       <section>
-        <h3 id="gikun-background"><span lang="en" its-locale-filter-list="en">Gikun, background</span><span lang="ja" its-locale-filter-list="ja">義訓、背景</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">“义训”，背景</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">『義訓』，背景</span></h3>
+        <h3 id="gikun-background"><span lang="en" its-locale-filter-list="en">Gikun, background</span><span lang="ja" its-locale-filter-list="ja">義訓、背景</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">『義訓』，背景</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">“义训”，背景</span></h3>
         
        <section class="no-secno notoc">
           <h4 id="gikun-background-JP"><span lang="en" its-locale-filter-list="en">(1) Japanese case</span><span lang="ja" its-locale-filter-list="ja">(1) 日本の事例</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">(1) 日本案例</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">(1) 日本案例</span></h4>
@@ -1105,9 +1105,12 @@
         <p lang="zh-Hans" its-locale-filter-list="zh-Hans"><dfn>“行间批语”</dfn> 的外观与 Ruby 注释相似。  
           <a data-cite="JLREQ#n224">note in JLreq</a> 用于引入行间批语，格式如下：</p>
         <aside class="note" title="Quoted note from JLReq" id="n20211101001">
+	  <p lang="en" its-locale-filter-list="en">
           Other than these styles of note, explanations of facts and persons in study aid books and history texts, 
           and modern translations of Japanese classic texts are sometimes set between lines. 
-          These notes are called interlinear notes (see <a data-cite="JLREQ#fig3_2_8">Figure 241</a>).
+          These notes are called interlinear notes (see <a data-cite="JLREQ#fig3_2_8">Figure 241</a>).</p>
+
+	  <p lang="ja" its-locale-filter-list="ja">この種の注記のほかにも、学習参考書や歴史書における事実・人物の説明、あるいは日本古典文学の現代語訳などが行間に配置されることがある。これらの注記は「行間注」と呼ばれる（<a data-cite="JLREQ#fig3_2_8">図241</a>参照）。</p>
         </aside>
         
         <p lang="en" its-locale-filter-list="en">In the example shown in 
@@ -1374,7 +1377,7 @@
       </section>   
     
     <section id="which_should_be_read_aloud">
-      <h2><span lang="en" its-locale-filter-list="en">Which should be read aloud, ruby bases or ruby annotations, or both?</span><span lang="ja" its-locale-filter-list="ja">「ruby bases」と「ruby annotations」、どちらを声に出して読むべきでしょうか？それとも両方でしょうか？</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">應該朗讀“Ruby 基礎”還是“Ruby 註釋”，還是兩者都要讀？</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">应该朗读“Ruby 基础”还是“Ruby 注释”，还是两者都要读？</span></h2>
+      <h2><span lang="en" its-locale-filter-list="en">Which should be read aloud, ruby bases or ruby annotations, or both?</span><span lang="ja" its-locale-filter-list="ja">親文字とルビ注釈のどちらを読み上げるべきか？それとも両方か？</span><span lang="zh-Hant" its-locale-filter-list="zh-Hant">應該朗讀“Ruby 基礎”還是“Ruby 註釋”，還是兩者都要讀？</span><span lang="zh-Hans" its-locale-filter-list="zh-Hans">应该朗读“Ruby 基础”还是“Ruby 注释”，还是两者都要读？</span></h2>
       
       <p lang="en" its-locale-filter-list="en">There are three possible strategies for text-to-speech rendering: (1) reading aloud both ruby bases and ruby annotations,
 	(2) reading aloud ruby annotations only, and (3) reading aloud ruby bases only. This section evaluates the consequences
@@ -2281,8 +2284,10 @@
         <p lang="zh-Hans" its-locale-filter-list="zh-Hans">该策略会朗读 Ruby 基础代码，但不会朗读 Ruby 注释。
           例如，<ruby><rb>foo</rb><rt>bar</rt></ruby> 会被朗读为 foo。</p>
         <aside class="note" title="" id="n20211101004">
+	  <p lang="en"  its-locale-filter-list="en">
           This strategy does not necessarily ignore ruby annotations. 
-          Although text-to-speech engines mainly use ruby bases, they may also use ruby annotations as a hint.
+          Although text-to-speech engines mainly use ruby bases, they may also use ruby annotations as a hint.</p>
+	  <plang="ja" its-locale-filter-list="ja">この戦略は、必ずしもルビ注釈を無視するものではない。音声合成エンジンは主としてルビの親文字を利用するが、ルビ注釈も補助的な手がかりとして利用する場合がある。</p>
         </aside>
 
         <section>
@@ -2298,8 +2303,9 @@
           <p lang="zh-Hant" its-locale-filter-list="zh-Hant">以下內容引自[[?ACCESSIBLE_E_BOOKS]]。</p>
           <p lang="zh-Hans" its-locale-filter-list="zh-Hans">以下内容引自[[?ACCESSIBLE_E_BOOKS]]。</p>
           <aside class="note" title="" id="n20211101005">
+	    <p lang="en" its-locale-filter-list="en">
             Many TTS engines support characters in JIS X 0208:1997 but do not typically support characters beyond it.
-            Thus, more than a half of the JIS CJK unified ideographs cannot be read aloud.
+            Thus, more than a half of the JIS CJK unified ideographs cannot be read aloud.</p>
           </aside>
           
           <p lang="en" its-locale-filter-list="en">Furthermore, compound words made up from CJK unified ideographs in JIS X 0208 are sometimes read aloud incorrectly.</p>
@@ -2970,7 +2976,7 @@ it becomes easier for the text-to-speech engine to maintain a correspondence tab
 	represented using the long vowel character. For example,
 	to tranlsate <span lang="ja">たいよう</span> to braille,
 	<span lang="ja">たいよう</span> is first converted to <span lang="ja">たいよー</span> and then translated to braille.</p>
-      <p lang="ja" its-locale-filter-list="ja">点字は、
+      <p lang="ja" its-locale-filter-list="ja">日本の点字は、
     日本語の表記体系とはいくつかの構文上の違いがあります。第一に、単語の区切りとして
     スペース文字が挿入されます。第二に、日本語の助詞である「
 	<span lang="ja">は</span>」と<span lang="ja">「へ」</span>は、発音通りに表記されるため、「
@@ -3023,7 +3029,7 @@ it becomes easier for the text-to-speech engine to maintain a correspondence tab
       <p lang="ja" its-locale-filter-list="ja">HTMLやEPUBのコンテンツを点字に変換する際には、
     各CJK統合漢字に対して正しい読み方を指定することが
     不可欠です。誤った読み方を選択すると、
-    点字の出力に誤りが生じる可能性があります。テキスト読み上げと同様に、
+    点字の出力に誤りが生じる可能性があります。テキスト読み上げのときと同様に、
     ルビ注釈は有用な手がかりとなりますが、[[?SSML]]やPLS
     ([[?PRONUNCIATION-LEXICON]])も効果的な代替手段となります。</p>
       <p lang="zh-Hant" its-locale-filter-list="zh-Hant">在將 HTML 或 EPUB 內容轉換爲盲文時，
