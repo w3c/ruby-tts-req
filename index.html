@@ -3024,11 +3024,27 @@ it becomes easier for the text-to-speech engine to maintain a correspondence tab
       <p lang="zh-Hans" its-locale-filter-list="zh-Hans">在将文本转换为盲文的过程中，需要借助自然语言处理技术来处理这些
     差异。然而，与
     文本转语音不同，语调在此并不重要。</p>
+
+      <p lang="en" its-locale-filter-list="en">Despite this difference, text-to-speech and automatic braille translation share an important preprocessing step: determining the correct pronunciation of each CJK ideographic character or word. Ruby annotations can provide this pronunciation information for both technologies.</p>
       
+      <p lang="ja" its-locale-filter-list="ja">
+この違いはあるものの、テキスト読み上げと点字自動変換は重要な前処理を共有している。すなわち、各CJK統合漢字または語の正しい読みを決定する処理である。ルビ注釈は、この読み情報を両方の技術に提供できる。
+</p>
+
+<p lang="zh-Hant" its-locale-filter-list="zh-Hant">
+儘管存在這種差異，文字轉語音與點字自動轉換仍共享一個重要的前處理步驟：確定每個 CJK 統一表意文字或詞語的正確讀音。Ruby 註記可以為這兩種技術提供這些讀音資訊。
+</p>
+
+<p lang="zh-Hans" its-locale-filter-list="zh-Hans">
+尽管存在这种差异，文字转语音与盲文自动转换仍共享一个重要的预处理步骤：确定每个 CJK 统一表意文字或词语的正确读音。Ruby 注释可以为这两种技术提供这些读音信息。
+</p>
+
+
+
       <p lang="en" its-locale-filter-list="en">When converting HTML or EPUB content to braille, it is
 	essential to select the correct reading for each CJK
 	ideographic character. Choosing an incorrect reading can
-	result in erroneous braille output. Similar to text-to-speech,
+	result in erroneous braille output. As in text-to-speech systems,
 	ruby annotations provide valuable hints, while [[?SSML]] and PLS
 	([[?PRONUNCIATION-LEXICON]]) serve as effective alternatives.</p>
       <p lang="ja" its-locale-filter-list="ja">HTMLやEPUBのコンテンツを点字に変換する際には、
