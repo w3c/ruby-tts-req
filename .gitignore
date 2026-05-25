@@ -2,3 +2,6 @@
 jlrex.html
 DeepL_API.txt
 translate.dib
+*.html#
+.\#jlrex.html
+*.js~
